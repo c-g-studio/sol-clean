@@ -1,0 +1,25 @@
+name: Linting...
+run-name: ${{ github.actor }} linting... 🚀
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: ["*"]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: install node ${{matrix.node-version}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Install dependencies
+        run: npm install
+      - name: Linting project
+        run: npm run lint
+      - name: Build project
+        run: npm run build
