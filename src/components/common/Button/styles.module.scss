@@ -1,0 +1,82 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.button {
+  width: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    font-weight 0.2s ease;
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  border-radius: 49px;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.primary {
+  background-color: $color-yellow;
+  color: $color-black;
+
+  &:hover,
+  &:focus {
+    color: $color-aqua;
+    font-weight: 700;
+    background-color: $color-black;
+  }
+}
+
+.secondary {
+  color: $color-black;
+  background: $color-aqua;
+
+  &:hover {
+    color: $color-aqua;
+    font-weight: 700;
+    background: $color-black;
+  }
+}
+
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.medium {
+  max-width: 349px;
+  padding: 8px 40px;
+
+  font-size: 14px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 295px;
+    font-size: 16px;
+  }
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 281px;
+
+    font-size: 16px;
+  }
+}
+
+.large {
+  padding: 12px 20px;
+  font-size: 18px;
+}

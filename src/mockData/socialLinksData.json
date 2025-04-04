@@ -1,0 +1,32 @@
+[
+  {
+    "name": "instagram",
+    "link": "/",
+    "header": false,
+    "footer": true
+  },
+  {
+    "name": "Dienstleistungen",
+    "link": "/services",
+    "header": true,
+    "footer": true
+  },
+  {
+    "name": "Über uns",
+    "link": "/about",
+    "header": true,
+    "footer": true
+  },
+  {
+    "name": "Kontakt",
+    "link": "/contact",
+    "header": true,
+    "footer": true
+  },
+  {
+    "name": "Business",
+    "link": "/business",
+    "header": true,
+    "footer": true
+  }
+]

@@ -1,6 +1,4 @@
-@import 'variables';
-
-
+@import '_variables.scss';
 
 html,
 body {
@@ -9,9 +7,9 @@ body {
 }
 
 body {
-  color: $color-clean-black;
+  color: $color-black;
   background: $color-clean-white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-outfit, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,4 +29,11 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

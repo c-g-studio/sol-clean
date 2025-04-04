@@ -1,0 +1,46 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.leftSideContent {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  background-color: $color-blue-light;
+  border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0 100px 40px;
+    width: 50%;
+
+    align-items: flex-start;
+
+    text-align: left;
+  }
+}
+
+.footerTitle {
+  margin-bottom: 20px;
+
+  color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+}
+
+.footerText {
+  margin-bottom: 40px;
+
+  color: $color-clean-white;
+}
+
+.leftSideContentButton {
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-top: auto;
+  }
+}

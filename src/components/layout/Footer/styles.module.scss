@@ -1,0 +1,29 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.footer {
+  padding-top: 90px;
+  padding-bottom: 45px;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 0;
+
+    background: linear-gradient(
+      to right,
+      $color-blue-dark 70%,
+      $color-blue-light 30%
+    );
+  }
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row-reverse;
+  }
+}

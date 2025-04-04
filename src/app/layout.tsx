@@ -1,7 +1,9 @@
+import '@/styles/globals.scss';
+
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 
-import '@/styles/globals.scss';
+import { Footer } from '@/components/layout/Footer/Footer';
 
 const outfitSans = Outfit({
   variable: '--font-outfit',
@@ -20,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${outfitSans.variable} `}>{children}</body>
+      <body className={`${outfitSans.variable} `}>
+        <main>{children} </main>
+        <Footer />
+      </body>
     </html>
   );
 }

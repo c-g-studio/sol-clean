@@ -1,0 +1,15 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 0 40px;
+  }
+  @include useMedia('min-width', $breakpoint-xl) {
+    max-width: 1920px;
+    padding: 0 340px;
+  }
+}
