@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 
 import { Footer } from '@/components/layout/Footer/Footer';
+import { Header } from '@/components/layout/Header/Header';
 
 const outfitSans = Outfit({
   variable: '--font-outfit',
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={`${outfitSans.variable} `}>
+        <Header />
         <main>{children} </main>
         <Footer />
       </body>

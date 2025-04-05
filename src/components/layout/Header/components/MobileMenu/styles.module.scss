@@ -1,0 +1,117 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.mobileMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+
+  padding: 30px 30px 40px 20px;
+  width: 100%;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+
+  background-color: $color-clean-white;
+}
+
+.isOpen {
+  transform: translateY(0);
+}
+
+.wrapper {
+  margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: -15px;
+  width: 142px;
+  height: 34px;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  &:hover .crossIcon,
+  &:focus .crossIcon {
+    stroke: $color-aqua;
+  }
+}
+
+.crossIcon {
+  transition: stroke 0.3s ease-in-out;
+
+  stroke: $color-blue-light;
+}
+
+.navList {
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.navListLink {
+  position: relative;
+  font-size: 16px;
+  color: $color-clean-black;
+  transition: color 0.5s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $color-blue-dark;
+
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-blue-dark;
+  }
+
+  &:hover:after,
+  &:focus:after {
+    width: 100%;
+  }
+}
+
+.mobileMenuButton {
+  max-width: 281px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+
+  transition: opacity 0.3s ease-in-out;
+
+  width: 100%;
+  height: 100%;
+  background-color: #ccccccb3;
+  pointer-events: none;
+}
+
+.showBackdrop {
+  opacity: 1;
+}
