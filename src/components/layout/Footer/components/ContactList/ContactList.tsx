@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import InstagramIcon from '../../../../../../public/img/socials/instagram.svg';
-import PhoneIcon from '../../../../../../public/img/socials/phone.svg';
-import EmailIcon from '../../../../../../public/img/socials/email.svg';
+import { InstagramIcon } from '@/components/icons/social/InstagramIcon';
+import { PhoneIcon } from '@/components/icons/social/PhoneIcon';
+import { EmailIcon } from '@/components/icons/social/EmailIcon';
 
 import s from './styles.module.scss';
 
