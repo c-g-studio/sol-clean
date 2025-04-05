@@ -2,29 +2,56 @@
 @import '@/styles/_mixins.scss';
 
 .rightSideContent {
-  @include useMedia('min-width', $breakpoint-md) {
-    width: 50%;
-    padding: 100px 0;
-  }
-}
-
-.navWrapper {
-  margin-bottom: 60px;
+  padding: 20px;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  background-color: $color-blue-light;
+  border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-md) {
-    flex-direction: column;
-    gap: 30px;
+    padding: 100px 0 100px 40px;
+    width: 50%;
+
+    align-items: flex-start;
+
+    text-align: left;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 160px 0 160px 117px;
+    width: 50%;
+
+    align-items: flex-start;
+
+    //text-align: left;
   }
 }
 
-.rightSideButton {
-  display: block;
-  margin: 0 auto;
+.footerTitle {
+  margin-bottom: 20px;
+
+  color: $color-clean-white;
+  line-height: 1.4;
 
   @include useMedia('min-width', $breakpoint-md) {
-    margin: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.footerText {
+  margin-bottom: 40px;
+
+  color: $color-clean-white;
+  line-height: 1.4;
+}
+
+.rightSideContentButton {
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-top: auto;
   }
 }

@@ -12,8 +12,8 @@
 
     background: linear-gradient(
       to right,
-      $color-blue-dark 70%,
-      $color-blue-light 30%
+      $color-blue-dark 60%,
+      $color-blue-light 40%
     );
   }
 }
@@ -25,5 +25,9 @@
 
   @include useMedia('min-width', $breakpoint-md) {
     flex-direction: row-reverse;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    gap: 0;
   }
 }

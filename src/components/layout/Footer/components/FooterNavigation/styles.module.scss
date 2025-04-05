@@ -1,9 +1,14 @@
 @import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .footerNavList {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    flex-direction: row;
+  }
 }
 
 .footerNavLink {

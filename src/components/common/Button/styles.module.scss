@@ -46,7 +46,8 @@
   color: $color-black;
   background: $color-aqua;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-aqua;
     font-weight: 700;
     background: $color-black;

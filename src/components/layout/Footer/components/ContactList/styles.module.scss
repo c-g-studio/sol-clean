@@ -11,6 +11,15 @@
   }
 }
 
+.contactListLink {
+  display: block;
+
+  &:hover .contactItemIcon,
+  &:focus .contactItemIcon {
+    fill: $color-aqua;
+  }
+}
+
 .contactItemIcon {
   width: 33px;
   height: 33px;
@@ -18,9 +27,4 @@
   fill: $color-clean-white;
 
   transition: fill 0.5s ease-in-out;
-
-  &:hover,
-  &:focus {
-    fill: $color-aqua;
-  }
 }
