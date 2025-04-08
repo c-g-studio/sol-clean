@@ -1,3 +1,96 @@
-.logo {
-  fill: red;
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+//.logo {
+//  fill: red;
+//}
+
+.heroSection {
+  padding-bottom: 50px;
+}
+
+.heroTitle {
+  margin-top: 30px;
+  padding-top: 104px;
+  padding-right: 65px;
+  padding-bottom: 184px;
+  padding-left: 11px;
+  max-width: 310px;
+
+  color: $color-clean-white;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.12;
+
+  border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-left: 20px;
+    max-width: 428px;
+
+    font-size: 64px;
+  }
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin-top: 50px;
+    padding-top: 151px;
+    padding-bottom: 332px;
+    max-width: 910px;
+
+    font-size: 107px;
+  }
+}
+
+.box {
+  position: relative;
+
+  margin-bottom: 30px;
+}
+.heroImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  @include useMedia('min-width', $breakpoint-xl) {
+    top: -50px;
+    max-height: 843px;
+    max-width: 1354px;
+    object-fit: contain;
+  }
+}
+
+.heroTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin-top: -250px;
+  }
+}
+
+.heroText {
+  margin: 0 auto 20px;
+  max-width: 295px;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin: 0 0 20px 0;
+    max-width: 383px;
+    text-align: left;
+  }
+}
+
+.heroButton {
+  margin: 0 auto;
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin: 0;
+    margin-right: 103px;
+    text-align: left;
+  }
 }

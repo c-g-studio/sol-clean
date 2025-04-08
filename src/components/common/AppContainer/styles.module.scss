@@ -5,9 +5,6 @@
   margin: 0 auto;
   padding: 0 20px;
 
-  @include useMedia('min-width', $breakpoint-md) {
-    padding: 0 40px;
-  }
   @include useMedia('min-width', $breakpoint-xl) {
     max-width: 1320px;
     padding: 0 40px;

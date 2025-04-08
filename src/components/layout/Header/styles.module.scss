@@ -1,10 +1,14 @@
 @import '@/styles/_variables';
 @import '@/styles/_mixins';
+.headerContainer {
+  position: relative;
+}
 
 .header {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 999;
 
   margin-top: 43px;
   padding-left: 20px;
@@ -16,12 +20,19 @@
   justify-content: space-between;
   overflow: hidden;
 
-  background-color: red;
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .logo {
   width: 142px;
   height: 34px;
+  @include useMedia('min-width', $breakpoint-xl) {
+    width: 200px;
+    height: 45px;
+  }
 }
 
 .mobileMenuButton {
@@ -47,4 +58,45 @@
   stroke: $color-clean-white;
 
   transition: stroke 0.3s ease-in-out;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navigationItem {
+  padding: 8px 23px;
+
+  font-weight: 500;
+}
+
+.navLink {
+  position: relative;
+  font-size: 16px;
+  color: $color-clean-black;
+  transition: color 0.5s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $color-blue-dark;
+
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-blue-dark;
+  }
+
+  &:hover:after,
+  &:focus:after {
+    width: 100%;
+  }
 }

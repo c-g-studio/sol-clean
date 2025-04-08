@@ -2,7 +2,7 @@
 @import '@/styles/_mixins.scss';
 
 .h1 {
-  font-size: 32px;
+  //font-size: 32px;
   font-weight: bold;
 }
 
@@ -31,7 +31,13 @@
 }
 
 .body2 {
-  line-height: 1.3;
+  color: $color-clean-black;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    font-size: 20px;
+  }
 }
 
 .decorSpan {
