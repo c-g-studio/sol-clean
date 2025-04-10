@@ -1,0 +1,80 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  padding: 45px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 20px;
+  }
+}
+
+.listItem {
+  padding: 57px 20px;
+
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 48px 0;
+    width: calc((100% - 20px) / 3);
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    width: calc((100% - 40px) / 3);
+  }
+}
+
+.listItemTitle {
+  margin-bottom: 30px;
+
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.4;
+}
+
+.listItemTitleSpan {
+  font-size: 48px;
+  color: $color-blue-light;
+}
+
+.listItemText {
+  margin: 0 auto;
+  max-width: 230px;
+
+  font-size: 16px;
+  line-height: 1.2;
+  color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 194px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 299px;
+
+    font-size: 20px;
+  }
+}
