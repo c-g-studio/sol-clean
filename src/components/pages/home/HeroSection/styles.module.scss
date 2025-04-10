@@ -1,12 +1,15 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
-//.logo {
-//  fill: red;
-//}
-
 .heroSection {
   padding-bottom: 50px;
+}
+
+.heroContainer {
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .heroTitle {
