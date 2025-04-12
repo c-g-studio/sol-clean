@@ -37,6 +37,30 @@
 
   text-align: center;
 
+  border: 1px solid transparent;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+    background-color: $color-yellow-light;
+  }
+
+  &:hover .listItemTitle,
+  &:focus .listItemTitle,
+  &:hover .listItemTitleSpan,
+  &:focus .listItemTitleSpan {
+    color: $color-yellow;
+  }
+
+  &:hover .listItemText,
+  &:focus .listItemText {
+    color: $color-clean-black;
+  }
+
   @include useMedia('min-width', $breakpoint-md) {
     padding: 48px 0;
     width: calc((100% - 20px) / 3);
@@ -53,11 +77,15 @@
   font-weight: 800;
   font-size: 48px;
   line-height: 1.4;
+
+  transition: color 0.3s ease-in-out;
 }
 
 .listItemTitleSpan {
   font-size: 36px;
   color: $color-blue-light;
+
+  transition: color 0.3s ease-in-out;
 }
 
 .listItemText {
@@ -67,6 +95,8 @@
   font-size: 16px;
   line-height: 1.2;
   color: $color-blue-dark;
+
+  transition: color 0.3s ease-in-out;
 
   @include useMedia('min-width', $breakpoint-md) {
     max-width: 194px;

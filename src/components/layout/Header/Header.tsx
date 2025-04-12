@@ -23,7 +23,7 @@ export const Header = () => {
     <header>
       <AppContainer classes={s.headerContainer}>
         <div className={s.header}>
-          <Link href="/">
+          <Link href="/" aria-label="Home page">
             <LogoIcon className={s.logo} />
           </Link>
           {!isDesktop ? (
@@ -31,6 +31,7 @@ export const Header = () => {
               <Button
                 className={s.mobileMenuButton}
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={'Open mobile menu'}
               >
                 <MobileMenuIcon className={s.mobileMenuButtonIcon} />
               </Button>

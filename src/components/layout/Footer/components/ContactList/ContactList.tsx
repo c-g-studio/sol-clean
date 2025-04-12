@@ -15,6 +15,7 @@ export const ContactList = () => {
           target={'_blank'}
           rel={'noopener noreferrer'}
           className={s.contactListLink}
+          aria-label="Instagram link"
         >
           <InstagramIcon className={s.contactItemIcon} />
         </Link>
@@ -25,6 +26,7 @@ export const ContactList = () => {
           target={'_blank'}
           rel={'noopener noreferrer'}
           className={s.contactListLink}
+          aria-label="Call us"
         >
           <PhoneIcon className={s.contactItemIcon} />
         </Link>
@@ -35,6 +37,7 @@ export const ContactList = () => {
           target={'_blank'}
           rel={'noopener noreferrer'}
           className={s.contactListLink}
+          aria-label="Send email"
         >
           <EmailIcon className={s.contactItemIcon} />
         </Link>

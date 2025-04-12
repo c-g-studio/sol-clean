@@ -20,10 +20,15 @@ export const MobileMenu: FC<TMobileMenuProps> = ({ isOpen, onClose }) => {
       <div className={`${s.backdrop} ${isOpen ? s.showBackdrop : ''}`}></div>
       <div className={`${s.mobileMenu} ${isOpen ? s.isOpen : ''}`}>
         <div className={s.wrapper}>
-          <Link href="/">
+          <Link href="/" aria-label={'Home page link'}>
             <LogoDarkIcon className={s.logo} />
           </Link>
-          <button type={'button'} onClick={onClose} className={s.closeButton}>
+          <button
+            type={'button'}
+            onClick={onClose}
+            className={s.closeButton}
+            aria-label={'Close mobile menu'}
+          >
             <CrossIcon className={s.crossIcon} />
           </button>
         </div>
