@@ -3,7 +3,7 @@ import { Typography } from '@/components/common/Typography/Typography';
 
 import s from './styles.module.scss';
 
-export const AdvantagesPage = () => {
+export const AdvantagesSection = () => {
   return (
     <section className={s.section}>
       <AppContainer>

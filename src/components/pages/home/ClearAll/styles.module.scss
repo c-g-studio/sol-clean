@@ -1,0 +1,129 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.clearAllSection {
+  padding-bottom: 45px;
+
+  background: linear-gradient(to bottom, $color-blue-dark 78%, transparent 22%);
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-bottom: 50px;
+
+    background: linear-gradient(
+      to bottom,
+      $color-blue-dark 60%,
+      transparent 40%
+    );
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding-bottom: 60px;
+  }
+}
+
+.sectionTitle {
+  margin-bottom: 75px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 95px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 172px;
+
+    text-align: left;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.listItem {
+  position: relative;
+
+  padding: 70px 30px 30px 30px;
+
+  text-align: center;
+
+  border: 1px solid transparent;
+  border-radius: 20px;
+
+  background-color: $color-blue-extra-light;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+    background-color: $color-yellow-light;
+  }
+
+  &:hover .round,
+  &:focus .round {
+    border-color: $color-yellow;
+  }
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: calc((100% - 20px) / 2);
+
+    padding: 70px 22px 30px 22px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 96px 62px;
+  }
+}
+
+.span {
+  font-weight: 700;
+}
+
+.round {
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 91px;
+  height: 91px;
+
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-color: $color-clean-white;
+
+  transition: border-color 0.3s ease-in-out;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    top: -65px;
+
+    width: 129px;
+    height: 129px;
+  }
+}
+
+.image {
+  width: 52px;
+  height: 52px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    width: 75px;
+    height: 75px;
+  }
+}
