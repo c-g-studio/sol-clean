@@ -1,0 +1,116 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.letsTalkSection {
+  position: relative;
+
+  padding: 90px 0;
+
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+}
+
+.leftArrowIcon {
+  position: absolute;
+  left: -110px;
+  top: 10px;
+
+  transform: rotate(15deg);
+
+  @include useMedia('min-width', $breakpoint-md) {
+    left: 0;
+    top: 79px;
+
+    transform: rotate(5deg);
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    left: 33%;
+    top: 35%;
+
+    width: 395px;
+    height: 125px;
+
+    transform: rotate(-5deg);
+  }
+}
+
+.airplaneIcon {
+  position: absolute;
+  left: 50px;
+  top: -70px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    left: 140px;
+    top: -50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    left: 40%;
+    top: -24%;
+
+    width: 500px;
+    height: 217px;
+
+    transform: rotate(-10deg);
+  }
+}
+
+.letsTalkContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.letsTalkSectionTitle {
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 0;
+  }
+}
+
+.buttonWrapper {
+  position: relative;
+
+  max-width: 349px;
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}
+
+.letsTalkSectionButton {
+  margin: 0 auto;
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+    height: 36px;
+  }
+}
+.RightArrowIcon {
+  position: absolute;
+
+  right: -125px;
+  top: -38px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    right: -140px;
+    top: -20px;
+  }
+}

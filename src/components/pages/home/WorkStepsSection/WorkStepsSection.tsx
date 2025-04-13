@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
+import { Typography } from '@/components/common/Typography/Typography';
 
 import s from './styles.module.scss';
-import { Typography } from '@/components/common/Typography/Typography';
 
 export const WorkStepsSection = () => {
   return (
