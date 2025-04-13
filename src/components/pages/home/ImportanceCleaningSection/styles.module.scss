@@ -1,0 +1,91 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.importanceCleaningSection {
+  padding: 45px 0 250px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 220px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 0 180px 0;
+  }
+}
+
+.importanceCleaningSectionContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    gap: 170px;
+  }
+}
+
+.importanceCleaningSectionImageDesktop {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+
+    width: 549px;
+    height: 410px;
+  }
+}
+
+.importanceCleaningTitle {
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 50px auto;
+    max-width: 450px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 30px 0;
+    max-width: 550px;
+
+    text-align: left;
+  }
+}
+
+.breakText {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: none;
+  }
+}
+
+.importanceCleaningSectionImage {
+  display: block;
+  margin: 0 auto 30px auto;
+
+  width: 100%;
+  height: auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.importanceCleaningText {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 123px;
+
+    text-align: left;
+  }
+}
+
+.importanceCleaningButton {
+  display: block;
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}

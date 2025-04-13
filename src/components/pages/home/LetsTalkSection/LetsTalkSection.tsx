@@ -8,7 +8,7 @@ import { AirplaneIcon } from '@/components/icons/letsTalkSection/AirplaneIcon';
 import s from './styles.module.scss';
 import { RightArrowIcon } from '@/components/icons/letsTalkSection/RightArrowIcon';
 
-export const LetsTalk = () => {
+export const LetsTalkSection = () => {
   return (
     <section className={s.letsTalkSection}>
       {' '}
