@@ -1,0 +1,115 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.wrkStepsSection {
+  padding: 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 180px 0 120px 0;
+  }
+}
+.WorkStepsTitle {
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+}
+
+.workStepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 19px;
+  }
+}
+
+.workStepsListItem {
+  &:hover .image {
+    opacity: 1;
+  }
+  &:hover .textWrapper {
+    border-top-color: $color-blue-dark;
+  }
+
+  &:hover .stepTitle {
+    color: $color-blue-dark;
+  }
+
+  &:hover .stepText {
+    color: $color-black;
+  }
+  @include useMedia('min-width', $breakpoint-md) {
+    width: calc(50% - 10px);
+  }
+  @include useMedia('min-width', $breakpoint-lg) {
+    width: calc((100% - 57px) / 4);
+  }
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  opacity: 0.5;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.textWrapper {
+  margin-top: 20px;
+  padding-top: 20px;
+
+  border-top: 3px solid $color-blue-extra-light;
+
+  transition: border-top-color 0.3s ease-in-out;
+}
+
+.step {
+  margin-bottom: 21px;
+
+  color: $color-blue-light;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+.stepTitle {
+  margin-bottom: 17px;
+
+  color: $color-blue-light;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1.4;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.stepText {
+  color: $color-blue-light;
+
+  transition: color 0.3s ease-in-out;
+}
