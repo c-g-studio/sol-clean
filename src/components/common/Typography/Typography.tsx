@@ -3,7 +3,15 @@ import classNames from 'classnames';
 
 import s from './styles.module.scss';
 
-type Variant = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'p' | 'decorSpan';
+type Variant =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'body1'
+  | 'body2'
+  | 'body3'
+  | 'p'
+  | 'decorSpan';
 
 interface TypographyProps {
   variant: Variant;
@@ -32,6 +40,7 @@ const tagMap: Record<Variant, keyof JSX.IntrinsicElements> = {
   p: 'p',
   body1: 'p',
   body2: 'p',
+  body3: 'p',
   decorSpan: 'span'
 };
 export const Typography: FC<TypographyProps> = ({

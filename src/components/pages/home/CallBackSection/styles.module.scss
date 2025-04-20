@@ -1,0 +1,170 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.callBackSection {
+  padding: 90px 0;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+}
+
+.callBackSectionContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.sectionTitle {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 30px auto;
+    max-width: 500px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 30px 0;
+
+    text-align: left;
+  }
+}
+
+.sectionText {
+  margin-bottom: 147px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 251px auto;
+    max-width: 484px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 80px 0;
+
+    text-align: left;
+  }
+}
+
+.mobileImageBox {
+  position: relative;
+
+  margin-bottom: 45px;
+  height: 204px;
+
+  border-radius: 14px;
+
+  background-color: $color-blue-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+
+    height: 401px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.mobileImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 303px;
+  height: 305px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: 596px;
+    height: 610px;
+  }
+}
+.contactList {
+  margin-bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 40px;
+
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    justify-content: flex-start;
+  }
+}
+
+.contactListItemLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+
+  color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 14px;
+  }
+}
+
+.icon {
+  width: 33px;
+  height: 33px;
+
+  fill: $color-yellow;
+}
+
+.button {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}
+
+.desktopImageBox {
+  position: relative;
+
+  display: none;
+  width: 504px;
+  height: 295px;
+
+  border-radius: 14px;
+
+  background-color: $color-blue-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.desktopImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 439px;
+  height: 450px;
+}
