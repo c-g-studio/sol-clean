@@ -1,0 +1,31 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.reviewsSection {
+  padding: 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  color: $color-yellow;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+}

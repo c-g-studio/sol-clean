@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Typography } from '@/components/common/Typography/Typography';
+import { Button } from '@/components/common/Button/Button';
 
 import s from './styles.module.scss';
-import { Button } from '@/components/common/Button/Button';
 
 export const ImportanceCleaningSection = () => {
   return (
