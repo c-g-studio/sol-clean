@@ -24,7 +24,7 @@ export const ReviewsSection = () => {
         <Slider>
           {reviewsData.map(review => {
             return (
-              <SwiperSlide className={s.slide}>
+              <SwiperSlide className={s.slide} key={review.id}>
                 <div>
                   <div className={s.ratingBox}>
                     <RatingMarkup rating={review.rating} />
