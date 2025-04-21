@@ -38,6 +38,9 @@
 
   @include useMedia('min-width', $breakpoint-md) {
     padding: 40px;
+
+    display: flex;
+    gap: 50px;
   }
 }
 
@@ -87,9 +90,18 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 
 .slideImage {
   width: 150px;
   height: 150px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: 183px;
+    height: 183px;
+  }
 }

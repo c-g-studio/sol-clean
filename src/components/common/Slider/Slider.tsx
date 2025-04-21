@@ -28,11 +28,20 @@ export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
     <div className="slider-wrapper">
       <Swiper
         modules={[Pagination, Navigation]}
+        loop={true}
         slidesPerView="auto"
         spaceBetween={20}
         centeredSlides={false}
         pagination={{ type: 'progressbar' }}
         onSwiper={swiper => (swiperRef.current = swiper)}
+        breakpoints={{
+          768: {
+            slidesPerView: 1.1
+          },
+          1199: {
+            slidesPerView: 2
+          }
+        }}
         {...props}
       >
         {children}

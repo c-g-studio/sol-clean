@@ -11,6 +11,7 @@ import { RatingMarkup } from '@/components/common/RatingMarkup/RatingMarkup';
 import reviewsData from '@/mockData/reviewsData.json';
 
 import s from './styles.module.scss';
+import { addDotsAsNeeded } from '@/utils/addDotsAsNeeded';
 
 export const ReviewsSection = () => {
   console.log('reviewsData', reviewsData);
@@ -23,6 +24,8 @@ export const ReviewsSection = () => {
 
         <Slider>
           {reviewsData.map(review => {
+            const { text, isTextSliced } = addDotsAsNeeded(review.text, 450);
+
             return (
               <SwiperSlide className={s.slide} key={review.id}>
                 <div>
@@ -33,11 +36,13 @@ export const ReviewsSection = () => {
                     {review.title}
                   </Typography>
                   <Typography variant={'body4'} className={s.slideText}>
-                    {review.text}
+                    {text}
                   </Typography>
-                  <button type={'button'} className={s.slideButton}>
-                    Weiterlesen
-                  </button>
+                  {isTextSliced && (
+                    <button type={'button'} className={s.slideButton}>
+                      Weiterlesen
+                    </button>
+                  )}
                   <div className={s.slideDateBox}>
                     <Typography variant={'body4'} className={s.slideAuthor}>
                       {review.author}

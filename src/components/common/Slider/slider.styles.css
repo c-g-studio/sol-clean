@@ -3,10 +3,20 @@
 
 .slider-wrapper {
   position: relative;
+
 }
 
 .swiper-wrapper {
   margin-bottom: 20px;
+}
+
+.swiper {
+  @media (min-width: 768px) {
+    overflow: visible;
+  }
+  @media (min-width: 1199px) {
+    overflow: hidden;
+  }
 }
 
 .swiper-pagination-progressbar  .swiper-pagination-progressbar-fill {
