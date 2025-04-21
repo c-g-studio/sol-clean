@@ -29,7 +29,7 @@ export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
       <Swiper
         modules={[Pagination, Navigation]}
         slidesPerView="auto"
-        spaceBetween={24}
+        spaceBetween={20}
         centeredSlides={false}
         pagination={{ type: 'progressbar' }}
         onSwiper={swiper => (swiperRef.current = swiper)}

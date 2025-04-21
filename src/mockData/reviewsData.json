@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Ich bin begeistert !",
+    "text": "\"Ich bin begeistert von der professionellen Solarreinigung der Sol-Clean! Schon nach der Reinigung habe ich eine deutliche Leistungssteigerung meiner Solaranlage bemerkt. Der Ertrag ist messbar gestiegen, und meine Module sehen aus wie neu. Besonders beeindruckt hat mich die gründliche und schonende Reinigung ohne Chemikalien – perfekt für die Umwelt und meine Anlage. Das Team war pünktlich, freundlich und sehr kompetent. Zudem wurde mir genau erklärt, wie regelmäßige Reinigung langfristig die Effizienz und Lebensdauer meiner Solarmodule erhöht.\"",
+    "rating": 5,
+    "author": "Katharina S., Privatkunde",
+    "date": "20.12.2024",
+    "images": [
+      {
+        "id": 1,
+        "url": "/img/home/reviewsSection/image_1.png",
+        "alt": "image 1"
+      },
+      {
+        "id": 2,
+        "url": "/img/home/reviewsSection/image_2.png",
+        "alt": "image 2"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sol-Clean überzeugt mit Qualität, Kundennutzen und ohne Zusatzkosten !",
+    "text": "\"In unserem landwirtschaftlichen Betrieb steht der Alltag niemals still – ob Feldarbeit, der Betrieb unserer Biogasanlage oder die Ernte, es gibt immer etwas zu tun. Unsere Solaranlage soll uns dabei helfen, Stromkosten zu senken, ohne zusätzlichen Aufwand zu verursachen. Doch durch Erntearbeiten, das Silieren und den ständigen Betrieb der Biogasanlage sammelt sich schnell eine Menge Staub und Schmutz auf den Modulen, was die Leistung erheblich beeinträchtigt. Seitdem wir auf eine professionelle... Solarreinigung und Wartungsservice setzen, haben wir endlich eine sorgenfreie Lösung. Nach der ersten Reinigung war der Unterschied sofort spürbar: Die Stromproduktion stieg merklich, und unsere Energiekosten sanken. Der größte Vorteil für uns ist der Sol-Clean 365 – wir müssen uns um nichts kümmern, denn die Reinigung und Kontrolle erfolgen regelmäßig und zuverlässig. So werden mögliche Defekte frühzeitig entdeckt und behoben, bevor sie zu Problemen führen.\"",
+    "rating": 5,
+    "author": "Katharina S., Privatkunde",
+    "date": "20.12.2024",
+    "images": [
+      {
+        "id": 1,
+        "url": "/img/home/reviewsSection/image_3.png",
+        "alt": "image 3"
+      },
+      {
+        "id": 2,
+        "url": "/img/home/reviewsSection/image_4.png",
+        "alt": "image 4"
+      }
+    ]
+  }
+]

@@ -10,6 +10,7 @@ type Variant =
   | 'body1'
   | 'body2'
   | 'body3'
+  | 'body4'
   | 'p'
   | 'decorSpan';
 
@@ -41,6 +42,7 @@ const tagMap: Record<Variant, keyof JSX.IntrinsicElements> = {
   body1: 'p',
   body2: 'p',
   body3: 'p',
+  body4: 'p',
   decorSpan: 'span'
 };
 export const Typography: FC<TypographyProps> = ({
