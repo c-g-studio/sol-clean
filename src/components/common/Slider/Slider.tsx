@@ -47,10 +47,10 @@ export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
         {children}
       </Swiper>
 
-      <div className="custom-prev" onClick={prevSlide}>
+      <div onClick={prevSlide}>
         <LeftArrow className="leftArrow" />
       </div>
-      <div className="custom-next" onClick={nextSlide}>
+      <div onClick={nextSlide}>
         <RightArrow className="rightArrow" />
       </div>
     </div>

@@ -123,6 +123,13 @@
 
   color: $color-clean-white;
 
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-aqua;
+  }
+
   @include useMedia('min-width', $breakpoint-lg) {
     gap: 14px;
   }
