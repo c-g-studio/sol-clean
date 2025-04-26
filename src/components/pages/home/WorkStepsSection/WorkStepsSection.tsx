@@ -18,6 +18,7 @@ export const WorkStepsSection = () => {
               src={'/img/home/calculator.png'}
               width={'295'}
               height={'295'}
+              quality={100}
               alt={'House image'}
               className={s.image}
             />
@@ -42,6 +43,7 @@ export const WorkStepsSection = () => {
               src={'/img/home/statistic.png'}
               width={'295'}
               height={'295'}
+              quality={100}
               alt={'House image'}
               className={s.image}
             />
@@ -66,6 +68,7 @@ export const WorkStepsSection = () => {
               src={'/img/home/big_house.png'}
               width={'295'}
               height={'295'}
+              quality={100}
               alt={'House image'}
               className={s.image}
             />
@@ -90,6 +93,7 @@ export const WorkStepsSection = () => {
               src={'/img/home/lemp.png'}
               width={'295'}
               height={'295'}
+              quality={100}
               alt={'House image'}
               className={s.image}
             />

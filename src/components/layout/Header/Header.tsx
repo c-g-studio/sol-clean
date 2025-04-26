@@ -1,18 +1,18 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { MobileMenuIcon } from '@/components/icons/MobileMenuIcon';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Button } from '@/components/common/Button/Button';
 import { MobileMenu } from '@/components/layout/Header/components/MobileMenu/MobileMenu';
+import { LogoIcon } from '@/components/icons/LogoIcon';
 
 import { useScrollLock } from '@/hooks/useScrollLock';
+import useWindowWidth from '@/hooks/useIsDesctopWidth';
+import navigationData from '@/mockData/navigationData.json';
 
 import s from './styles.module.scss';
-import useWindowWidth from '@/hooks/useIsDesctopWidth';
-import Link from 'next/link';
-import { LogoIcon } from '@/components/icons/LogoIcon';
-import navigationData from '@/mockData/navigationData.json';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

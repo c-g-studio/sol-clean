@@ -8,6 +8,7 @@ import { LetsTalkSection } from '@/components/pages/home/LetsTalkSection/LetsTal
 import { ImportanceCleaningSection } from '@/components/pages/home/ImportanceCleaningSection/ImportanceCleaningSection';
 import { CallBackSection } from '@/components/pages/home/CallBackSection/CallBackSection';
 import { ReviewsSection } from '@/components/pages/home/ReviewsSection/ReviewsSection';
+import { CleaningSection } from '@/components/pages/home/CleaningSection/CleaningSection';
 
 export const metadata: Metadata = {
   title: 'Sol Clean | Maximale Effizienz für  Ihre Solarenergie '
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <AdvantagesSection />
+      <CleaningSection />
       <ClearAllSection />
       <WorkStepsSection />
       <LetsTalkSection />

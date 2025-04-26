@@ -1,0 +1,8 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+.circleWrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}

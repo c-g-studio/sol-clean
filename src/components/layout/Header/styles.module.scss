@@ -10,7 +10,7 @@
   top: 0;
   z-index: 12;
 
-  margin-top: 43px;
+  margin-top: 35px;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
@@ -30,6 +30,8 @@
   width: 142px;
   height: 34px;
   @include useMedia('min-width', $breakpoint-xl) {
+    margin-left: -15px;
+
     width: 200px;
     height: 45px;
   }
