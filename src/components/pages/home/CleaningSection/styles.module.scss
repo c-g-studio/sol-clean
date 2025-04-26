@@ -1,8 +1,87 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
-.circleWrapper {
+
+.cleaningSection {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+
+  padding: 70px 0 50px 0;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-top: 26px;
+    padding: 70px 0 50px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+    padding: 30px 0 60px 0;
+  }
+}
+
+.cleaningSectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include useMedia('min-width', $breakpoint-xl) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.sectionTitle {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 299px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 470px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 520px;
+
+    text-align: left;
+  }
+}
+
+.text {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 532px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    margin: 0;
+    max-width: 485px;
+
+    text-align: left;
+  }
+}
+
+.animation {
+  width: 351px;
+  height: 311px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: 581px;
+    height: 515px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    width: 665px;
+    height: 558px;
+  }
 }

@@ -1,0 +1,28 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.sectionTopBar {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 17px;
+  width: 250px; /* высота полоски */
+  background-color: $color-blue-dark; /* цвет, как на твоей картинке */
+  clip-path: polygon(0 100%, 10% 0, 90% 0, 100% 100%);
+
+  @include useMedia('min-width', $breakpoint-md) {
+    top: -26px;
+
+    width: 500px;
+    height: 28px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    top: -38px;
+
+    width: 1000px;
+    height: 40px;
+  }
+}
