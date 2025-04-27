@@ -25,7 +25,7 @@ export const CleaningSection = () => {
           </Typography>
         </div>
         <Image
-          src={'/img/home/cleaningSection/animation.gif'}
+          src={'/img/home/cleaningSection/animation.webp'}
           width={665}
           height={558}
           alt={'animation'}
