@@ -2,7 +2,6 @@
 @import '@/styles/_mixins.scss';
 
 .h1 {
-  //font-size: 32px;
   font-weight: bold;
 }
 
@@ -19,6 +18,15 @@
 .h3 {
   font-size: 16px;
   font-weight: 700;
+}
+
+.h4 {
+  font-size: 16px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    font-size: 20px;
+  }
 }
 
 .body1 {

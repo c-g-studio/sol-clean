@@ -3,6 +3,7 @@ import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import { RightArrow } from '@/components/icons/arrows/RightArrow/RightArrow';
 
 import s from './styles.module.scss';
+import Link from 'next/link';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
@@ -24,10 +25,10 @@ export const Button: FC<ButtonProps> = ({
 
   if (buttonType === 'withArrow') {
     return (
-      <button className={`${s.buttonWithArrow} ${className}`} {...props}>
+      <Link className={`${s.buttonWithArrow} ${className}`} href={'/services'}>
         <span className={s.buttonWithArrowText}>{children}</span>
         <RightArrow className={s.arrowIcon} />
-      </button>
+      </Link>
     );
   }
 

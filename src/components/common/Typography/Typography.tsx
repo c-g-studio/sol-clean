@@ -7,6 +7,7 @@ type Variant =
   | 'h1'
   | 'h2'
   | 'h3'
+  | 'h4'
   | 'body1'
   | 'body2'
   | 'body3'
@@ -24,7 +25,7 @@ const mergeClassNames = (
   moduleClass: string | string[] | undefined,
   className?: string,
   options?: {
-    classNameFirst?: boolean; // если true — ставит className перед moduleClass
+    classNameFirst?: boolean;
   }
 ): string => {
   const mod = Array.isArray(moduleClass) ? moduleClass : [moduleClass];
@@ -38,6 +39,7 @@ const tagMap: Record<Variant, keyof JSX.IntrinsicElements> = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
+  h4: 'h4',
   p: 'p',
   body1: 'p',
   body2: 'p',

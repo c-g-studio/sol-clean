@@ -3,18 +3,23 @@
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
 
+import { Modal } from '@/components/common/Modal/Modal';
 import { Slider } from '@/components/common/Slider/Slider';
 import { Typography } from '@/components/common/Typography/Typography';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { RatingMarkup } from '@/components/common/RatingMarkup/RatingMarkup';
+import { ReviewModal } from '@/components/pages/home/ReviewsSection/components/ReviewModal/ReviewModal';
+
+import { useMultiModal } from '@/hooks/useMultiModal';
+import { addDotsAsNeeded } from '@/utils/addDotsAsNeeded';
 
 import reviewsData from '@/mockData/reviewsData.json';
 
 import s from './styles.module.scss';
-import { addDotsAsNeeded } from '@/utils/addDotsAsNeeded';
 
 export const ReviewsSection = () => {
-  console.log('reviewsData', reviewsData);
+  const { openModal, closeModal, isOpen } = useMultiModal<string | number>();
+
   return (
     <section className={s.reviewsSection}>
       <AppContainer>
@@ -39,7 +44,11 @@ export const ReviewsSection = () => {
                     {text}
                   </Typography>
                   {isTextSliced && (
-                    <button type={'button'} className={s.slideButton}>
+                    <button
+                      type={'button'}
+                      className={s.slideButton}
+                      onClick={() => openModal(review.id)}
+                    >
                       Weiterlesen
                     </button>
                   )}
@@ -66,6 +75,9 @@ export const ReviewsSection = () => {
                     );
                   })}
                 </div>
+                <Modal onClose={closeModal} open={isOpen(review.id)}>
+                  <ReviewModal review={review} />
+                </Modal>
               </SwiperSlide>
             );
           })}

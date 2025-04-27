@@ -1,0 +1,90 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    scale: 2;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 2;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  scale: 2;
+  pointer-events: none;
+
+  &.open {
+    animation: fadeIn 0.3s ease forwards;
+    pointer-events: auto;
+  }
+  &.close {
+    animation: fadeOut 0.3s ease forwards;
+  }
+}
+
+.modal {
+  position: relative;
+
+  padding: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  border-radius: 20px;
+  background-color: $color-clean-white;
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 40px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 14px;
+  height: 14px;
+
+  stroke: $color-black;
+
+  cursor: pointer;
+
+  transition: stroke 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    stroke: $color-aqua;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    top: 40px;
+    right: 40px;
+  }
+}
