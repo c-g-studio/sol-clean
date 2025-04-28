@@ -4,7 +4,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    scale: 2;
+    scale: 0;
   }
   to {
     scale: 1;
@@ -19,7 +19,7 @@
   }
   to {
     opacity: 0;
-    scale: 2;
+    scale: 0;
   }
 }
 
