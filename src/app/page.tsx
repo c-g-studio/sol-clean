@@ -10,6 +10,7 @@ import { CallBackSection } from '@/components/pages/home/CallBackSection/CallBac
 import { ReviewsSection } from '@/components/pages/home/ReviewsSection/ReviewsSection';
 import { CleaningSection } from '@/components/pages/home/CleaningSection/CleaningSection';
 import { OurRangeSection } from '@/components/pages/home/OurRangeSection/OurRangeSection';
+import { CalculatorSection } from '@/components/pages/home/CalculatorSection/CalculatorSection';
 
 export const metadata: Metadata = {
   title: 'Sol Clean | Maximale Effizienz für  Ihre Solarenergie '
@@ -22,6 +23,7 @@ export default function Home() {
       <AdvantagesSection />
       <CleaningSection />
       <ClearAllSection />
+      <CalculatorSection />
       <OurRangeSection />
       <WorkStepsSection />
       <LetsTalkSection />

@@ -1,11 +1,12 @@
 import { FC, ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useScrollLock } from '@/hooks/useScrollLock';
+import { CrossIcon } from '@/components/icons/CrossIcon';
+
 import { useModalAnimation } from '@/hooks/useModalAnimation';
+import { useScrollLock } from '@/hooks/useScrollLock';
 
 import s from './styles.module.scss';
-import { CrossIcon } from '@/components/icons/CrossIcon';
 
 type TModalProps = {
   children: ReactNode;
@@ -41,7 +42,10 @@ export const Modal: FC<TModalProps> = ({ children, onClose, open }) => {
       className={`${s.backdrop} ${shouldAnimate ? s.open : s.close}`}
       onClick={onClose}
     >
-      <div className={s.modal} onClick={e => e.stopPropagation()}>
+      <div
+        className={`${s.modal} ${shouldAnimate ? s.open : s.close}`}
+        onClick={e => e.stopPropagation()}
+      >
         <CrossIcon className={s.closeBtn} onClick={onClose} />
         {children}
       </div>

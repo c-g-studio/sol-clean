@@ -1,0 +1,14 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.calculatorSection {
+  padding: 45px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 0 120px 0;
+  }
+}

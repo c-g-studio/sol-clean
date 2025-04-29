@@ -1,24 +1,38 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
-@keyframes fadeIn {
+@keyframes showBackdrop {
   from {
     opacity: 0;
-    scale: 0;
   }
   to {
-    scale: 1;
     opacity: 1;
   }
 }
 
-@keyframes fadeOut {
+@keyframes hideBackdrop {
   from {
     opacity: 1;
-    scale: 1;
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes showModal {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes hideModal {
+  from {
+    scale: 1;
+  }
+  to {
     scale: 0;
   }
 }
@@ -38,15 +52,14 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   opacity: 0;
-  scale: 2;
   pointer-events: none;
 
   &.open {
-    animation: fadeIn 0.3s ease forwards;
+    animation: showBackdrop 0.3s ease forwards;
     pointer-events: auto;
   }
   &.close {
-    animation: fadeOut 0.3s ease forwards;
+    animation: hideBackdrop 0.3s ease forwards;
   }
 }
 
@@ -61,6 +74,14 @@
   background-color: $color-clean-white;
   @include useMedia('min-width', $breakpoint-xl) {
     padding: 40px;
+  }
+
+  &.open {
+    animation: showModal 0.3s ease forwards;
+  }
+
+  &.close {
+    animation: hideModal 0.3s ease forwards;
   }
 }
 
