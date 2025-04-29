@@ -37,7 +37,12 @@ export const ImportanceCleaningSection = () => {
             verursachen. Eine regelmäßige Reinigung sorgt für maximale
             Energieausbeute und verlängert die Lebensdauer Ihrer Anlage.
           </Typography>
-          <Button variant={'primary'} className={s.importanceCleaningButton}>
+          <Button
+            variant={'primary'}
+            buttonType={'buttonLink'}
+            href={'#calculatorSection'}
+            className={s.importanceCleaningButton}
+          >
             Wirtschaftlichkeitsrechnung
           </Button>
         </div>

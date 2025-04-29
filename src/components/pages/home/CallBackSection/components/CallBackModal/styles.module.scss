@@ -1,0 +1,83 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.title {
+  max-width: 300px;
+
+  font-size: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phoneWrapper {
+  display: flex;
+  align-items: center;
+  background: #eef2fa;
+  border-radius: 12px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.input {
+  width: 470px;
+
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+}
+
+.textarea {
+  background: #eef2fa;
+  border-radius: 12px;
+  padding: 16px;
+  border: none;
+  resize: none;
+  height: 120px;
+  font-size: 16px;
+  outline: none;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #dde7f7;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.arrow {
+  font-size: 18px;
+  margin-left: 12px;
+}
+
+.btn {
+  width: 100%;
+  max-width: 286px;
+  align-self: flex-end;
+
+  & span {
+    background: #dde7f7;
+  }
+
+  & svg {
+    background: #dde7f7;
+  }
+}

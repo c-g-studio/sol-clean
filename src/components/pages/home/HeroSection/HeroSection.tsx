@@ -36,7 +36,12 @@ export const HeroSection = () => {
             Professionelle Wartung und Reinigung von Solaranlagen – damit Ihre
             Anlage volle Leistung bringt
           </Typography>
-          <Button variant={'primary'} className={s.heroButton}>
+          <Button
+            variant={'primary'}
+            buttonType={'buttonLink'}
+            href={'#calculatorSection'}
+            className={s.heroButton}
+          >
             Wirtschaftlichkeitsrechnung
           </Button>
         </div>

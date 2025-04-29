@@ -19,7 +19,12 @@ export const LetsTalkSection = () => {
           Lass uns anfangen
         </Typography>
         <div className={s.buttonWrapper}>
-          <Button variant={'primary'} className={s.letsTalkSectionButton}>
+          <Button
+            variant={'primary'}
+            buttonType={'buttonLink'}
+            href={'#calculatorSection'}
+            className={s.letsTalkSectionButton}
+          >
             Wirtschaftlichkeitsrechnung
           </Button>
           <RightArrowIcon className={s.RightArrowIcon} />

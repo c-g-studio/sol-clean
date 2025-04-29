@@ -11,7 +11,12 @@ export const LeftSideContent = () => {
         <FooterNavigation />
         <ContactList />
       </div>
-      <Button variant={'primary'} type={'button'} className={s.leftSideButton}>
+      <Button
+        variant={'primary'}
+        buttonType={'buttonLink'}
+        href={'#calculatorSection'}
+        className={s.leftSideButton}
+      >
         Wirtschaftlichkeitsrechnung
       </Button>
     </div>

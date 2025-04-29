@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -5,11 +7,17 @@ import { PhoneIcon } from '@/components/icons/social/PhoneIcon';
 import { Typography } from '@/components/common/Typography/Typography';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { Button } from '@/components/common/Button/Button';
+import { Modal } from '@/components/common/Modal/Modal';
+
+import { useModal } from '@/hooks/useModal';
 
 import s from './styles.module.scss';
-import { Button } from '@/components/common/Button/Button';
+import { CallBackModal } from '@/components/pages/home/CallBackSection/components/CallBackModal/CallBackModal';
 
 export const CallBackSection = () => {
+  const { isOpen, onOpen, onClose } = useModal();
+
   return (
     <section className={s.callBackSection}>
       <AppContainer classes={s.callBackSectionContainer}>
@@ -53,10 +61,14 @@ export const CallBackSection = () => {
               </Link>
             </li>
           </ul>
-          <Button variant={'primary'} className={s.button}>
+          <Button variant={'primary'} className={s.button} onClick={onOpen}>
             Rückruf anfordern
           </Button>
+          <Modal open={isOpen} onClose={onClose}>
+            <CallBackModal />
+          </Modal>
         </div>
+
         <div className={s.desktopImageBox}>
           <Image
             src={'/img/home/callBackSection/some_man.png'}

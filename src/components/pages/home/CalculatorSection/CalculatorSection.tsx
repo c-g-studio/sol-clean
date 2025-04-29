@@ -5,7 +5,7 @@ import s from './styles.module.scss';
 
 export const CalculatorSection = () => {
   return (
-    <section className={s.calculatorSection}>
+    <section className={s.calculatorSection} id={'calculatorSection'}>
       <AppContainer classes={s.callBackSectionContainer}>
         <Typography variant={'h2'} className={s.sectionTitle}>
           Jetzt Ersparnis

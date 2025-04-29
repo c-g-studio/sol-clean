@@ -30,7 +30,11 @@ export const OurRangeSection = () => {
                 bleiben.
               </Typography>
             </div>
-            <Button buttonType={'withArrow'} className={s.listItemButton}>
+            <Button
+              buttonType={'withArrow'}
+              href={'/services'}
+              className={s.listItemButton}
+            >
               Mehr erfahren
             </Button>
             <Image
@@ -54,7 +58,11 @@ export const OurRangeSection = () => {
                 bleiben.
               </Typography>
             </div>
-            <Button buttonType={'withArrow'} className={s.listItemButton}>
+            <Button
+              buttonType={'withArrow'}
+              href={'/services'}
+              className={s.listItemButton}
+            >
               Mehr erfahren
             </Button>
             <Image
@@ -78,7 +86,11 @@ export const OurRangeSection = () => {
                 bleiben.
               </Typography>
             </div>
-            <Button buttonType={'withArrow'} className={s.listItemButton}>
+            <Button
+              buttonType={'withArrow'}
+              href={'/services'}
+              className={s.listItemButton}
+            >
               Mehr erfahren
             </Button>
             <Image
