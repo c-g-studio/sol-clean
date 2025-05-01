@@ -3,6 +3,7 @@ import { Typography } from '@/components/common/Typography/Typography';
 
 import s from './styles.module.scss';
 import { FC } from 'react';
+import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 
 type TImage = {
   id: number;
@@ -22,29 +23,36 @@ type TReview = {
 
 type TReviewModalProps = {
   review: TReview;
+  isOpen: boolean;
+  onClose: () => void;
 };
 
-export const ReviewModal: FC<TReviewModalProps> = ({ review }) => {
-  console.log('review', review);
+export const ReviewModal: FC<TReviewModalProps> = ({
+  onClose,
+  isOpen,
+  review
+}) => {
   return (
-    <div className={s.modalBox}>
-      <div className={s.rating}>
-        <RatingMarkup rating={review.rating} />
-      </div>
-      <Typography variant={'h4'} className={s.title}>
-        {review.title}
-      </Typography>
-      <Typography variant={'body4'} className={s.text}>
-        {review.text}
-      </Typography>
-      <div className={s.dateBox}>
-        <Typography variant={'body4'} className={s.author}>
-          {review.author}
+    <ModalLayout onClose={onClose} isOpen={isOpen}>
+      <div className={s.modalBox}>
+        <div className={s.rating}>
+          <RatingMarkup rating={review.rating} />
+        </div>
+        <Typography variant={'h4'} className={s.title}>
+          {review.title}
         </Typography>
-        <Typography variant={'body4'} className={s.date}>
-          {review.date}
+        <Typography variant={'body4'} className={s.text}>
+          {review.text}
         </Typography>
+        <div className={s.dateBox}>
+          <Typography variant={'body4'} className={s.author}>
+            {review.author}
+          </Typography>
+          <Typography variant={'body4'} className={s.date}>
+            {review.date}
+          </Typography>
+        </div>
       </div>
-    </div>
+    </ModalLayout>
   );
 };

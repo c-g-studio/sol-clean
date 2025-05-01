@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
-
-import { Modal } from '@/components/common/Modal/Modal';
 import { Slider } from '@/components/common/Slider/Slider';
 import { Typography } from '@/components/common/Typography/Typography';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
@@ -75,9 +73,12 @@ export const ReviewsSection = () => {
                     );
                   })}
                 </div>
-                <Modal onClose={closeModal} open={isOpen(review.id)}>
-                  <ReviewModal review={review} />
-                </Modal>
+
+                <ReviewModal
+                  review={review}
+                  onClose={closeModal}
+                  isOpen={isOpen(review.id)}
+                />
               </SwiperSlide>
             );
           })}

@@ -8,12 +8,11 @@ import { Typography } from '@/components/common/Typography/Typography';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { Button } from '@/components/common/Button/Button';
-import { Modal } from '@/components/common/Modal/Modal';
+import { CallBackModal } from '@/components/pages/home/CallBackSection/components/CallBackModal/CallBackModal';
 
 import { useModal } from '@/hooks/useModal';
 
 import s from './styles.module.scss';
-import { CallBackModal } from '@/components/pages/home/CallBackSection/components/CallBackModal/CallBackModal';
 
 export const CallBackSection = () => {
   const { isOpen, onOpen, onClose } = useModal();
@@ -64,9 +63,7 @@ export const CallBackSection = () => {
           <Button variant={'primary'} className={s.button} onClick={onOpen}>
             Rückruf anfordern
           </Button>
-          <Modal open={isOpen} onClose={onClose}>
-            <CallBackModal />
-          </Modal>
+          <CallBackModal isOpen={isOpen} onClose={onClose} />
         </div>
 
         <div className={s.desktopImageBox}>

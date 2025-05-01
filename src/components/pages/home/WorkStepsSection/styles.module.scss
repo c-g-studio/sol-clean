@@ -49,7 +49,7 @@
     opacity: 1;
   }
   &:hover .textWrapper {
-    border-top-color: $color-blue-dark;
+    border-top: 3px solid $color-blue-dark;
   }
 
   &:hover .stepTitle {
@@ -70,16 +70,22 @@
 .image {
   display: block;
   margin: 0 auto;
-  opacity: 0.5;
 
   transition: opacity 0.3s ease-in-out;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    opacity: 0.5;
+  }
 }
 
 .textWrapper {
   margin-top: 20px;
   padding-top: 20px;
+  border-top: 3px solid $color-blue-dark;
 
-  border-top: 3px solid $color-blue-extra-light;
+  @include useMedia('min-width', $breakpoint-lg) {
+    border-top: 3px solid $color-blue-extra-light;
+  }
 
   transition: border-top-color 0.3s ease-in-out;
 }
@@ -99,17 +105,24 @@
 
 .stepTitle {
   margin-bottom: 17px;
+  color: $color-blue-dark;
 
-  color: $color-blue-light;
   font-weight: 900;
   font-size: 20px;
   line-height: 1.4;
 
   transition: color 0.3s ease-in-out;
+  @include useMedia('min-width', $breakpoint-lg) {
+    color: $color-blue-light;
+  }
 }
 
 .stepText {
-  color: $color-blue-light;
+  color: $color-black;
 
   transition: color 0.3s ease-in-out;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    color: $color-blue-light;
+  }
 }

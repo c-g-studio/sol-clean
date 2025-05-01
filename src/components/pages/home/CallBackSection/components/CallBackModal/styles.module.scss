@@ -1,53 +1,141 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
-.title {
-  max-width: 300px;
+.layout {
+  padding: 20px;
 
-  font-size: 40px;
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 40px;
+    max-width: 495px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 60px;
+    max-width: 590px;
+  }
+}
+
+.closeIcon {
+  top: 30px;
+  right: 30px;
+}
+
+.modalBox {
+  max-width: 330px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 495px;
+  }
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 838px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  max-width: 200px;
+
+  font-size: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 300px;
+
+    font-size: 40px;
+  }
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .label {
-  font-weight: bold;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+
+  color: $color-black;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.labelName {
+  margin-bottom: 10px;
 }
 
 .phoneWrapper {
+  padding: 8px 20px;
+
   display: flex;
   align-items: center;
   background: #eef2fa;
   border-radius: 12px;
-  padding: 10px;
   gap: 10px;
 }
 
 .input {
-  width: 470px;
+  padding: 8px 20px;
+  max-width: 470px;
 
-  flex: 1;
-  border: none;
-  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: $color-blue-extra-light;
   outline: none;
-  font-size: 16px;
+
+  font-family: inherit;
+  color: $color-black;
+  font-size: 14px;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+
+  &::placeholder {
+    color: $color-blue-dark;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+  font-weight: 400;
 }
 
 .textarea {
-  background: #eef2fa;
-  border-radius: 12px;
-  padding: 16px;
-  border: none;
-  resize: none;
-  height: 120px;
-  font-size: 16px;
+  padding: 11px 34px 11px 20px;
+  min-height: 108px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: $color-blue-extra-light;
   outline: none;
+
+  font-family: inherit;
+  color: $color-black;
+  font-size: 14px;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+
+  &::placeholder {
+    color: $color-blue-dark;
+  }
 }
 
 .submitButton {
@@ -60,7 +148,11 @@
   font-weight: 600;
   cursor: pointer;
   border: none;
-  font-size: 16px;
+  font-size: 12px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 16px;
+  }
 }
 
 .arrow {
@@ -70,14 +162,58 @@
 
 .btn {
   width: 100%;
-  max-width: 286px;
+  max-width: 210px;
+  gap: 10px;
   align-self: flex-end;
 
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 296px;
+  }
+
   & span {
+    padding: 8px 20px;
     background: #dde7f7;
+
+    font-size: 12px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+      padding: 8px 40px;
+
+      font-size: 16px;
+    }
   }
 
   & svg {
+    width: 31px;
+    height: 31px;
+
     background: #dde7f7;
+
+    @include useMedia('min-width', $breakpoint-md) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
   }
 }

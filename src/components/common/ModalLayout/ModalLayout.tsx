@@ -11,13 +11,21 @@ import s from './styles.module.scss';
 type TModalProps = {
   children: ReactNode;
   onClose: () => void;
-  open: boolean;
+  isOpen: boolean;
+  layoutClass?: string;
+  closeIconClass?: string;
 };
 
-export const Modal: FC<TModalProps> = ({ children, onClose, open }) => {
-  const { mounted, shouldAnimate } = useModalAnimation(open, 300);
+export const ModalLayout: FC<TModalProps> = ({
+  children,
+  onClose,
+  isOpen,
+  layoutClass,
+  closeIconClass
+}) => {
+  const { mounted, shouldAnimate } = useModalAnimation(isOpen, 300);
 
-  useScrollLock(open);
+  useScrollLock(isOpen);
 
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
@@ -26,14 +34,14 @@ export const Modal: FC<TModalProps> = ({ children, onClose, open }) => {
       }
     };
 
-    if (open) {
+    if (isOpen) {
       document.addEventListener('keydown', handleEscKey);
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscKey);
     };
-  }, [open]);
+  }, [isOpen]);
 
   if (!mounted) return null;
 
@@ -43,10 +51,13 @@ export const Modal: FC<TModalProps> = ({ children, onClose, open }) => {
       onClick={onClose}
     >
       <div
-        className={`${s.modal} ${shouldAnimate ? s.open : s.close}`}
+        className={`${s.modalLayout} ${shouldAnimate ? s.open : s.close} ${layoutClass}`}
         onClick={e => e.stopPropagation()}
       >
-        <CrossIcon className={s.closeBtn} onClick={onClose} />
+        <CrossIcon
+          className={`${s.closeBtn} ${closeIconClass}`}
+          onClick={onClose}
+        />
         {children}
       </div>
     </div>,
