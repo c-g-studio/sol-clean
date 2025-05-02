@@ -1,0 +1,74 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.label {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  color: $color-black;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.labelName {
+  margin-bottom: 10px;
+}
+
+.input {
+  padding: 8px 20px;
+  max-width: 470px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: $color-blue-extra-light;
+  outline: none;
+
+  font-family: inherit;
+  color: $color-black;
+  font-size: 14px;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+
+  &::placeholder {
+    color: $color-blue-dark;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
+  }
+}

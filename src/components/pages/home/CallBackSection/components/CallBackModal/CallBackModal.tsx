@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useMask } from '@react-input/mask';
+import { z } from 'zod';
 
+import { Input } from '@/components/common/Input/Input';
 import { Button } from '@/components/common/Button/Button';
+import { Textarea } from '@/components/common/Textarea/Textarea';
 import { Typography } from '@/components/common/Typography/Typography';
 import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 
@@ -13,9 +14,9 @@ import s from './styles.module.scss';
 const formSchema = z.object({
   phone: z
     .string()
-    .min(1, 'Write your phone number!')
-    .regex(/^\+49/, 'Phone number must start with +49'),
-  message: z.string().min(1, 'Write your message!')
+    .min(17, 'Schreiben Sie Ihre Telefonnummer')
+    .regex(/^\+49/, 'Die Telefonnummer muss mit +49 beginnen'),
+  message: z.string().min(10, 'Min 10 Zeichen')
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -32,30 +33,13 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
     handleSubmit,
     formState: { errors, dirtyFields, isSubmitted }
   } = useForm<FormData>({
-    resolver: zodResolver(formSchema), // Используем zod для валидации
+    resolver: zodResolver(formSchema),
     mode: 'onChange'
   });
 
   const onSubmit = (data: FormData) => {
     console.log('Form submitted:', data);
   };
-
-  const getFieldClass = (
-    fieldName: keyof FormData,
-    baseClass: string
-  ): string => {
-    const hasError = !!errors[fieldName];
-    const isDirty = dirtyFields[fieldName];
-
-    if (!isDirty && !isSubmitted) return baseClass;
-
-    return hasError ? `${baseClass} ${s.invalid}` : `${baseClass} ${s.valid}`;
-  };
-
-  const inputRef = useMask({
-    mask: '+49 ___-___-__-__',
-    replacement: { _: /\d/ }
-  });
 
   return (
     <ModalLayout
@@ -70,39 +54,20 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
         </Typography>
 
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-          <label className={s.label}>
-            <span className={s.labelName}>Tel</span>
-
-            <Controller
-              name={'phone'}
-              control={control}
-              render={({ field }) => (
-                <input
-                  type="tel"
-                  placeholder="+49"
-                  className={getFieldClass('phone', s.input)}
-                  ref={inputRef}
-                  onChange={field.onChange}
-                />
-              )}
-            />
-            {errors.phone && (
-              <span className={s.error}>{errors.phone.message}</span>
-            )}
-          </label>
-
-          <label className={s.label}>
-            <span className={s.labelName}>Nachricht</span>
-            <textarea
-              placeholder="Hi..."
-              className={getFieldClass('message', s.textarea)}
-              {...register('message')}
-            />
-            {errors.message && (
-              <span className={s.error}>{errors.message.message}</span>
-            )}
-          </label>
-
+          <Input<FormData>
+            name="phone"
+            control={control}
+            errors={errors}
+            dirtyFields={dirtyFields}
+            isSubmitted={isSubmitted}
+          />
+          <Textarea
+            name="message"
+            errors={errors}
+            dirtyFields={dirtyFields}
+            isSubmitted={isSubmitted}
+            register={register}
+          />
           <Button buttonType="buttonWithArrow" className={s.btn} type="submit">
             Jetzt Rückruf anfordern
           </Button>
