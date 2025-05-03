@@ -1,0 +1,237 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.ourRangeSection {
+  margin-top: 90px;
+  padding: 45px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 120px;
+    padding: 83px 0 120px 0;
+  }
+}
+
+.ourRangeContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 1400px;
+  }
+}
+
+.sectionTitle {
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.4;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 132px;
+
+    font-size: 40px;
+    text-align: left;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 184px;
+  }
+}
+
+.listItem {
+  position: relative;
+
+  padding: 20px 11px;
+  overflow: hidden;
+
+  background-color: $color-blue-extra-light;
+  border-radius: 20px;
+
+  &:hover .decorBackground {
+    opacity: 1;
+  }
+
+  &:hover .decorSpanWrapper {
+    opacity: 1;
+  }
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 40px 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 0;
+    overflow: unset;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: transparent;
+  }
+}
+
+.listItemReverse {
+  @include useMedia('min-width', $breakpoint-lg) {
+    flex-direction: row-reverse;
+  }
+}
+
+.listItemTitle {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 30px;
+
+    text-align: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.imageWrapper {
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.mobileImage {
+  margin: 0 auto;
+  width: auto;
+  height: 410px;
+  display: block;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: 687px;
+    height: 410px;
+  }
+}
+
+.contentWrapper {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+}
+
+.listItemText {
+  margin-bottom: 30px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 30px auto;
+    max-width: 581px;
+
+    text-align: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 90px;
+    max-width: 610px;
+    width: 100%;
+
+    text-align: left;
+  }
+}
+
+.listItemBtn {
+  display: block;
+  margin: 0 auto;
+
+  font-size: 16px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 130px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: auto 0 0 auto;
+  }
+}
+
+.desktopImage {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.decorBackground {
+  position: absolute;
+  left: -53px;
+  bottom: -72px;
+  z-index: -1;
+
+  width: calc(100% + 106px);
+  height: calc(100% + 144px);
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background-color: $color-blue-extra-light;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.decorSpanWrapper {
+  position: absolute;
+  left: -53px;
+  bottom: -72px;
+
+  width: 331px;
+  height: 221px;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.decorSpan {
+  position: absolute;
+  left: -98px;
+  bottom: -90px;
+  overflow: hidden;
+
+  display: none;
+
+  color: $color-blue-light;
+  font-weight: 800;
+  font-size: 312px;
+  line-height: 1;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
