@@ -3,14 +3,14 @@
 import { SectionTopBar } from '@/components/common/SectionTopBar/SectionTopBar';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Typography } from '@/components/common/Typography/Typography';
-
+import { Button } from '@/components/common/Button/Button';
 import { Slider } from '@/components/common/Slider/Slider';
+
 import { SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 
 import s from './styles.module.scss';
 import './styles.styles.css';
-import { Button } from '@/components/common/Button/Button';
 
 export const DifferenceSection = () => {
   return (
