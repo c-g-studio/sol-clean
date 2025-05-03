@@ -14,7 +14,7 @@ export const LeftSideContent = () => {
       <Button
         variant={'primary'}
         buttonType={'buttonLink'}
-        href={'#calculatorSection'}
+        href={'/#calculatorSection'}
         className={s.leftSideButton}
       >
         Wirtschaftlichkeitsrechnung
