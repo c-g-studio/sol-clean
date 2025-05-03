@@ -2,29 +2,38 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+
 import { MobileMenuIcon } from '@/components/icons/MobileMenuIcon';
+import { LogoDarkIcon } from '@/components/icons/LogoDarkIcon';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
-import { Button } from '@/components/common/Button/Button';
 import { MobileMenu } from '@/components/layout/Header/components/MobileMenu/MobileMenu';
 import { LogoIcon } from '@/components/icons/LogoIcon';
+import { Button } from '@/components/common/Button/Button';
 
 import { useScrollLock } from '@/hooks/useScrollLock';
 import useWindowWidth from '@/hooks/useIsDesctopWidth';
+
 import navigationData from '@/mockData/navigationData.json';
 
 import s from './styles.module.scss';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  useScrollLock(isOpen);
+  const pathname = usePathname();
   const isDesktop = useWindowWidth();
+  useScrollLock(isOpen);
 
   return (
     <header>
       <AppContainer classes={s.headerContainer}>
         <div className={s.header}>
           <Link href="/" aria-label="Home page">
-            <LogoIcon className={s.logo} />
+            {pathname === '/' ? (
+              <LogoIcon className={s.logo} />
+            ) : (
+              <LogoDarkIcon className={s.logo} />
+            )}
           </Link>
           {!isDesktop ? (
             <>
@@ -33,7 +42,13 @@ export const Header = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={'Open mobile menu'}
               >
-                <MobileMenuIcon className={s.mobileMenuButtonIcon} />
+                <MobileMenuIcon
+                  className={
+                    pathname === '/'
+                      ? s.mobileMenuButtonIcon
+                      : s.mobileMenuButtonIconDark
+                  }
+                />
               </Button>
               <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
             </>

@@ -62,6 +62,12 @@
   transition: stroke 0.3s ease-in-out;
 }
 
+.mobileMenuButtonIconDark {
+  stroke: $color-black;
+
+  transition: stroke 0.3s ease-in-out;
+}
+
 .navigation {
   display: flex;
   align-items: center;
