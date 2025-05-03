@@ -1,0 +1,150 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.differenceSection {
+  position: relative;
+
+  padding: 90px 0;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+}
+
+.sectionTitle {
+  margin: 0 auto 30px auto;
+  max-width: 340px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 452px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 30px 0;
+
+    text-align: left;
+  }
+}
+
+.titleBreakLine {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    display: block;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 50px auto;
+    max-width: 452px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 60px 0;
+    max-width: 610px;
+
+    text-align: left;
+  }
+}
+
+.slider {
+  margin-bottom: 30px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+  }
+}
+
+.slide {
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+  }
+}
+
+.slideText {
+  margin-bottom: 20px;
+
+  color: $color-black;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 0;
+  }
+}
+
+.imagesBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    flex-shrink: 0;
+  }
+}
+
+.slideImage {
+  display: block;
+  max-width: 310px;
+  width: 100%;
+  height: 222px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 260px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 380px;
+    height: 376px;
+  }
+}
+
+.button {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}

@@ -53,7 +53,7 @@ export const OurRangeSection = () => {
                 className={s.listItemBtn}
                 href={'/#calculatorSection'}
               >
-                Weiter
+                Jetzt berechnen
               </Button>
             </div>
             <Image
@@ -101,7 +101,7 @@ export const OurRangeSection = () => {
                 className={s.listItemBtn}
                 href={'/#calculatorSection'}
               >
-                Weiter
+                Jetzt berechnen
               </Button>
             </div>
             <Image
@@ -146,7 +146,7 @@ export const OurRangeSection = () => {
                 className={s.listItemBtn}
                 href={'/#calculatorSection'}
               >
-                Weiter
+                Jetzt berechnen
               </Button>
             </div>
             <Image

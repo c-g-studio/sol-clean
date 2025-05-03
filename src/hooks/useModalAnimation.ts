@@ -22,7 +22,7 @@ export const useModalAnimation: IUseModalAnimation = (open, animationTime) => {
       }, animationTime);
       return () => clearTimeout(timeout);
     }
-  }, [open]);
+  }, [open, animationTime]);
 
   return { mounted, shouldAnimate };
 };

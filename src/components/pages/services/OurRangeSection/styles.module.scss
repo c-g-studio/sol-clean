@@ -154,7 +154,6 @@
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    margin-bottom: 90px;
     max-width: 610px;
     width: 100%;
 
@@ -169,7 +168,7 @@
   font-size: 16px;
 
   @include useMedia('min-width', $breakpoint-md) {
-    max-width: 130px;
+    max-width: 210px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {

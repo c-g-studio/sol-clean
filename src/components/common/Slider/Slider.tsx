@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, ReactNode, useRef } from 'react';
-import { Swiper } from 'swiper/react';
+import { Swiper, SwiperProps } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper';
 
@@ -16,7 +16,7 @@ import './slider.styles.css';
 
 type TSliderProps = {
   children: ReactNode;
-};
+} & SwiperProps;
 
 export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
   const swiperRef = useRef<SwiperType | null>(null);

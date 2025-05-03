@@ -20,7 +20,7 @@ export const MobileMenu: FC<TMobileMenuProps> = ({ isOpen, onClose }) => {
       <div className={`${s.backdrop} ${isOpen ? s.showBackdrop : ''}`}></div>
       <div className={`${s.mobileMenu} ${isOpen ? s.isOpen : ''}`}>
         <div className={s.wrapper}>
-          <Link href="/" aria-label={'Home page link'}>
+          <Link href="/" aria-label={'Home page link'} onClick={onClose}>
             <LogoDarkIcon className={s.logo} />
           </Link>
           <button
@@ -45,6 +45,7 @@ export const MobileMenu: FC<TMobileMenuProps> = ({ isOpen, onClose }) => {
                     href={item.link}
                     title={`Link naar pagina ${item.name}`}
                     className={s.navListLink}
+                    onClick={onClose}
                   >
                     {item.name}
                   </Link>
