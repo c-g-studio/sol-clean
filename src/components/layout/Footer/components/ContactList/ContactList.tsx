@@ -22,7 +22,7 @@ export const ContactList = () => {
       </li>
       <li>
         <Link
-          href={'tel:+49 1623828542'}
+          href={'tel:+491623828542'}
           target={'_blank'}
           rel={'noopener noreferrer'}
           className={s.contactListLink}
