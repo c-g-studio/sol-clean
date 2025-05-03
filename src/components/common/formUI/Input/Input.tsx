@@ -7,6 +7,8 @@ import {
 } from 'react-hook-form';
 import { useMask } from '@react-input/mask';
 
+import { Error } from '@/components/common/formUI/Error/Error';
+
 import { getFieldClass } from '@/heplers/getFieldClass';
 
 import s from './styles.module.scss';
@@ -40,7 +42,6 @@ export const Input = <T extends FieldValues>({
         control={control}
         render={({ field }) => (
           <input
-            defaultValue={''}
             type="tel"
             placeholder="+49"
             className={getFieldClass(
@@ -60,11 +61,7 @@ export const Input = <T extends FieldValues>({
         )}
       />
 
-      {errors[name] && (
-        <span className={s.error}>
-          {(errors[name]?.message ?? '') as string}
-        </span>
-      )}
+      <Error name={name} errors={errors} />
     </label>
   );
 };

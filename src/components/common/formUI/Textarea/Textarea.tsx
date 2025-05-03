@@ -4,6 +4,9 @@ import {
   Path,
   UseFormRegister
 } from 'react-hook-form';
+
+import { Error } from '@/components/common/formUI/Error/Error';
+
 import { getFieldClass } from '@/heplers/getFieldClass';
 
 import s from './styles.module.scss';
@@ -39,11 +42,7 @@ export const Textarea = <T extends FieldValues>({
         )}
         {...register(name)}
       />
-      {errors[name] && (
-        <span className={s.error}>
-          {(errors[name]?.message ?? '') as string}
-        </span>
-      )}
+      <Error name={name} errors={errors} />
     </label>
   );
 };

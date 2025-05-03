@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { Input } from '@/components/common/Input/Input';
+import { Input } from '@/components/common/formUI/Input/Input';
 import { Button } from '@/components/common/Button/Button';
-import { Textarea } from '@/components/common/Textarea/Textarea';
+import { Textarea } from '@/components/common/formUI/Textarea/Textarea';
 import { Typography } from '@/components/common/Typography/Typography';
 import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 

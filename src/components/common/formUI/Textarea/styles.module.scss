@@ -1,5 +1,5 @@
-@import '@/styles/_mixins';
-@import '@/styles/_variables';
+@import '@/styles/mixins';
+@import '@/styles/variables';
 
 .label {
   margin-bottom: 20px;
@@ -16,14 +16,15 @@
   margin-bottom: 10px;
 }
 
-.input {
-  padding: 8px 20px;
-  max-width: 470px;
+.textarea {
+  padding: 11px 34px 11px 20px;
+  min-height: 108px;
 
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: $color-blue-extra-light;
   outline: none;
+  resize: none;
 
   font-family: inherit;
   color: $color-black;
@@ -43,12 +44,6 @@
   &::placeholder {
     color: $color-blue-dark;
   }
-}
-
-.error {
-  color: red;
-  font-size: 10px;
-  font-weight: 400;
 }
 
 .valid {
