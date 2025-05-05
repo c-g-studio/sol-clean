@@ -14,7 +14,7 @@ type BaseProps = {
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
   icon?: ReactNode;
-  buttonType?: 'withArrow' | 'buttonLink' | 'buttonWithArrow';
+  buttonType?: 'withArrow' | 'buttonLink' | 'buttonWithArrow' | 'buttonDiv';
   className?: string;
   children: ReactNode;
 };
@@ -31,7 +31,12 @@ type RegularButtonProps = BaseProps &
     href?: never;
   };
 
-type ButtonProps = ButtonLinkProps | RegularButtonProps;
+type ButtonDivProps = BaseProps & {
+  buttonType: 'buttonDiv';
+  href?: never;
+};
+
+type ButtonProps = ButtonLinkProps | RegularButtonProps | ButtonDivProps;
 
 export const Button: FC<ButtonProps> = ({
   variant = 'primary',
@@ -73,6 +78,15 @@ export const Button: FC<ButtonProps> = ({
         {icon && <span className={s.icon}>{icon}</span>}
         {children}
       </Link>
+    );
+  }
+
+  if (buttonType === 'buttonDiv') {
+    return (
+      <div className={`${s.buttonWithArrow} ${className}`}>
+        <span className={s.buttonWithArrowText}>{children}</span>
+        <RightArrow className={s.arrowIcon} />
+      </div>
     );
   }
 
