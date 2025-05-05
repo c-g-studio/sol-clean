@@ -1,0 +1,91 @@
+@import '@/styles/_variables';
+@import '@/styles/_mixins';
+
+.accordionItem + hr {
+  margin-bottom: 30px;
+  height: 2px;
+
+  border: 1px solid $color-blue-light;
+  background-color: $color-blue-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.itemText {
+  margin-bottom: 20px;
+}
+
+.itemTitle {
+  color: $color-blue-light;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+
+  transition: color 0.3s ease-in-out;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 20px;
+  }
+}
+
+.trigger {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  display: block !important;
+
+  &:hover .itemTitle {
+    color: $color-black;
+  }
+}
+
+.headerWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 18px;
+}
+
+.accordionButton {
+  width: 200px;
+  pointer-events: none;
+
+  &:before {
+    height: 37px;
+  }
+}
+
+.accordionButton span {
+  pointer-events: none;
+  color: $color-clean-white;
+  font-size: 14px;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+.accordionButton svg {
+  width: 37px;
+  height: 37px;
+
+  background-color: $color-blue-dark;
+  fill: $color-clean-white;
+  pointer-events: none;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.base[data-open='true'] .itemTitle {
+  color: $color-black;
+}
+
+.base[data-open='true'] .accordionButton svg {
+  transform: rotate(90deg);
+}
