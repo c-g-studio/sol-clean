@@ -14,6 +14,7 @@ import { addDotsAsNeeded } from '@/utils/addDotsAsNeeded';
 import reviewsData from '@/mockData/reviewsData.json';
 
 import s from './styles.module.scss';
+import './styles.css';
 
 export const ReviewsSection = () => {
   const { openModal, closeModal, isOpen } = useMultiModal<string | number>();
@@ -30,7 +31,7 @@ export const ReviewsSection = () => {
             const { text, isTextSliced } = addDotsAsNeeded(review.text, 450);
 
             return (
-              <SwiperSlide className={s.slide} key={review.id}>
+              <SwiperSlide className={'swiper-slide'} key={review.id}>
                 <div>
                   <div className={s.ratingBox}>
                     <RatingMarkup rating={review.rating} />

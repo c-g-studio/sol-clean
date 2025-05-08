@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import './slider.styles.css';
+import './slider.css';
 
 type TSliderProps = {
   children: ReactNode;

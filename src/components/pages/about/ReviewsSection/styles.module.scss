@@ -42,13 +42,6 @@
     display: flex;
     gap: 50px;
   }
-
-  @include useMedia('min-width', $breakpoint-lg) {
-    padding: 40px;
-
-    display: flex;
-    gap: 50px;
-  }
 }
 
 .ratingBox {
