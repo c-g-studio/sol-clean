@@ -101,7 +101,7 @@
   max-width: 350px;
   max-height: 253px;
 
-  @include useMedia('min-width', 390px) {
+  @include useMedia('min-width', 391px) {
     display: none;
   }
 
