@@ -20,7 +20,7 @@ export const ReviewsSection = () => {
   const { openModal, closeModal, isOpen } = useMultiModal<string | number>();
 
   return (
-    <section className={s.reviewsSection}>
+    <section className={s.reviewsSection} id={'reviewsSection'} tabIndex={-1}>
       <AppContainer>
         <Typography variant={'h2'} className={s.title}>
           Kundenbewertungen
