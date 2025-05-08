@@ -42,7 +42,6 @@ export const OurMissionSection = () => {
           alt={'sunny panels image'}
           className={s.solPanelImageTablet}
         />
-        {/*<SolPanelTablet className={s.solPanelImageTablet} />*/}
         <Image
           src={'/img/about/ourMissionSection/hero_background.png'}
           width={'982'}
