@@ -3,7 +3,6 @@ import { Typography } from '@/components/common/Typography/Typography';
 import s from './styles.module.scss';
 import Image from 'next/image';
 import { SolPanelMobile } from '@/components/icons/aboutPage/ourMission/SolPanelMobile';
-import { SolPanelTablet } from '@/components/icons/aboutPage/ourMission/SolIconTablet';
 
 export const OurMissionSection = () => {
   return (
@@ -36,7 +35,14 @@ export const OurMissionSection = () => {
           </div>
           <SolPanelMobile className={s.solPanelImageMobile} />
         </div>
-        <SolPanelTablet className={s.solPanelImageTablet} />
+        <Image
+          src={'/img/about/ourMissionSection/Visual.png'}
+          width={'1300'}
+          height={'487'}
+          alt={'sunny panels image'}
+          className={s.solPanelImageTablet}
+        />
+        {/*<SolPanelTablet className={s.solPanelImageTablet} />*/}
         <Image
           src={'/img/about/ourMissionSection/hero_background.png'}
           width={'982'}

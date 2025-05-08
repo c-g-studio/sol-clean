@@ -123,6 +123,8 @@
   height: auto;
   display: none;
 
+  border-radius: 20px;
+
   @include useMedia('min-width', 391px) {
     display: block;
   }
