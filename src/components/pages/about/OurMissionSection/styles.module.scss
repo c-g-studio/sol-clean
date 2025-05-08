@@ -46,6 +46,8 @@
   width: 100%;
   height: auto;
 
+  border-radius: 20px;
+
   @include useMedia('min-width', $breakpoint-xl) {
     display: none;
   }
@@ -100,6 +102,9 @@
 .solPanelImageMobile {
   max-width: 350px;
   max-height: 253px;
+  width: 100%;
+
+  border-radius: 20px;
 
   @include useMedia('min-width', 391px) {
     display: none;
