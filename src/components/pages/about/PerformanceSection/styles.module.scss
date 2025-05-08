@@ -49,6 +49,8 @@
 
   display: block;
 
+  border-radius: 20px;
+
   @include useMedia('min-width', $breakpoint-lg) {
     display: none;
   }
@@ -85,6 +87,8 @@
   height: 410px;
 
   display: none;
+
+  border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-lg) {
     display: block;
