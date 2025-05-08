@@ -16,9 +16,14 @@ import './slider.styles.css';
 
 type TSliderProps = {
   children: ReactNode;
+  isCustomArrows?: boolean;
 } & SwiperProps;
 
-export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
+export const Slider: FC<TSliderProps> = ({
+  children,
+  isCustomArrows = true,
+  ...props
+}) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const nextSlide = () => swiperRef.current?.slideNext();
@@ -47,12 +52,16 @@ export const Slider: FC<TSliderProps> = ({ children, ...props }) => {
         {children}
       </Swiper>
 
-      <div onClick={prevSlide}>
-        <LeftArrow className="leftArrow" />
-      </div>
-      <div onClick={nextSlide}>
-        <RightArrow className="rightArrow" />
-      </div>
+      {isCustomArrows && (
+        <>
+          <div onClick={prevSlide}>
+            <LeftArrow className="leftArrow" />
+          </div>
+          <div onClick={nextSlide}>
+            <RightArrow className="rightArrow" />
+          </div>
+        </>
+      )}
     </div>
   );
 };

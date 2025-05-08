@@ -1,0 +1,142 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.ourMissionSection {
+  margin-top: 90px;
+  padding: 45px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 120px;
+    padding: 83px 0 160px 0;
+  }
+}
+
+.ourMissionContainer {
+  position: relative;
+}
+
+.sectionTitle {
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.4;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    font-size: 40px;
+    text-align: left;
+  }
+}
+
+.mobileImage {
+  margin-bottom: 30px;
+
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    display: none;
+  }
+}
+
+.contentWrapper {
+  margin-bottom: 30px;
+  padding: 30px 12px;
+
+  border-radius: 20px;
+  background-color: $color-blue-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 51px 52px 57px 40px;
+    margin-bottom: 0;
+    max-width: 778px;
+  }
+}
+
+.subtitle {
+  color: $color-yellow;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 16px;
+  }
+}
+
+.text {
+  color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 20px;
+  }
+}
+
+.dosktopContentWrapper {
+  @include useMedia('min-width', $breakpoint-xl) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: flex-end;
+  }
+}
+
+.solPanelImageMobile {
+  max-width: 350px;
+  max-height: 253px;
+
+  @include useMedia('min-width', 390px) {
+    display: none;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    max-width: 352px;
+    max-height: 260px;
+
+    display: block;
+  }
+}
+
+.solPanelImageTablet {
+  width: 100%;
+  height: auto;
+  display: none;
+
+  @include useMedia('min-width', 391px) {
+    display: block;
+  }
+  @include useMedia('min-width', $breakpoint-xl) {
+    display: none;
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 115px;
+  left: -72px;
+
+  max-width: 982px;
+  width: 100%;
+  height: auto;
+
+  display: none;
+  @include useMedia('min-width', $breakpoint-xl) {
+    display: block;
+  }
+}

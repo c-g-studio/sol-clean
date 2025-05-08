@@ -1,0 +1,5 @@
+.slider {
+    @media (min-width: 1199px) {
+        overflow: visible !important;
+    }
+}

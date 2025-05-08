@@ -6,7 +6,7 @@ import { OurRecommendationsSection } from '@/components/pages/services/OurRecomm
 import { FaqSection } from '@/components/pages/services/FaqSection/FaqSection';
 
 export const metadata: Metadata = {
-  title: 'Sol Clean | Unsere Mission'
+  title: 'Sol Clean | Unser Angebot'
 };
 
 export default function ServicesPage() {

@@ -1,0 +1,92 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.performanceSection {
+  position: relative;
+
+  padding: 90px 0;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+}
+
+.performanceSectionContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.sectionTitle {
+  margin: 0 auto 30px auto;
+  max-width: 340px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 452px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 30px 0;
+
+    text-align: left;
+  }
+}
+
+.imageMobile {
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0 auto 30px auto;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 50px 0;
+    max-width: 610px;
+
+    text-align: left;
+  }
+}
+
+.button {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}
+
+.imageDesktop {
+  width: 540px;
+  height: 410px;
+
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}

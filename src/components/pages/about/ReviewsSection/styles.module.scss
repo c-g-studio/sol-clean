@@ -1,0 +1,109 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.reviewsSection {
+  padding: 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 0;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  color: $color-yellow;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+}
+
+.slide {
+  padding: 20px;
+
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 40px;
+
+    display: flex;
+    gap: 50px;
+  }
+}
+
+.ratingBox {
+  margin-bottom: 20px;
+}
+
+.slideTitle {
+  margin-bottom: 10px;
+
+  color: $color-blue-dark;
+}
+
+.slideText {
+  margin-bottom: 10px;
+}
+
+.slideDateBox {
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slideButton {
+  margin-bottom: 10px;
+  margin-left: auto;
+
+  font-size: 12px;
+  color: $color-yellow;
+  line-height: 1.4;
+  text-decoration: underline;
+
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.slideAuthor,
+.slideDate {
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-blue-light;
+}
+
+.imagesBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.slideImage {
+  width: 150px;
+  height: 150px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    width: 183px;
+    height: 183px;
+  }
+}

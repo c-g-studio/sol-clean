@@ -1,0 +1,25 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.slidesSection {
+  padding-top: 90px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-top: 100px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding-top: 120px;
+  }
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 548px;
+    max-height: 410px;
+  }
+}
