@@ -8,7 +8,6 @@ import { EmailIcon } from '@/components/icons/social/EmailIcon';
 
 import s from './styles.module.scss';
 import { GoogleMapIcon } from '@/components/icons/GoogleMapIcon';
-import Image from 'next/image';
 
 export const WorkingHoursSection = () => {
   return (
@@ -86,13 +85,14 @@ export const WorkingHoursSection = () => {
           target={'_blank'}
           rel={'noopener noreferrer'}
         >
-          <Image
-            src={'/img/contact/WorkingHoursSection/google_map.png'}
-            width="610"
-            height="393"
-            alt={'Google map image'}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.449110264377!2d8.915740399999999!3d48.906835099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47977b878411f20d%3A0xc7f41b31e0e74c98!2zU29ubmVuYmVyZyA0NSwgNzE3MzUgRWJlcmRpbmdlbiwg0JPQtdGA0LzQsNC90LjRjw!5e0!3m2!1sru!2sua!4v1746817337771!5m2!1sru!2sua"
+            width="auto"
+            height="auto"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             className={s.googleMapImage}
-          />
+          ></iframe>
         </Link>
         <div className={s.decorWrapper}>
           <div className={s.decorBackground}></div>

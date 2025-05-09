@@ -142,7 +142,10 @@
 .googleMapImage {
   display: block;
   width: 100%;
-  height: auto;
+  height: 300px;
+
+  border: none;
+  border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-md) {
     width: 350px;
