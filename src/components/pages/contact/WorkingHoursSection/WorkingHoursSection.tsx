@@ -8,12 +8,13 @@ import { EmailIcon } from '@/components/icons/social/EmailIcon';
 
 import s from './styles.module.scss';
 import { GoogleMapIcon } from '@/components/icons/GoogleMapIcon';
+import Image from 'next/image';
 
 export const WorkingHoursSection = () => {
   return (
     <section className={s.workingHoursSection}>
-      <AppContainer>
-        <div className={s.workingHoursContainer}>
+      <AppContainer classes={s.workingHoursContainer}>
+        <div>
           <Typography variant={'h1'} className={s.sectionTitle}>
             Geschäftszeiten
           </Typography>
@@ -72,16 +73,32 @@ export const WorkingHoursSection = () => {
                 className={s.contactListLink}
                 aria-label="Call us"
               >
-                <GoogleMapIcon className={s.googleMapIcon} />
+                <GoogleMapIcon className={s.contactItemIcon} />
                 <Typography variant={'body4'}>
                   Sonnenberg 45, 71735 Eberdingen
                 </Typography>
               </Link>
             </li>
-            {/*<li>*/}
-            {/*  <Link></Link>*/}
-            {/*</li>*/}
           </ul>
+        </div>
+        <Link
+          href={'https://maps.app.goo.gl/x8LDKmruBJRTEFi36'}
+          target={'_blank'}
+          rel={'noopener noreferrer'}
+        >
+          <Image
+            src={'/img/contact/WorkingHoursSection/google_map.png'}
+            width="610"
+            height="393"
+            alt={'Google map image'}
+            className={s.googleMapImage}
+          />
+        </Link>
+        <div className={s.decorWrapper}>
+          <div className={s.decorBackground}></div>
+        </div>
+        <div className={s.decorPhoneWrapper}>
+          <PhoneIcon className={s.decorPhone} />
         </div>
       </AppContainer>
     </section>
