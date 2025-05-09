@@ -117,6 +117,8 @@
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 770px;
+    width: 100%;
     flex-shrink: 0;
   }
 }

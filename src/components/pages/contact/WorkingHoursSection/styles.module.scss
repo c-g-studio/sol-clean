@@ -1,0 +1,132 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.workingHoursSection {
+  margin-top: 90px;
+  padding: 45px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 120px;
+    padding: 83px 0 160px 0;
+  }
+}
+
+//.workingHoursContainer {
+//  padding: 30px 11px;
+//
+//  background-color: $color-blue-extra-light;
+//  border-radius: 20px;
+//
+//  @include useMedia('min-width', $breakpoint-md) {
+//    padding: 30px 40px;
+//  }
+//
+//  @include useMedia('min-width', $breakpoint-xl) {
+//    padding: 0;
+//    background-color: transparent;
+//  }
+//}
+
+.sectionTitle {
+  margin-bottom: 30px;
+
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: left;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 40px;
+
+    font-size: 40px;
+  }
+}
+
+.subTitle {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: left;
+  }
+}
+
+.timeBox {
+  margin-bottom: 40px;
+
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    justify-content: flex-start;
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 10px;
+  }
+}
+
+.contactListLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  &:hover .contactItemIcon {
+    fill: $color-yellow;
+  }
+
+  &:hover .googleMapIcon {
+    stroke: $color-yellow;
+  }
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    gap: 10px;
+  }
+}
+
+.contactItemIcon {
+  width: 25px;
+  height: 25px;
+
+  fill: $color-yellow;
+
+  transition: fill 0.3s ease-in-out;
+  @include useMedia('min-width', $breakpoint-xl) {
+    fill: $color-black;
+  }
+}
+
+.googleMapIcon {
+  width: 25px;
+  height: 25px;
+
+  stroke: $color-yellow;
+
+  transition: stroke 0.3s ease-in-out;
+  @include useMedia('min-width', $breakpoint-xl) {
+    stroke: $color-black;
+  }
+}
