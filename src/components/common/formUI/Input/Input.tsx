@@ -1,3 +1,4 @@
+import { Ref } from 'react';
 import {
   Control,
   Controller,
@@ -18,7 +19,7 @@ type InputProps<T extends FieldValues> = {
   errors: FieldErrors<T>;
   dirtyFields: Partial<Record<keyof T, boolean>>;
   isSubmitted: boolean;
-  maskRef?: any;
+  maskRef?: Ref<HTMLInputElement>;
   labelName: string;
   placeholder: string;
   type: string;

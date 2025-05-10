@@ -1,17 +1,17 @@
 'use client';
-
-import { AppContainer } from '@/components/common/AppContainer/AppContainer';
-import { Typography } from '@/components/common/Typography/Typography';
-
-import s from './styles.module.scss';
-import { Input } from '@/components/common/formUI/Input/Input';
-import { Textarea } from '@/components/common/formUI/Textarea/Textarea';
-import { Button } from '@/components/common/Button/Button';
-import { z } from 'zod';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Image from 'next/image';
+import { z } from 'zod';
+
+import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { QuestionIcon } from '@/components/icons/QuestionIcon';
+import { Typography } from '@/components/common/Typography/Typography';
+import { Textarea } from '@/components/common/formUI/Textarea/Textarea';
+import { Button } from '@/components/common/Button/Button';
+import { Input } from '@/components/common/formUI/Input/Input';
+
+import s from './styles.module.scss';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Geben Sie die richtige E-Mail ein' }),
