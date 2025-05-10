@@ -5,9 +5,9 @@ import { Typography } from '@/components/common/Typography/Typography';
 import { InstagramIcon } from '@/components/icons/social/InstagramIcon';
 import { PhoneIcon } from '@/components/icons/social/PhoneIcon';
 import { EmailIcon } from '@/components/icons/social/EmailIcon';
+import { GoogleMapIcon } from '@/components/icons/GoogleMapIcon';
 
 import s from './styles.module.scss';
-import { GoogleMapIcon } from '@/components/icons/GoogleMapIcon';
 
 export const WorkingHoursSection = () => {
   return (

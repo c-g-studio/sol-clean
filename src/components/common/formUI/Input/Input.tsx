@@ -5,7 +5,6 @@ import {
   FieldValues,
   Path
 } from 'react-hook-form';
-import { useMask } from '@react-input/mask';
 
 import { Error } from '@/components/common/formUI/Error/Error';
 
@@ -19,6 +18,10 @@ type InputProps<T extends FieldValues> = {
   errors: FieldErrors<T>;
   dirtyFields: Partial<Record<keyof T, boolean>>;
   isSubmitted: boolean;
+  maskRef?: any;
+  labelName: string;
+  placeholder: string;
+  type: string;
 };
 
 export const Input = <T extends FieldValues>({
@@ -26,24 +29,23 @@ export const Input = <T extends FieldValues>({
   control,
   errors,
   dirtyFields,
-  isSubmitted
+  isSubmitted,
+  maskRef,
+  labelName,
+  placeholder,
+  type
 }: InputProps<T>) => {
-  const inputRef = useMask({
-    mask: '+49 ___-___-__-__',
-    replacement: { _: /\d/ }
-  });
-
   return (
     <label className={s.label}>
-      <span className={s.labelName}>Tel</span>
+      <span className={s.labelName}>{labelName}</span>
 
       <Controller
         name={name}
         control={control}
         render={({ field }) => (
           <input
-            type="tel"
-            placeholder="+49"
+            type={type}
+            placeholder={placeholder}
             className={getFieldClass(
               name,
               s.input,
@@ -53,7 +55,7 @@ export const Input = <T extends FieldValues>({
               s.valid,
               s.invalid
             )}
-            ref={inputRef}
+            ref={maskRef ? maskRef : undefined}
             onChange={field.onChange}
             value={field.value ?? ''}
             name={field.name}

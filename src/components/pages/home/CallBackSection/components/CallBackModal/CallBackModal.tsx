@@ -10,6 +10,7 @@ import { Typography } from '@/components/common/Typography/Typography';
 import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 
 import s from './styles.module.scss';
+import { useMask } from '@react-input/mask';
 
 const formSchema = z.object({
   phone: z
@@ -41,6 +42,11 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
     console.log('Form submitted:', data);
   };
 
+  const inputRef = useMask({
+    mask: '+49 ___-___-__-__',
+    replacement: { _: /\d/ }
+  });
+
   return (
     <ModalLayout
       isOpen={isOpen}
@@ -60,6 +66,10 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
             errors={errors}
             dirtyFields={dirtyFields}
             isSubmitted={isSubmitted}
+            maskRef={inputRef}
+            labelName={'Tel'}
+            placeholder={'+49'}
+            type={'tel'}
           />
           <Textarea
             name="message"
