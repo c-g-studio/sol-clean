@@ -44,8 +44,8 @@ export const SlidesSection: FC<TSlidesSectionProps> = ({ classes, data }) => {
           }}
           className={'slider'}
         >
-          {data.map(({ url, width, height, alt }) => (
-            <SwiperSlide>
+          {data.map(({ url, width, height, alt }, index) => (
+            <SwiperSlide key={index}>
               <Image
                 src={url}
                 width={width}
@@ -56,66 +56,6 @@ export const SlidesSection: FC<TSlidesSectionProps> = ({ classes, data }) => {
               />
             </SwiperSlide>
           ))}
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_1.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>{' '}
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_1.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>{' '}
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_1.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_2.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_3.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_4.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>
         </Slider>
       </AppContainer>
     </section>
