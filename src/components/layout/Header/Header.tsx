@@ -29,7 +29,7 @@ export const Header = () => {
       <AppContainer classes={s.headerContainer}>
         <div className={s.header}>
           <Link href="/" aria-label="Home page">
-            {pathname === '/' ? (
+            {pathname === '/' || pathname === '/business' ? (
               <LogoIcon className={s.logo} />
             ) : (
               <LogoDarkIcon className={s.logo} />
