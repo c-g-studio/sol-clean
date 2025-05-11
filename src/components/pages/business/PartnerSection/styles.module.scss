@@ -1,0 +1,79 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  padding: 45px 0 90px 0;
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 50px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 0 120px 0;
+  }
+}
+
+.container {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    flex-direction: row;
+    gap: 81px;
+    align-items: flex-start;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    text-align: left;
+  }
+}
+
+.imageDesktop {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+    flex-shrink: 0;
+  }
+}
+
+.image {
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 35px;
+
+    text-align: left;
+  }
+}
+
+.button {
+  margin: 0 auto;
+
+  border-radius: 0;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}

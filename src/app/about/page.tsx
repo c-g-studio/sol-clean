@@ -6,6 +6,9 @@ import { SlidesSection } from '@/components/pages/about/SlidesSection/SlidesSect
 import { PerformanceSection } from '@/components/pages/about/PerformanceSection/PerformanceSection';
 import { OurMissionSection } from '@/components/pages/about/OurMissionSection/OurMissionSection';
 
+import { ourMIssionAboutData } from '@/mockData/ourMIssionAboutData';
+import mockData from '@/mockData/sliderSectionAboutDate.json';
+
 export const metadata: Metadata = {
   title: 'Sol Clean | Unsere Mission'
 };
@@ -15,8 +18,8 @@ export default function AboutPage() {
     <>
       <OurMissionSection />
       <PerformanceSection />
-      <SlidesSection />
-      <OurRecommendationsSection />
+      <SlidesSection data={mockData} />
+      <OurRecommendationsSection data={ourMIssionAboutData} />
       <ReviewsSection />
       <FaqSection />
     </>

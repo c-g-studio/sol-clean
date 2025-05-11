@@ -1,0 +1,56 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.ourRecommendationsSection {
+  background-color: $color-blue-extra-dark;
+
+  padding: 90px 0 90px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0 120px 0;
+  }
+
+  & ul li div {
+    background-color: $color-blue-dark;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    & ul li div {
+      background-color: transparent;
+    }
+    & ul li:hover div {
+      background-color: $color-blue-dark;
+    }
+  }
+}
+
+.ourRecommendationsSection h2,
+.ourRecommendationsSection h3 {
+  color: $color-clean-white;
+}
+
+.ourRecommendationsSection p {
+  color: $color-blue-extra-light;
+}
+
+.sliderSection {
+  padding: 90px 0;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 100px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 120px 0;
+  }
+
+  & img {
+    border-radius: 0;
+  }
+}

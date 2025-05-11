@@ -1,18 +1,32 @@
 'use client';
 
+import { FC } from 'react';
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Slider } from '@/components/common/Slider/Slider';
-import 'swiper/css/autoplay';
-import s from './styles.module.scss';
-import './styles.styles.css';
-import { Autoplay } from 'swiper/modules';
 
-export const SlidesSection = () => {
+import 'swiper/css/autoplay';
+import './styles.styles.css';
+import s from './styles.module.scss';
+
+type TDataItem = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+type TSlidesSectionProps = {
+  classes?: string;
+  data: TDataItem[];
+};
+
+export const SlidesSection: FC<TSlidesSectionProps> = ({ classes, data }) => {
   return (
-    <section className={s.slidesSection}>
+    <section className={`${s.slidesSection} ${classes}`}>
       <AppContainer>
         <Slider
           modules={[Autoplay]}
@@ -30,16 +44,18 @@ export const SlidesSection = () => {
           }}
           className={'slider'}
         >
-          <SwiperSlide>
-            <Image
-              src={'/img/about/slidesSection/image_1.png'}
-              width={'549'}
-              height={'410'}
-              quality={100}
-              alt={'House image'}
-              className={s.img}
-            />
-          </SwiperSlide>{' '}
+          {data.map(({ url, width, height, alt }) => (
+            <SwiperSlide>
+              <Image
+                src={url}
+                width={width}
+                height={height}
+                quality={100}
+                alt={alt}
+                className={s.img}
+              />
+            </SwiperSlide>
+          ))}
           <SwiperSlide>
             <Image
               src={'/img/about/slidesSection/image_1.png'}
