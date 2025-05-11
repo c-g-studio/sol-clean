@@ -1,0 +1,148 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  position: relative;
+  z-index: -1;
+
+  margin-top: -165px;
+  padding-top: 190px;
+
+  background-color: $color-blue-dark;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-top: 210px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding-top: 250px;
+    padding-bottom: 100px;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.contentWrapper {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 45px;
+    justify-content: space-between;
+  }
+}
+
+.desktopTitle {
+  margin-bottom: 20px;
+  display: none;
+  color: $color-clean-white;
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.tabletBreak {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    display: block;
+  }
+}
+
+.break {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: none;
+  }
+}
+
+.image {
+  margin-bottom: 30px;
+
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 0;
+    max-width: 549px;
+  }
+}
+
+.subtitle {
+  margin-bottom: 10px;
+
+  color: $color-blue-extra-light;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 40px;
+
+    text-align: left;
+  }
+}
+
+.listsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 86px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    align-items: flex-start;
+  }
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+.listItemIcon {
+  flex-shrink: 0;
+}

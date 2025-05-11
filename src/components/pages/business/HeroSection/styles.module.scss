@@ -1,0 +1,62 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  font-family: $font-roboto, sans-serif;
+  padding: 230px 0 202px 0;
+
+  background-image: url('/img/business/hero/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 200px 0 230px 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 203px 0 313px 0;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+
+  color: $color-clean-white;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.12;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 64px;
+    text-align: left;
+  }
+}
+
+.text {
+  margin-bottom: 60px;
+
+  color: $color-clean-white;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.button {
+  margin: 0 auto;
+
+  font-family: $font-outfit, sans-serif;
+
+  border-radius: 0;
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0;
+  }
+}

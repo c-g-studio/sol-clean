@@ -1,7 +1,7 @@
 import '@/styles/globals.scss';
 
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Outfit, Roboto } from 'next/font/google';
 
 import { Footer } from '@/components/layout/Footer/Footer';
 import { Header } from '@/components/layout/Header/Header';
@@ -9,6 +9,12 @@ import { Header } from '@/components/layout/Header/Header';
 const outfitSans = Outfit({
   variable: '--font-outfit',
   subsets: ['latin']
+});
+
+const robotoSans = Roboto({
+  variable: '--font-roboto',
+  subsets: ['latin'],
+  weight: ['400', '700', '800']
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${outfitSans.variable} `}>
+      <body className={`${outfitSans.variable} ${robotoSans.variable} `}>
         <Header />
         <main>{children} </main>
         <Footer />

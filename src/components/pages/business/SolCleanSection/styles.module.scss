@@ -1,0 +1,59 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  margin-top: -130px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-top: -90px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: -115px;
+  }
+}
+
+.contentWrapper {
+  padding: 40px 30px;
+
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 43px 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px 191px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+
+  font-family: $font-roboto, sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.4;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 0;
+  }
+}
+
+.span {
+  color: $color-blue-dark;
+}
+
+.text {
+  color: $color-blue-dark;
+  font-family: $font-roboto, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 36px;
+  }
+}
