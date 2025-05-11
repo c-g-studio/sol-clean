@@ -2,7 +2,7 @@
 @import '@/styles/_variables';
 
 .contactUsSection {
-  padding: 50px 0;
+  padding: 50px 0 70px 0;
 
   &:hover .decorBackground {
     opacity: 1;
@@ -10,6 +10,14 @@
 
   &:hover .icon {
     opacity: 1;
+  }
+
+  &:hover .titleDesktop {
+    color: $color-clean-white;
+  }
+
+  &:hover .form label {
+    color: $color-clean-white;
   }
 
   @include useMedia('min-width', $breakpoint-md) {
@@ -47,6 +55,8 @@
 
   color: $color-black;
 
+  transition: color 0.3s ease-in-out;
+
   @include useMedia('min-width', $breakpoint-xl) {
     display: block;
   }
@@ -66,6 +76,8 @@
 
 .form label {
   color: $color-clean-white;
+
+  transition: color 0.3s ease-in-out;
 
   @include useMedia('min-width', $breakpoint-xl) {
     color: $color-black;
