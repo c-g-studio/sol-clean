@@ -44,7 +44,7 @@ export const Header = () => {
               >
                 <MobileMenuIcon
                   className={
-                    pathname === '/'
+                    pathname === '/' || pathname === '/business'
                       ? s.mobileMenuButtonIcon
                       : s.mobileMenuButtonIconDark
                   }
@@ -59,8 +59,22 @@ export const Header = () => {
                   return null;
                 }
                 return (
-                  <li key={item.name} className={s.navigationItem}>
-                    <Link href={item.link} className={s.navLink}>
+                  <li
+                    key={item.name}
+                    className={
+                      pathname === '/business'
+                        ? `${s.navigationItem} ${s.navigationItemBusiness}`
+                        : s.navigationItem
+                    }
+                  >
+                    <Link
+                      href={item.link}
+                      className={
+                        pathname === '/business'
+                          ? `${s.navLink} ${s.navLinkBusiness}`
+                          : s.navLink
+                      }
+                    >
                       {item.name}
                     </Link>
                   </li>

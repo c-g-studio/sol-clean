@@ -108,3 +108,33 @@
     width: 100%;
   }
 }
+
+.navigationItemBusiness {
+  padding: 0;
+  color: $color-clean-white;
+  &:hover {
+    color: $color-clean-white;
+  }
+}
+
+.navLinkBusiness {
+  display: block;
+  padding: 8px 23px;
+
+  color: $color-clean-white;
+  background-color: $color-clean-black;
+
+  transition:
+    color 0.5s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-clean-white;
+    background-color: $color-blue-dark;
+  }
+
+  &:after {
+    display: none;
+  }
+}
