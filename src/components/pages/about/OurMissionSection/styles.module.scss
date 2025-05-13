@@ -92,6 +92,7 @@
 
 .dosktopContentWrapper {
   @include useMedia('min-width', $breakpoint-xl) {
+    margin-right: -55px;
     display: flex;
     flex-direction: column-reverse;
     gap: 20px;
@@ -136,7 +137,7 @@
 .heroBackground {
   position: absolute;
   top: 115px;
-  left: -72px;
+  left: -15px;
 
   max-width: 982px;
   width: 100%;
