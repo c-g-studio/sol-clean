@@ -1,8 +1,10 @@
+import Image from 'next/image';
+
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Typography } from '@/components/common/Typography/Typography';
-import s from './styles.module.scss';
-import Image from 'next/image';
 import { SolPanelMobile } from '@/components/icons/aboutPage/ourMission/SolPanelMobile';
+
+import s from './styles.module.scss';
 
 export const OurMissionSection = () => {
   return (

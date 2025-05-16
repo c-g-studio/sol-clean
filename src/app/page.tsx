@@ -13,7 +13,7 @@ import { OurRangeSection } from '@/components/pages/home/OurRangeSection/OurRang
 import { CalculatorSection } from '@/components/pages/home/CalculatorSection/CalculatorSection';
 
 export const metadata: Metadata = {
-  title: 'Sol Clean | Maximale Effizienz für  Ihre Solarenergie '
+  title: 'Sol Clean | Maximale Effizienz für Ihre Solarenergie '
 };
 
 export default function Home() {
