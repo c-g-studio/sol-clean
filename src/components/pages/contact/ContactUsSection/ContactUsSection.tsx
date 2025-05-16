@@ -12,6 +12,10 @@ import { Button } from '@/components/common/Button/Button';
 import { Input } from '@/components/common/formUI/Input/Input';
 
 import s from './styles.module.scss';
+import { useState } from 'react';
+import { callBackService } from '@/services/sendInfo.service';
+import { SuccessRequestModal } from '@/components/common/SuccessRequestModal/SuccessRequestModal';
+import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRequestModal';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Geben Sie die richtige E-Mail ein' }),
@@ -19,20 +23,34 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+type RequestStatus = 'idle' | 'success' | 'error';
 
 export const ContactUsSection = () => {
+  const [requestStatus, setRequestStatus] = useState<RequestStatus>('idle');
+
   const {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors, dirtyFields, isSubmitted }
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     mode: 'onChange'
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
+  const onSubmit = async (data: FormData) => {
+    try {
+      await callBackService.callBack(data);
+      reset();
+      setRequestStatus('success');
+    } catch {
+      setRequestStatus('error');
+    }
+  };
+
+  const handleClose = () => {
+    setRequestStatus('idle');
   };
 
   return (
@@ -83,6 +101,16 @@ export const ContactUsSection = () => {
         <div className={s.decorPhoneWrapper}>
           <QuestionIcon className={s.icon} />
         </div>
+
+        <SuccessRequestModal
+          requestStatus={requestStatus}
+          handleClose={handleClose}
+        />
+
+        <ErrorRequestModal
+          requestStatus={requestStatus}
+          handleClose={handleClose}
+        />
       </AppContainer>
     </section>
   );
