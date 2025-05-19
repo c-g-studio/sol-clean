@@ -1,0 +1,85 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.cardGroup {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 20px;
+  background-color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 124px 30px;
+
+    flex-direction: row;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 53px 47px;
+
+    gap: 20px;
+  }
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  max-width: 428px;
+  width: 100%;
+  @include useMedia('min-width', $breakpoint-md) {
+    //width: 289px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 502px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    filter: grayscale(100%);
+
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .label {
+    font-weight: bold;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    border-color: #999;
+  }
+}
+
+.selected img {
+  filter: grayscale(0);
+}
+
+.button {
+  z-index: 1;
+
+  margin-top: 20px;
+  margin-left: auto;
+  width: 175px;
+
+  background-color: transparent;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+  }
+}
+
+.error {
+  font-size: 16px;
+}

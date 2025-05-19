@@ -1,0 +1,13 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.multiFormContainer {
+  padding: 40px 20px;
+
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 60px;
+  }
+}

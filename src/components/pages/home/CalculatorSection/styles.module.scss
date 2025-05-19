@@ -12,3 +12,19 @@
     padding: 60px 0 120px 0;
   }
 }
+
+.sectionTitle {
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+}

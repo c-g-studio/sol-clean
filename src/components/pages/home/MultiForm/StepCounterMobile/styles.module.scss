@@ -1,0 +1,34 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.counterBox {
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter {
+  width: 53px;
+  height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $color-aqua-light;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+
+  background-color: $color-black;
+  border-radius: 50%;
+}
+
+.text {
+  color: $color-blue-dark;
+  font-weight: 700;
+}

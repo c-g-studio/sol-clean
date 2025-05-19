@@ -1,0 +1,12 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.map {
+  overflow: hidden;
+
+  margin-bottom: 4px;
+  width: 290px;
+  height: 199px;
+
+  border-radius: 16px;
+}

@@ -1,0 +1,116 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.mobileWrapper {
+  padding: 20px 10px 26px 10px;
+
+  background-color: $color-clean-white;
+  border-radius: 20px;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20px;
+  }
+}
+
+.input {
+  margin: 0;
+  padding: 10px;
+
+  display: block;
+  width: 100%;
+
+  color: $color-black;
+
+  background-color: $color-blue-extra-light;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+
+  &::placeholder {
+    color: #718096;
+    font-size: 12px;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-blue-light;
+  font-size: 10px;
+}
+
+.title {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+}
+
+.totalBox {
+  display: flex;
+  gap: 10px;
+}
+
+.total {
+  color: $color-blue-extra-light;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+  }
+}
+
+.left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.right {
+  flex: 1;
+  min-width: 320px;
+  height: 400px;
+  position: relative;
+}
+
+.input.error {
+  border: 1px solid red;
+}
+
+.solarInfo {
+  margin-top: 16px;
+  h3 {
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 14px;
+    color: #333;
+  }
+  strong {
+    font-size: 24px;
+    color: #9ebeff;
+    font-weight: bold;
+  }
+}
+
+.note {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #718096;
+}
+
+.footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
