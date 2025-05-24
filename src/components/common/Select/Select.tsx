@@ -1,12 +1,8 @@
-import React, { ComponentPropsWithoutRef, ForwardedRef } from 'react';
+import React, { ComponentPropsWithoutRef, ForwardedRef, useState } from 'react';
 import { Select as S } from 'radix-ui';
 import { SelectProps } from '@radix-ui/react-select';
 import classnames from 'classnames';
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon
-} from '@radix-ui/react-icons';
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 
 import styles from './styles.module.css';
 
@@ -15,6 +11,7 @@ interface CustomSelectProps extends SelectProps {
     value: string;
     label: string;
   }>;
+  className?: string;
   placeholder: string;
   ariaLabel: string;
 }
@@ -31,51 +28,56 @@ const SelectItem = React.forwardRef(
         ref={forwardedRef}
       >
         <S.ItemText>{children}</S.ItemText>
-
-        <S.ItemIndicator className={styles.ItemIndicator}>
-          <CheckIcon />
-        </S.ItemIndicator>
       </S.Item>
     );
   }
 );
+SelectItem.displayName = 'SelectItem';
 
 export const Select = ({
   ariaLabel,
   placeholder,
   data,
+  className,
   ...props
-}: CustomSelectProps) => (
-  <S.Root {...props}>
-    <S.Trigger className={styles.Trigger} aria-label={ariaLabel}>
-      <S.Value placeholder={placeholder} />
-      <S.Icon className={styles.Icon}>
-        <ChevronDownIcon />
-      </S.Icon>
-    </S.Trigger>
+}: CustomSelectProps) => {
+  const [open, setOpen] = useState(false);
 
-    <S.Portal>
-      <S.Content className={styles.Content}>
-        <S.ScrollUpButton className={styles.ScrollButton}>
-          <ChevronUpIcon />
-        </S.ScrollUpButton>
+  return (
+    <S.Root open={open} onOpenChange={setOpen} {...props}>
+      <S.Trigger
+        className={`${styles.Trigger} ${className}`}
+        aria-label={ariaLabel}
+      >
+        <S.Value placeholder={placeholder} />
+        <S.Icon className={styles.Icon}>
+          {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
+        </S.Icon>
+      </S.Trigger>
 
-        <S.Viewport className={styles.Viewport}>
-          {data.map(item => (
-            <SelectItem
-              key={item.value}
-              value={item.value}
-              className={styles.Item}
-            >
-              {item.label}
-            </SelectItem>
-          ))}
-        </S.Viewport>
+      <S.Portal>
+        <S.Content className={styles.Content}>
+          <S.ScrollUpButton className={styles.ScrollButton}>
+            <ChevronUpIcon />
+          </S.ScrollUpButton>
 
-        <S.ScrollDownButton className={styles.ScrollButton}>
-          <ChevronDownIcon />
-        </S.ScrollDownButton>
-      </S.Content>
-    </S.Portal>
-  </S.Root>
-);
+          <S.Viewport className={styles.Viewport}>
+            {data.map(item => (
+              <SelectItem
+                key={item.value}
+                value={item.value}
+                className={styles.Item}
+              >
+                {item.label}
+              </SelectItem>
+            ))}
+          </S.Viewport>
+
+          <S.ScrollDownButton className={styles.ScrollButton}>
+            <ChevronDownIcon />
+          </S.ScrollDownButton>
+        </S.Content>
+      </S.Portal>
+    </S.Root>
+  );
+};

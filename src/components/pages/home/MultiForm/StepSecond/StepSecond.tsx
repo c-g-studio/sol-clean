@@ -1,19 +1,24 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { Select } from '@/components/common/Select/Select';
 import { z } from 'zod';
-import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRef, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { Autocomplete, useLoadScript } from '@react-google-maps/api';
 
-import { MapWithAutocomplete } from '@/components/pages/home/MapWithAutocomplete';
+import { Error } from '@/components/common/formUI/Error/Error';
+import { Select } from '@/components/common/Select/Select';
 import { Typography } from '@/components/common/Typography/Typography';
 
+import { getFieldClass } from '@/heplers/getFieldClass';
+
 import s from './styles.module.scss';
+import { MapWithAutocomplete } from '@/components/pages/home/MapWithAutocomplete';
+import { Button } from '@/components/common/Button/Button';
 
 const schema = z.object({
-  address: z.string().min(1, 'Введите адрес')
+  address: z.string().min(1, 'Geben Sie die Adresse ein'),
+  ownerType: z.string().min(1, 'Wählen Sie den Besitzer')
 });
 
 export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
@@ -23,11 +28,15 @@ export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
     handleSubmit,
     setValue,
     getValues,
-    formState: { errors },
+    formState: { errors, dirtyFields, isSubmitted },
     watch
   } = useForm({
     resolver: zodResolver(schema),
-    defaultValues
+    defaultValues: {
+      ownerType: '',
+      address: '',
+      ...defaultValues
+    }
   });
 
   const [position, setPosition] = useState(null);
@@ -82,81 +91,134 @@ export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={s.mobileWrapper}>
-        {isLoaded && (
-          <div>
-            <label className={s.label}>Ihre Adresse</label>
-            <Autocomplete
-              onLoad={autocomplete => (autocompleteRef.current = autocomplete)}
-              onPlaceChanged={handlePlaceChanged}
-            >
-              <input
-                type="text"
-                placeholder="Adresse eingeben"
-                className={s.input}
-              />
-            </Autocomplete>
-            {errors.address && <p>{errors.address.message}</p>}
-
+      <div className={s.box}>
+        <div className={s.mobileWrapper}>
+          {isLoaded && (
             <div>
-              <Controller
-                control={control}
-                name="type"
-                render={({ field }) => (
-                  <Select
-                    placeholder="Выберите тип"
-                    ariaLabel="Test select"
-                    data={[
-                      { value: 'agriculture', label: 'Landwirtschaft' },
-                      {
-                        value: 'arableLand',
-                        label: 'in der Nähe einer Ackerfläche'
-                      },
-                      {
-                        value: 'nearForest',
-                        label: 'in der Nähe eines Waldes'
-                      },
-                      { value: 'residentialArea', label: 'Wohngebiet' },
-                      { value: 'settlementFarm', label: 'Aussiedlerhof' }
-                    ]}
-                    onValueChange={field.onChange}
-                    {...field}
+              <div className={s.inputWrapper}>
+                <label className={s.label}>Ihre Adresse</label>
+                <Autocomplete
+                  onLoad={autocomplete =>
+                    (autocompleteRef.current = autocomplete)
+                  }
+                  onPlaceChanged={handlePlaceChanged}
+                >
+                  <input
+                    type="text"
+                    placeholder="Adresse eingeben"
+                    className={`${s.input} ${getFieldClass(
+                      'address',
+                      s.input,
+                      errors,
+                      dirtyFields,
+                      isSubmitted,
+                      s.valid,
+                      s.invalid
+                    )}`}
+                    {...register('address')}
                   />
-                )}
-              />
+                </Autocomplete>
+                {errors.address && <Error errors={errors} name={'address'} />}
+              </div>
+
+              <div className={s.selectWrapper}>
+                <label className={s.label}>Eigentümer</label>
+                <Controller
+                  control={control}
+                  name="ownerType"
+                  render={({ field }) => (
+                    <Select
+                      placeholder="Wählen Sie den Eigentümer"
+                      ariaLabel="Test select"
+                      data={[
+                        { value: 'agriculture', label: 'Landwirtschaft' },
+                        {
+                          value: 'arableLand',
+                          label: 'in der Nähe einer Ackerfläche'
+                        },
+                        {
+                          value: 'nearForest',
+                          label: 'in der Nähe eines Waldes'
+                        },
+                        { value: 'residentialArea', label: 'Wohngebiet' },
+                        { value: 'settlementFarm', label: 'Aussiedlerhof' }
+                      ]}
+                      onValueChange={field.onChange}
+                      className={`${getFieldClass(
+                        'ownerType',
+                        '',
+                        errors,
+                        dirtyFields,
+                        isSubmitted,
+                        s.valid,
+                        s.invalid
+                      )}`}
+                      {...field}
+                    />
+                  )}
+                />
+                <Error name={'ownerType'} errors={errors} />
+              </div>
             </div>
+          )}
+
+          <div className={s.mapBox}>
+            <MapWithAutocomplete position={position} />
+            <Typography variant={'body3'} className={s.text}>
+              Wir nutzen die Google Solar API, um die mögliche Solarenergie an
+              Ihrem Standort basierend auf der Sonneneinstrahlung zu ermitteln.
+              Für eine genauere Berechnung, die auch Dachgröße und -ausrichtung
+              berücksichtigt, wenden Sie sich direkt an uns oder wählen Sie die
+              Zusendung eines Angebots am Ende dieser
+              Wirtschaftlichkeitsberechnung aus.
+            </Typography>
           </div>
-        )}
 
-        <MapWithAutocomplete position={position} />
-        <Typography variant={'body3'} className={s.text}>
-          Wir nutzen die Google Solar API, um die mögliche Solarenergie an Ihrem
-          Standort basierend auf der Sonneneinstrahlung zu ermitteln. Für eine
-          genauere Berechnung, die auch Dachgröße und -ausrichtung
-          berücksichtigt, wenden Sie sich direkt an uns oder wählen Sie die
-          Zusendung eines Angebots am Ende dieser Wirtschaftlichkeitsberechnung
-          aus.
-        </Typography>
-
-        <Typography variant={'body4'} className={s.title}>
-          Sonnenenergie pro kWp in diesem Gebiet
-        </Typography>
-
-        <div className={s.totalBox}>
-          <Typography variant={'body3'} className={s.total}>
-            0
+          <Typography variant={'body4'} className={s.title}>
+            Sonnenenergie pro kWp in diesem Gebiet
           </Typography>
 
-          <Typography variant={'body3'} className={s.total}>
-            kWp / Jahr
+          <div className={s.totalBox}>
+            <Typography variant={'body3'} className={s.total}>
+              0
+            </Typography>
+
+            <Typography variant={'body3'} className={s.total}>
+              kWp / Jahr
+            </Typography>
+          </div>
+        </div>
+
+        <div className={s.mapBoxDesktop}>
+          <MapWithAutocomplete position={position} />
+          <Typography variant={'body3'} className={s.text}>
+            Wir nutzen die Google Solar API, um die mögliche Solarenergie an
+            Ihrem Standort basierend auf der Sonneneinstrahlung zu ermitteln.
+            Für eine genauere Berechnung, die auch Dachgröße und -ausrichtung
+            berücksichtigt, wenden Sie sich direkt an uns oder wählen Sie die
+            Zusendung eines Angebots am Ende dieser
+            Wirtschaftlichkeitsberechnung aus.
           </Typography>
         </div>
       </div>
 
-      <button type="button" onClick={onBack}>
-        Назад
-      </button>
-      <button type="submit">Далее</button>
+      <div className={s.buttonsBox}>
+        <Button
+          type={'button'}
+          buttonType={'buttonWithArrow'}
+          className={`${s.button} ${s.buttonBack}`}
+          onClick={onBack}
+        >
+          Zurück
+        </Button>
+        <Button
+          type={'submit'}
+          buttonType={'buttonWithArrow'}
+          className={s.button}
+        >
+          Weiter
+        </Button>
+      </div>
     </form>
   );
 };

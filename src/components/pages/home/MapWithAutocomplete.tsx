@@ -13,7 +13,8 @@ const libraries: 'places'[] = ['places'];
 
 const containerStyle = {
   width: '100%',
-  height: '400px'
+  maxWidth: '768px',
+  height: '376px'
 };
 
 export const MapWithAutocomplete = ({ position, className }: Props) => {

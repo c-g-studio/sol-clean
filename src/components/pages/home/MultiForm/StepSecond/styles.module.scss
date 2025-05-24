@@ -1,11 +1,33 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
+.box {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    gap: 20px;
+  }
+}
+
 .mobileWrapper {
   padding: 20px 10px 26px 10px;
 
   background-color: $color-clean-white;
   border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    width: 100%;
+    max-width: 550px;
+    flex-shrink: 0;
+    padding: 40px;
+  }
+}
+
+.inputWrapper {
+  margin-bottom: 20px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 50px;
+  }
 }
 
 .label {
@@ -35,9 +57,62 @@
   border: 1px solid transparent;
   outline: none;
 
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
   &::placeholder {
     color: #718096;
     font-size: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+}
+
+.selectWrapper {
+  margin-bottom: 20px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 50px;
+  }
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
+  }
+}
+
+.mapBox {
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 40px;
+
+    display: flex;
+    gap: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
   }
 }
 
@@ -46,6 +121,14 @@
 
   color: $color-blue-light;
   font-size: 10px;
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 50%;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
 }
 
 .title {
@@ -113,4 +196,47 @@
   margin-top: 32px;
   display: flex;
   justify-content: space-between;
+}
+
+.mapBoxDesktop {
+  display: none;
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.button {
+  z-index: 1;
+
+  margin-top: 20px;
+  width: 175px;
+
+  background-color: transparent;
+
+  & span {
+    padding: 8px 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+
+    & span {
+      padding: 8px 40px;
+    }
+  }
+}
+
+.buttonsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.buttonBack {
+  flex-direction: row-reverse;
+
+  & svg {
+    transform: rotate(180deg);
+  }
 }

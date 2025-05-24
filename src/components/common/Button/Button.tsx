@@ -46,6 +46,7 @@ export const Button: FC<ButtonProps> = ({
   className = '',
   buttonType,
   href = '',
+  onClick,
   ...props
 }) => {
   const classNames = [s.button, s[variant], s[size], className].join(' ');
@@ -61,7 +62,7 @@ export const Button: FC<ButtonProps> = ({
 
   if (buttonType === 'buttonWithArrow') {
     return (
-      <button className={`${s.buttonWithArrow} ${className}`}>
+      <button className={`${s.buttonWithArrow} ${className}`} onClick={onClick}>
         <span className={s.buttonWithArrowText}>{children}</span>
         <RightArrow className={s.arrowIcon} />
       </button>

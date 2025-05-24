@@ -5,8 +5,19 @@
   overflow: hidden;
 
   margin-bottom: 4px;
-  width: 290px;
+  width: 100%;
+  max-width: 768px;
   height: 199px;
 
   border-radius: 16px;
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: 0;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 10px;
+
+    max-width: 550px;
+    height: 376px;
+  }
 }
