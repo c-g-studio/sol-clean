@@ -78,7 +78,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
     setPosition({ lat, lng });
     console.log(
       'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY',
-      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
     );
     const res = await fetch(
       `https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=${lat}&location.longitude=${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
