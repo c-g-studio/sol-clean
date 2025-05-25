@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Autocomplete, useLoadScript } from '@react-google-maps/api';
 
@@ -16,12 +16,30 @@ import s from './styles.module.scss';
 import { MapWithAutocomplete } from '@/components/pages/home/MapWithAutocomplete';
 import { Button } from '@/components/common/Button/Button';
 
+type TData = {
+  address: string;
+  ownerType: string;
+  solarData?: unknown;
+};
+
+type TPosition = { lat: number; lng: number };
+
+type TStepSecondProps = {
+  onNextAction: (data: TData) => void;
+  onBackAction: () => void;
+  defaultValues?: Partial<TData>;
+};
+
 const schema = z.object({
   address: z.string().min(1, 'Geben Sie die Adresse ein'),
   ownerType: z.string().min(1, 'Wählen Sie den Besitzer')
 });
 
-export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
+export const StepSecond: FC<TStepSecondProps> = ({
+  onNextAction,
+  onBackAction,
+  defaultValues
+}) => {
   const {
     register,
     control,
@@ -39,20 +57,14 @@ export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
     }
   });
 
-  const [position, setPosition] = useState(null);
+  const [position, setPosition] = useState<TPosition | null>(null);
   const [solarData, setSolarData] = useState(null);
-  const [selectValue, setSelectValue] = useState('');
-  const autocompleteRef = useRef(null);
+  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     libraries: ['places']
   });
-
-  const handleChange = event => {
-    console.log('e', event);
-    setSelectValue(event.target.value as string);
-  };
 
   const handlePlaceChanged = async () => {
     const place = autocompleteRef.current?.getPlace();
@@ -78,8 +90,9 @@ export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
     setSolarData(solarData);
   };
 
-  const onSubmit = data => {
-    onNext({
+  const onSubmit = (data: TData) => {
+    console.log('data', data);
+    onNextAction({
       ...data,
       solarData
     });
@@ -206,8 +219,8 @@ export const StepSecond = ({ onNext, onBack, defaultValues }: any) => {
         <Button
           type={'button'}
           buttonType={'buttonWithArrow'}
-          className={`${s.button} ${s.buttonBack}`}
-          onClick={onBack}
+          className={`${s.button} ${s.buttonBackAction}`}
+          onClick={onBackAction}
         >
           Zurück
         </Button>

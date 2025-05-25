@@ -17,6 +17,7 @@ type BaseProps = {
   buttonType?: 'withArrow' | 'buttonLink' | 'buttonWithArrow' | 'buttonDiv';
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 };
 
 type ButtonLinkProps = BaseProps &

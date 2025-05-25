@@ -1,4 +1,11 @@
-export const StepThird = ({ onBack, data }) => {
+import { FC } from 'react';
+
+type TStepThirdProps = {
+  onBack: () => void;
+  data: unknown;
+};
+
+export const StepThird: FC<TStepThirdProps> = ({ onBack, data }) => {
   return (
     <div>
       <h2>Шаг 3: Подтверждение</h2>

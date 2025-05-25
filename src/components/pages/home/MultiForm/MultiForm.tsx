@@ -9,9 +9,9 @@ import { StepCounterMobile } from '@/components/pages/home/MultiForm/StepCounter
 import s from './styles.module.scss';
 
 type TMultiFormData = {
-  firstName: string;
-  email: string;
-  age: number;
+  address: string;
+  ownerType: string;
+  solarData?: unknown;
   typeOfUse: 'business' | 'personal';
 };
 
@@ -31,7 +31,11 @@ export const MultiForm = () => {
       <StepCounterMobile step={step} />
       {step === 1 && <StepFirst onNext={next} defaultValues={formData} />}
       {step === 2 && (
-        <StepSecond onNext={next} onBack={back} defaultValues={formData} />
+        <StepSecond
+          onNextAction={next}
+          onBackAction={back}
+          defaultValues={formData}
+        />
       )}
       {step === 3 && <StepThird onBack={back} data={formData} />}
     </div>
