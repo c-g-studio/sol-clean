@@ -45,7 +45,6 @@ export const StepSecond: FC<TStepSecondProps> = ({
     control,
     handleSubmit,
     setValue,
-    getValues,
     formState: { errors, dirtyFields, isSubmitted },
     watch
   } = useForm({
