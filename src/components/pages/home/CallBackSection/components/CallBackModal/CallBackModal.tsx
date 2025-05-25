@@ -60,7 +60,6 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      console.log(1);
       await callBackService.callBack(data);
       setRequestStatus('success');
     } catch {

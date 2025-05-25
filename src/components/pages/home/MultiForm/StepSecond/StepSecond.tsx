@@ -76,10 +76,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
 
     setValue('address', address);
     setPosition({ lat, lng });
-    console.log(
-      'NEXT_PUBLIC_GOOGLE_MAPS_API_KEY',
-      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-    );
+
     const res = await fetch(
       `https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=${lat}&location.longitude=${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
     );
@@ -94,14 +91,11 @@ export const StepSecond: FC<TStepSecondProps> = ({
   };
 
   const onSubmit = (data: TData) => {
-    console.log('data', data);
     onNextAction({
       ...data,
       solarData
     });
   };
-
-  console.log('getValues', getValues());
 
   watch();
 
@@ -222,7 +216,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
         <Button
           type={'button'}
           buttonType={'buttonWithArrow'}
-          className={`${s.button} ${s.buttonBackAction}`}
+          className={`${s.button} ${s.buttonBack}`}
           onClick={onBackAction}
         >
           Zurück
