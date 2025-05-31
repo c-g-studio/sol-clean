@@ -21,6 +21,36 @@
   }
 }
 
+.totalContainer {
+  margin-bottom: 40px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+}
+
+.totalBox {
+  display: flex;
+  gap: 10px;
+}
+
+.total {
+  color: $color-blue-extra-light;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+  }
+}
+
 .label {
   margin-bottom: 10px;
   display: block;
