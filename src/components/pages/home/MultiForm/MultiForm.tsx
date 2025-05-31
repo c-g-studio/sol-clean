@@ -7,12 +7,15 @@ import { StepThird } from '@/components/pages/home/MultiForm/StepThird/StepThird
 import { StepCounterMobile } from '@/components/pages/home/MultiForm/StepCounterMobile/StepCounterMobile';
 
 import s from './styles.module.scss';
+import { StepFourth } from '@/components/pages/home/MultiForm/StepFourth/StepFourth';
 
 type TMultiFormData = {
   address: string;
   ownerType: string;
   solarData?: unknown;
   typeOfUse: 'business' | 'personal';
+  nominalExit: string;
+  year: string;
 };
 
 export const MultiForm = () => {
@@ -37,7 +40,14 @@ export const MultiForm = () => {
           defaultValues={formData}
         />
       )}
-      {step === 3 && <StepThird onBack={back} data={formData} />}
+      {step === 3 && (
+        <StepThird
+          onNextAction={next}
+          onBackAction={back}
+          defaultValues={formData}
+        />
+      )}
+      {step === 4 && <StepFourth onBack={back} data={formData} />}
     </div>
   );
 };

@@ -16,7 +16,7 @@ import s from './styles.module.scss';
 
 export const CallBackSection = () => {
   const { isOpen, onOpen, onClose } = useModal();
-
+  console.log('onOpen', onOpen);
   return (
     <section className={s.callBackSection}>
       <AppContainer classes={s.callBackSectionContainer}>

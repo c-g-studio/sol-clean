@@ -1,0 +1,331 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.box {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.mobileWrapper {
+  padding: 20px 10px 26px 10px;
+
+  background-color: $color-clean-white;
+  border-radius: 20px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    width: 100%;
+    max-width: 550px;
+    flex-shrink: 0;
+    padding: 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 30px 160px;
+    max-width: 100%;
+    display: flex;
+    gap: 87px;
+  }
+}
+
+.boxDesktop {
+  width: 100%;
+}
+
+.checkboxGroup {
+  margin-bottom: 20px;
+  padding: 20px;
+
+  border: 1px solid $color-blue-dark;
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.checkboxGroupDesktop {
+  display: none;
+  padding: 20px;
+  width: 100%;
+  max-width: 242px;
+  height: 237px;
+
+  border: 1px solid $color-blue-dark;
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.checkBoxTitle {
+  margin-bottom: 10px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20pxhh;
+  }
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 33px;
+  grid-row-gap: 10px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    display: grid;
+    grid-template-columns: none; // отменяем фиксированные колонки
+    grid-auto-flow: column; // все ячейки в одну строку
+    grid-auto-columns: max-content; // ширина колонок по содержимому
+    grid-column-gap: 23px; // отступы между колонками
+    grid-row-gap: 0; // убираем вертикальные отступы
+    grid-template-rows: 1fr; // одна строка
+  }
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
+
+.inputWrapper {
+  margin-bottom: 40px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 50px;
+  }
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20px;
+  }
+}
+
+.input {
+  margin: 0;
+  padding: 10px;
+
+  display: block;
+  width: 100%;
+
+  color: $color-black;
+
+  background-color: $color-blue-extra-light;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &::placeholder {
+    color: #718096;
+    font-size: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+}
+
+.selectWrapper {
+  margin-bottom: 40px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 50px;
+  }
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
+  }
+}
+
+.mapBox {
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 40px;
+
+    display: flex;
+    gap: 20px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+
+  color: $color-blue-light;
+  font-size: 10px;
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 50%;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+}
+
+.totalBoxFirst {
+  margin-bottom: 40px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 20px;
+  }
+}
+
+.totalBox {
+  display: flex;
+  gap: 10px;
+}
+
+.total {
+  color: $color-blue-extra-light;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 24px;
+  }
+}
+
+.left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.right {
+  flex: 1;
+  min-width: 320px;
+  height: 400px;
+  position: relative;
+}
+
+.input.error {
+  border: 1px solid red;
+}
+
+.solarInfo {
+  margin-top: 16px;
+  h3 {
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 14px;
+    color: #333;
+  }
+  strong {
+    font-size: 24px;
+    color: #9ebeff;
+    font-weight: bold;
+  }
+}
+
+.note {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #718096;
+}
+
+.footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapBoxDesktop {
+  display: none;
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.button {
+  z-index: 1;
+
+  margin-top: 20px;
+  width: 175px;
+
+  background-color: transparent;
+
+  & span {
+    padding: 8px 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+
+    & span {
+      padding: 8px 40px;
+    }
+  }
+}
+
+.buttonsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.buttonBack {
+  flex-direction: row-reverse;
+
+  & svg {
+    transform: rotate(180deg);
+  }
+}

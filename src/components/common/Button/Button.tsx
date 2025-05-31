@@ -96,6 +96,7 @@ export const Button: FC<ButtonProps> = ({
     <button
       className={classNames}
       {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+      onClick={onClick}
     >
       {icon && <span className={s.icon}>{icon}</span>}
       {children}

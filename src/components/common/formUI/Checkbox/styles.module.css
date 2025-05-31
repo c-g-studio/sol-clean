@@ -1,0 +1,44 @@
+.Root {
+    all: unset;
+    background-color: #B9BECC;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: none;
+    border: 1px solid #849AB4;
+
+    transition: border-color 250ms ease-in-out, background-color 250ms ease-in-out;
+
+
+    &:hover,
+    &:focus {
+        border: 1px solid #ffc600;
+        background: #FFF9E2;
+    }
+}
+
+.Root[data-state='checked'] {
+    border: 1px solid #ffc600;
+    background-color: #FFF9E2;
+}
+
+.Indicator {
+    color: #B9BECC;
+    /*border: 1px solid #849AB4;*/
+    border-radius: 3px;
+}
+
+.checkIcon {
+    stroke: #ffc600;
+}
+
+.Label {
+    color: #849AB4;
+    padding-left: 15px;
+    font-size: 15px;
+    line-height: 1;
+}
