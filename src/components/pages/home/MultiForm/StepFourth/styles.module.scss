@@ -1,0 +1,186 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.inputsContainer {
+  padding: 20px 10px;
+
+  border-radius: 20px;
+  background: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 135px 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 84px 325px;
+  }
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 60px;
+  }
+}
+
+//.inputWrapper {
+//  margin-bottom: 40px;
+//
+//  @include useMedia('min-width', $breakpoint-md) {
+//    margin-bottom: 20px;
+//  }
+//
+//  @include useMedia('min-width', $breakpoint-lg) {
+//    margin-bottom: 50px;
+//  }
+//}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+  }
+}
+
+.text {
+  margin-bottom: 10px;
+
+  font-size: 12px;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+  }
+}
+
+.input {
+  margin: 0;
+  padding: 10px;
+
+  display: block;
+  width: 100%;
+
+  color: $color-black;
+
+  background-color: $color-blue-extra-light;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+
+  transition:
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &::placeholder {
+    color: #718096;
+    font-size: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
+}
+
+.input[type='number']::-webkit-inner-spin-button,
+.input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.title {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+}
+//
+//.left {
+//  flex: 1;
+//  min-width: 320px;
+//}
+//
+//.right {
+//  flex: 1;
+//  min-width: 320px;
+//  height: 400px;
+//  position: relative;
+//}
+
+.input.error {
+  border: 1px solid red;
+}
+
+.buttonsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.button {
+  z-index: 1;
+
+  margin-top: 20px;
+  width: 175px;
+
+  background-color: transparent;
+
+  & span {
+    padding: 8px 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+
+    & span {
+      padding: 8px 40px;
+    }
+  }
+}
+
+.buttonBack {
+  flex-direction: row-reverse;
+
+  & svg {
+    transform: rotate(180deg);
+  }
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
+  }
+}

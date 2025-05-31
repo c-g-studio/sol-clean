@@ -67,7 +67,6 @@ export const StepThird: FC<TStepThirdProps> = ({
   });
 
   const onSubmit = (data: TStepThirdData) => {
-    // Собираем полные данные TData
     const fullData: TData = {
       address: defaultValues?.address ?? '',
       ownerType: defaultValues?.ownerType ?? '',
@@ -144,7 +143,7 @@ export const StepThird: FC<TStepThirdProps> = ({
             <div className={s.inputWrapper}>
               <label className={s.label}>Nennleistung ( in kWp )</label>
               <input
-                type="text"
+                type="number"
                 placeholder="Höchstleistungen erbringen kWp"
                 className={`${s.input} ${getFieldClass(
                   'nominalExit',

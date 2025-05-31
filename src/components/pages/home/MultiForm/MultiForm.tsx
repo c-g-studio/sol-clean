@@ -8,6 +8,7 @@ import { StepCounterMobile } from '@/components/pages/home/MultiForm/StepCounter
 
 import s from './styles.module.scss';
 import { StepFourth } from '@/components/pages/home/MultiForm/StepFourth/StepFourth';
+import { StepFifth } from '@/components/pages/home/MultiForm/StepFifth/StepFifth';
 
 type TMultiFormData = {
   address: string;
@@ -47,7 +48,14 @@ export const MultiForm = () => {
           defaultValues={formData}
         />
       )}
-      {step === 4 && <StepFourth onBack={back} data={formData} />}
+      {step === 4 && (
+        <StepFourth
+          onBackAction={back}
+          onNextAction={next}
+          defaultValues={formData}
+        />
+      )}
+      {step === 5 && <StepFifth onBack={back} data={formData} />}
     </div>
   );
 };
