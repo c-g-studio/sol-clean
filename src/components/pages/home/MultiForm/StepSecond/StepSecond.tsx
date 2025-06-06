@@ -16,6 +16,51 @@ import s from './styles.module.scss';
 import { MapWithAutocomplete } from '@/components/pages/home/MapWithAutocomplete';
 import { Button } from '@/components/common/Button/Button';
 
+type SolarPotentialData = {
+  solarPotential: {
+    panelHeightMeters: number;
+    panelWidthMeters: number;
+    roofSegmentStats?: {
+      stats: {
+        sunshineQuantiles: number[];
+      };
+    }[];
+    wholeRoofStats?: {
+      sunshineQuantiles: number[];
+    };
+  };
+};
+
+function calculateSinglePanelProductionKWh(
+  data: SolarPotentialData,
+  efficiency = 0.18
+): number | null {
+  const {
+    panelHeightMeters,
+    panelWidthMeters,
+    roofSegmentStats,
+    wholeRoofStats
+  } = data.solarPotential;
+
+  if (!panelHeightMeters || !panelWidthMeters) return null;
+
+  const panelArea = panelHeightMeters * panelWidthMeters;
+
+  // Используем максимум из sunshineQuantiles
+  const sunshineQuantiles =
+    roofSegmentStats?.[0]?.stats?.sunshineQuantiles ||
+    wholeRoofStats?.sunshineQuantiles;
+
+  if (!sunshineQuantiles || sunshineQuantiles.length === 0) return null;
+
+  const maxSunshine = Math.max(...sunshineQuantiles); // kWh/m²/year
+
+  // Годовая генерация одной панели в кВт⋅ч
+  const panelEnergyKWhPerYear = maxSunshine * panelArea * efficiency;
+
+  return Number(panelEnergyKWhPerYear.toFixed(2));
+}
+
 type TData = {
   address: string;
   ownerType: string;
@@ -58,6 +103,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
 
   const [position, setPosition] = useState<TPosition | null>(null);
   const [solarData, setSolarData] = useState(null);
+  const [solarPotential, setSolarPotential] = useState<number | null>(0);
   const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
 
   const { isLoaded } = useLoadScript({
@@ -79,13 +125,15 @@ export const StepSecond: FC<TStepSecondProps> = ({
     const res = await fetch(
       `https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=${lat}&location.longitude=${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
     );
-
     if (!res.ok) {
       console.error('Error fetching solar data:', res.statusText);
       return;
     }
 
     const solarData = await res.json();
+    console.log('solarData', solarData);
+
+    setSolarPotential(calculateSinglePanelProductionKWh(solarData));
     setSolarData(solarData);
   };
 
@@ -140,17 +188,14 @@ export const StepSecond: FC<TStepSecondProps> = ({
                       placeholder="Wählen Sie den Eigentümer"
                       ariaLabel="Test select"
                       data={[
-                        { value: 'agriculture', label: 'Landwirtschaft' },
+                        { value: 'Wiese', label: 'Landwirtschaft' }, // agriculture → Wiese
                         {
-                          value: 'arableLand',
+                          value: 'Acker',
                           label: 'in der Nähe einer Ackerfläche'
-                        },
-                        {
-                          value: 'nearForest',
-                          label: 'in der Nähe eines Waldes'
-                        },
-                        { value: 'residentialArea', label: 'Wohngebiet' },
-                        { value: 'settlementFarm', label: 'Aussiedlerhof' }
+                        }, // arableLand → Acker
+                        { value: 'Wald', label: 'in der Nähe eines Waldes' }, // nearForest → Wald
+                        { value: 'Norm', label: 'Wohngebiet' }, // residentialArea → Norm
+                        { value: 'Bauernhof', label: 'Aussiedlerhof' }
                       ]}
                       onValueChange={field.onChange}
                       className={`${getFieldClass(
@@ -189,7 +234,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
 
           <div className={s.totalBox}>
             <Typography variant={'body3'} className={s.total}>
-              0
+              {solarPotential}
             </Typography>
 
             <Typography variant={'body3'} className={s.total}>
