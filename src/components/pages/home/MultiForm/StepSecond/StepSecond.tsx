@@ -102,7 +102,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
   });
 
   const [position, setPosition] = useState<TPosition | null>(null);
-  const [solarData, setSolarData] = useState(null);
+  // const [solarData, setSolarData] = useState(null);
   const [solarPotential, setSolarPotential] = useState<number | null>(0);
   const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
 
@@ -131,16 +131,15 @@ export const StepSecond: FC<TStepSecondProps> = ({
     }
 
     const solarData = await res.json();
-    console.log('solarData', solarData);
 
     setSolarPotential(calculateSinglePanelProductionKWh(solarData));
-    setSolarData(solarData);
+    // setSolarData(solarData);
   };
 
   const onSubmit = (data: TData) => {
     onNextAction({
       ...data,
-      solarData
+      solarData: solarPotential
     });
   };
 
