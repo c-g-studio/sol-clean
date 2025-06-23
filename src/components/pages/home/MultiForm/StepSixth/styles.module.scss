@@ -1,0 +1,52 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.container {
+  margin-bottom: 30px;
+  padding: 20px 10px;
+
+  border-radius: 20px;
+  background-color: $color-clean-white;
+}
+
+.title {
+  margin-bottom: 40px;
+
+  color: $color-blue-dark;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.age {
+  color: $color-black;
+  font-weight: 500;
+}
+
+.lossMoney {
+  color: $color-black;
+  font-weight: 500;
+  font-size: 51px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+  gap: 13px;
+}
+
+.itemText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+.itemTextSpan {
+  color: $color-black;
+  font-weight: 700;
+}

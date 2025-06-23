@@ -41,7 +41,7 @@ export const ModalLayout: FC<TModalProps> = ({
     return () => {
       document.removeEventListener('keydown', handleEscKey);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!mounted) return null;
 

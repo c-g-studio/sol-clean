@@ -20,6 +20,7 @@ export const CustomAccordion: FC<customAccordionProps> = ({ data }) => {
     <Accordion
       variant="light"
       selectionMode="multiple"
+      hideIndicator={true}
       className={s.accordion}
       itemClasses={{
         base: s.base,

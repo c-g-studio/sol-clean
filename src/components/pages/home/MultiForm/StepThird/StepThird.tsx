@@ -94,7 +94,8 @@ export const StepThird: FC<TStepThirdProps> = ({
 
   let absolutePollution = null;
   const age = new Date().getFullYear() - parseInt(year) + 1;
-  const efficiencyLoss = ((1 - 0.995 ** age) * 100).toFixed(2);
+
+  const efficiencyLoss = age ? ((1 - 0.995 ** age) * 100).toFixed(2) : null;
 
   if (selectedNearBy?.length) {
     absolutePollution = Math.max(
@@ -188,10 +189,10 @@ export const StepThird: FC<TStepThirdProps> = ({
             </div>
 
             <div className={s.inputWrapper}>
-              <label className={s.label}>Nennleistung ( in kWp )</label>
+              <label className={s.label}>Nennleistung ( in kWh )</label>
               <input
                 type="number"
-                placeholder="Höchstleistungen erbringen kWp"
+                placeholder="Höchstleistungen erbringen kWh"
                 className={`${s.input} ${getFieldClass(
                   'nominalExit',
                   s.input,
@@ -228,7 +229,7 @@ export const StepThird: FC<TStepThirdProps> = ({
               </Typography>
               <div className={s.totalBox}>
                 <Typography variant="body3" className={s.total}>
-                  {efficiencyLoss || '00'}
+                  {efficiencyLoss ? efficiencyLoss : '00'}
                 </Typography>
                 <Typography variant="body3" className={s.total}>
                   %
