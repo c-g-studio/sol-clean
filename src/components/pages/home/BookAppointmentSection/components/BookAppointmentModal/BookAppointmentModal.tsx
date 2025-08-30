@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useMask } from '@react-input/mask';
 import { z } from 'zod';
 import Link from 'next/link';
 
@@ -14,17 +13,45 @@ import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 import { SuccessRequestModal } from '@/components/common/SuccessRequestModal/SuccessRequestModal';
 import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRequestModal';
 
-import { callBackService } from '@/services/sendInfo.service';
+// import { callBackService } from '@/services/sendInfo.service';
 
 import s from './styles.module.scss';
 
 const formSchema = z.object({
     name: z
         .string()
-        .min(17, 'Schreiben Sie Ihre Telefonnummer')
-        .regex(/^\+49/, 'Die Telefonnummer muss mit +49 beginnen'),
-    message: z.string().min(10, 'Min 10 Zeichen'),
-    contactInfo: z.string().min(1, 'Bitte wählen Sie eine Kontaktmethode')
+        .min(2, 'Bitte geben Sie Ihren vollständigen Namen ein'),
+    plz: z
+        .string()
+        .regex(/^\d{5}$/, 'Bitte geben Sie eine gültige Postleitzahl (5 Ziffern) ein'),
+    contactMethod: z.enum(['E-Mail-Adresse', 'Telefonnummer', 'WhatsApp'], {
+        errorMap: () => ({ message: 'Bitte wählen Sie eine Kontaktmethode' }),
+    }),
+    contactInfo: z.string().min(1, 'Bitte geben Sie Ihre Kontaktinformationen ein'),
+    message: z
+        .string()
+        .max(500, 'Maximal 500 Zeichen')
+        .optional()
+}).superRefine((data, ctx) => {
+    if (data.contactMethod === 'E-Mail-Adresse') {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contactInfo)) {
+            ctx.addIssue({
+                code: 'custom',
+                path: ['contactInfo'],
+                message: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+            });
+        }
+    }
+
+    if (data.contactMethod === 'Telefonnummer' || data.contactMethod === 'WhatsApp') {
+        if (!/^\+49 \d{3}-\d{3}-\d{2}-\d{2}$/.test(data.contactInfo)) {
+            ctx.addIssue({
+                code: 'custom',
+                path: ['contactInfo'],
+                message: 'Bitte geben Sie eine gültige Telefonnummer im Format +49 ___-___-__-__ ein',
+            });
+        }
+    }
 });
 
 
@@ -45,15 +72,14 @@ export const BookAppointmentModal: FC<TBookAppointmentModal> = ({ isOpen, onClos
         control,
         handleSubmit,
         reset,
+        watch,
         formState: { errors, dirtyFields, isSubmitted }
     } = useForm<FormData>({
         resolver: zodResolver(formSchema),
-        mode: 'onChange'
-    });
-
-    const inputRef = useMask({
-        mask: '+49 ___-___-__-__',
-        replacement: { _: /\d/ }
+        mode: 'onChange',
+        defaultValues: {
+            contactMethod: "E-Mail-Adresse"
+        }
     });
 
     const handleClose = () => {
@@ -63,12 +89,13 @@ export const BookAppointmentModal: FC<TBookAppointmentModal> = ({ isOpen, onClos
     };
 
     const onSubmit = async (data: FormData) => {
-        try {
-            await callBackService.callBack(data);
-            setRequestStatus('success');
-        } catch {
-            setRequestStatus('error');
-        }
+        console.log('data: ', data);
+        // try {
+        //     await callBackService.callBack(data);
+        //     setRequestStatus('success');
+        // } catch {
+        //     setRequestStatus('error');
+        // }
     };
 
     return (
@@ -88,26 +115,26 @@ export const BookAppointmentModal: FC<TBookAppointmentModal> = ({ isOpen, onClos
                             errors={errors}
                             dirtyFields={dirtyFields}
                             isSubmitted={isSubmitted}
-                            maskRef={inputRef}
                             labelName={'Tragen Sie Ihren Namen ein, um einen Termin zu vereinbaren.'}
                             placeholder={'Vor- und Nachname'}
                             type={'text'}
                         />
                         <Input<FormData>
-                            name="name"
+                            name="plz"
                             control={control}
                             errors={errors}
                             dirtyFields={dirtyFields}
                             isSubmitted={isSubmitted}
-                            maskRef={inputRef}
                             labelName={'Geben Sie Ihre Postleitzah.'}
                             placeholder={'PLZ'}
-                            type={'email'}
+                            type={'text'}
                         />
                         <ContactMethodInput<FormData>
                             control={control}
+                            watch={watch}
                             errors={errors}
-                            name="contactInfo"
+                            nameContactMethod="contactMethod"
+                            nameContactInfo="contactInfo"
                             dirtyFields={dirtyFields}
                             isSubmitted={isSubmitted}
                             labelClassName={s.labelName}
@@ -124,7 +151,7 @@ export const BookAppointmentModal: FC<TBookAppointmentModal> = ({ isOpen, onClos
                         />
                         <Typography variant="body1" className={s.agreementText}>
                             Sie erteilen der Sol-clean die Erlaubnis, Sie zum Zweck einer Beratung kontaktieren zu dürfen. Ausführliche Hinweise erhalten Sie in unserer
-                            <Link className={s.agreementLink} href={"/"}>
+                            <Link className={s.agreementLink} href={"/"} target="_blank">
                                 Datenschu zerklaruno.
                             </Link>
                         </Typography>

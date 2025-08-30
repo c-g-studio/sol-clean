@@ -26,6 +26,7 @@ type InputProps<T extends FieldValues> = {
   labelName: string;
   placeholder: string;
   type: string;
+  autoComplete?: string
 };
 
 export const Input = <T extends FieldValues>({
@@ -38,7 +39,8 @@ export const Input = <T extends FieldValues>({
   maskRef,
   labelName,
   placeholder,
-  type
+  type,
+  autoComplete
 }: InputProps<T>) => {
   return (
     <label className={s.label}>
@@ -51,6 +53,7 @@ export const Input = <T extends FieldValues>({
           <input
             type={type}
             placeholder={placeholder}
+            autoComplete={autoComplete}
             className={getFieldClass(
               name,
               s.input,
