@@ -10,6 +10,11 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .heroTitle {
@@ -18,29 +23,46 @@
   padding-right: 65px;
   padding-bottom: 184px;
   padding-left: 11px;
-  max-width: 310px;
+  max-width: 454px;
 
   color: $color-clean-white;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 48px;
   line-height: 1.12;
 
   border-radius: 20px;
 
+  @include useMedia('max-width', 400px) {
+    font-size: 11vw;
+  }
+
   @include useMedia('min-width', $breakpoint-md) {
+    padding-top: 124px;
+    padding-bottom: 128px;
     padding-left: 20px;
-    max-width: 428px;
+    max-width: 564px;
 
     font-size: 64px;
   }
+
   @include useMedia('min-width', $breakpoint-xl) {
-    margin-top: 50px;
-    padding-top: 151px;
+    margin-top: 74px;
+    padding-top: 62px;
     padding-bottom: 332px;
-    max-width: 910px;
+    padding-left: 40px;
+    max-width: 907px;
 
     font-size: 107px;
   }
+}
+
+.heroTitleHighlight {
+  font-weight: 700;
+  color: $color-aqua-light;
+
+  @include useMedia('min-width', $breakpoint-md) {}
+
+  @include useMedia('min-width', $breakpoint-xl) {}
 }
 
 .box {
@@ -48,6 +70,7 @@
 
   margin-bottom: 30px;
 }
+
 .heroImg {
   position: absolute;
   left: 0;
@@ -58,6 +81,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+
   @include useMedia('min-width', $breakpoint-xl) {
     top: -50px;
     max-height: 843px;
@@ -75,13 +99,14 @@
   align-items: flex-end;
 
   @include useMedia('min-width', $breakpoint-xl) {
-    margin-top: -237px;
+    margin-top: -257px;
+    margin-right: 57px;
   }
 }
 
 .heroText {
   margin: 0 auto 20px;
-  max-width: 295px;
+  max-width: 383px;
 
   text-align: center;
 
@@ -94,6 +119,7 @@
 
 .heroButton {
   margin: 0 auto;
+
   @include useMedia('min-width', $breakpoint-xl) {
     margin: 0;
     margin-right: 103px;

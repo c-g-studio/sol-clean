@@ -1,0 +1,119 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.layout {
+    padding: 20px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        padding: 40px;
+        max-width: 495px;
+    }
+
+    @include useMedia('min-width', $breakpoint-xl) {
+        padding: 60px;
+        max-width: 590px;
+    }
+}
+
+.closeIcon {
+    top: 30px;
+    right: 30px;
+}
+
+.modalBox {
+    max-width: 330px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        max-width: 495px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        max-width: 838px;
+    }
+}
+
+.title {
+    margin-bottom: 20px;
+    max-width: 200px;
+
+    font-size: 20px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        max-width: 300px;
+
+        font-size: 40px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.phoneWrapper {
+    padding: 8px 20px;
+
+    display: flex;
+    align-items: center;
+    background: #eef2fa;
+    border-radius: 12px;
+    gap: 10px;
+}
+
+.submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #dde7f7;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        font-size: 16px;
+    }
+}
+
+.arrow {
+    font-size: 18px;
+    margin-left: 12px;
+}
+
+.btn {
+    width: 100%;
+    max-width: 210px;
+    gap: 10px;
+    align-self: flex-end;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        max-width: 296px;
+    }
+
+    & span {
+        padding: 8px 20px;
+        background: #dde7f7;
+
+        font-size: 12px;
+
+        @include useMedia('min-width', $breakpoint-md) {
+            padding: 8px 40px;
+
+            font-size: 16px;
+        }
+    }
+
+    & svg {
+        width: 31px;
+        height: 31px;
+
+        background: #dde7f7;
+
+        @include useMedia('min-width', $breakpoint-md) {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}

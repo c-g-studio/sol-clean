@@ -100,6 +100,8 @@ export const EmergencyServiceSection = () => {
               />
               <Textarea
                 name="message"
+                labelName="Nachricht"
+                placeholder="Hi..."
                 errors={errors}
                 dirtyFields={dirtyFields}
                 isSubmitted={isSubmitted}

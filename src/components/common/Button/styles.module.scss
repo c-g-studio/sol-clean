@@ -65,14 +65,14 @@
 
   font-size: 14px;
 
-  @include useMedia('min-width', $breakpoint-lg) {
-    max-width: 295px;
-    font-size: 16px;
-  }
-
   @include useMedia('min-width', $breakpoint-md) {
     max-width: 281px;
 
+    font-size: 16px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 295px;
     font-size: 16px;
   }
 }
@@ -166,4 +166,32 @@
   transition:
     background-color 0.5s ease-in-out,
     fill 0.5s ease-in-out;
+}
+
+.buttonWithArrowOnDesktop {
+  @extend .buttonWithArrow;
+
+  .arrowIcon {
+    display: none;
+
+    @include useMedia('min-width', $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  .buttonWithArrowText {
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+    padding: 8px 20px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+      // max-width: 295px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+      max-width: unset;
+      width: unset
+    }
+  }
 }
