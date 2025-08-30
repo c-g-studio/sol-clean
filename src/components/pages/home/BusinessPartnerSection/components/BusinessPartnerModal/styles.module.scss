@@ -6,7 +6,7 @@
 
     @include useMedia('min-width', $breakpoint-md) {
         padding: 40px;
-        max-width: 495px;
+        max-width: 688px;
     }
 
     @include useMedia('min-width', $breakpoint-xl) {
@@ -21,10 +21,11 @@
 }
 
 .modalBox {
+    padding-top: 20px;
     max-width: 330px;
 
     @include useMedia('min-width', $breakpoint-md) {
-        max-width: 495px;
+        max-width: 688px;
     }
 
     @include useMedia('min-width', $breakpoint-lg) {
@@ -34,20 +35,31 @@
 
 .title {
     margin-bottom: 20px;
-    max-width: 200px;
+    max-width: 275px;
 
-    font-size: 20px;
+    font-size: 36px;
 
     @include useMedia('min-width', $breakpoint-md) {
-        max-width: 300px;
+        max-width: 534px;
 
-        font-size: 40px;
     }
 }
 
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.labelName {
+    max-width: 300px;
+}
+
+.message {
+    max-width: 310px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        max-width: 100%;
+    }
 }
 
 .phoneWrapper {
@@ -84,12 +96,16 @@
 
 .btn {
     width: 100%;
-    max-width: 210px;
     gap: 10px;
     align-self: flex-end;
 
     @include useMedia('min-width', $breakpoint-md) {
         max-width: 296px;
+        align-self: flex-start;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        align-self: flex-end;
     }
 
     & span {
@@ -116,4 +132,19 @@
             height: 36px;
         }
     }
+}
+
+.agreementText {
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include useMedia('min-width', $breakpoint-md) {}
+
+    @include useMedia('min-width', $breakpoint-lg) {}
+}
+
+.agreementLink {
+    display: block;
+    text-decoration: underline;
+    color: $color-yellow;
 }

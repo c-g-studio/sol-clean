@@ -14,16 +14,30 @@ import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 import { SuccessRequestModal } from '@/components/common/SuccessRequestModal/SuccessRequestModal';
 import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRequestModal';
 
-import { callBackService } from '@/services/sendInfo.service';
 
 import s from './styles.module.scss';
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const formSchema = z.object({
-    name: z
+    phone: z
         .string()
-        .min(17, 'Schreiben Sie Ihre Telefonnummer')
-        .regex(/^\+49/, 'Die Telefonnummer muss mit +49 beginnen'),
-    message: z.string().min(10, 'Min 10 Zeichen')
+        .min(17, 'Bitte geben Sie Ihre Telefonnummer ein')
+        .regex(/^\+49 \d{3}-\d{3}-\d{2}-\d{2}$/, 'Die Telefonnummer muss im Format +49 xxx-xxx-xx-xx sein'),
+
+    email: z
+        .string()
+        .regex(emailRegex, 'Bitte geben Sie eine gültige E-Mail-Adresse ein'),
+
+    linkedin: z
+        .string()
+        .regex(emailRegex, 'Bitte geben Sie eine gültige E-Mail-Adresse ein')
+        .optional(), // якщо не обов’язкове
+
+    message: z
+        .string()
+        .max(500, 'Maximal 500 Zeichen erlaubt')
+        .optional()
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -61,12 +75,7 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
     };
 
     const onSubmit = async (data: FormData) => {
-        try {
-            await callBackService.callBack(data);
-            setRequestStatus('success');
-        } catch {
-            setRequestStatus('error');
-        }
+        console.log(data);
     };
 
     return (
@@ -79,35 +88,47 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
             >
                 <div className={s.modalBox}>
                     <Typography variant="h2" className={s.title}>
-                        Jetzt Nummer hinterlassen
+                        Senden Sie Ihre Informationen und wir werden Ihnen antworten
                     </Typography>
 
                     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
                         <Input<FormData>
-                            name="name"
+                            name="phone"
                             control={control}
                             errors={errors}
                             dirtyFields={dirtyFields}
                             isSubmitted={isSubmitted}
                             maskRef={inputRef}
-                            labelName={'Tragen Sie Ihren Namen ein, um einen Termin zu vereinbaren.'}
-                            placeholder={'Vor- und Nachname'}
-                            type={'text'}
+                            labelName={'Tel'}
+                            placeholder={'+49'}
+                            autoComplete={'tel'}
+                            type={'tel'}
                         />
                         <Input<FormData>
-                            name="name"
+                            name="email"
                             control={control}
                             errors={errors}
                             dirtyFields={dirtyFields}
                             isSubmitted={isSubmitted}
-                            maskRef={inputRef}
-                            labelName={'Geben Sie Ihre Postleitzah.'}
-                            placeholder={'PLZ'}
+                            labelName={'E-Mail'}
+                            autoComplete={'email'}
+                            placeholder={'@gmail.com'}
+                            type={'email'}
+                        />
+                        <Input<FormData>
+                            name="linkedin"
+                            control={control}
+                            errors={errors}
+                            dirtyFields={dirtyFields}
+                            isSubmitted={isSubmitted}
+                            labelName={'LinkedIn'}
+                            autoComplete={'email'}
+                            placeholder={'@gmail.com'}
                             type={'email'}
                         />
                         <Textarea
                             name="message"
-                            labelName="Haben Sie besondere Anliegen oder Fragen? (optional)"
+                            labelName="Nachricht"
                             placeholder="Hi..."
                             errors={errors}
                             dirtyFields={dirtyFields}
@@ -115,11 +136,11 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
                             register={register}
                         />
                         <Button
-                            buttonType="buttonWithArrow"
+                            buttonType='buttonWithArrowOnDesktop'
                             className={s.btn}
                             type="submit"
                         >
-                            Jetzt Rückruf anfordern
+                            Schicken
                         </Button>
                     </form>
                 </div>
