@@ -23,7 +23,7 @@ export const HeroSection = () => {
             src={
               isDesktop
                 ? '/img/home/hero_desktop.png'
-                : '/img/home/hero_mobile.png'
+                : '/img/home/hero_mobile.jpg'
             }
             alt={'some img'}
             className={s.heroImg}

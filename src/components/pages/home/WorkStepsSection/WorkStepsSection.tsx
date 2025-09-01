@@ -32,9 +32,9 @@ export const WorkStepsSection = () => {
               <Typography variant={'body1'} className={s.stepText}>
                 Durch einen unserer Sol-Clean Fachberater werden alle
                 notwendigen Informationen zu Ihrer Photovoltaik-Anlage
-                sorgfältig aufgenommen bei Ihnen vor Ort oder  digital, um Ihnen
+                sorgfältig aufgenommen bei Ihnen vor Ort oder digital, um Ihnen
                 eine detaillierte Wirtschaftlichkeitsberechnung
-                 (Kosten-Nutzen-Analyse) erstellen zu können
+(Kosten-Nutzen-Analyse) erstellen zu können
               </Typography>
             </div>
           </li>

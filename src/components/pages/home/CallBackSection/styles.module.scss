@@ -86,14 +86,15 @@
   left: 50%;
   transform: translateX(-50%);
 
-  width: 303px;
-  height: 305px;
+  width: 350px;
+  height: 307px;
 
   @include useMedia('min-width', $breakpoint-md) {
-    width: 596px;
-    height: 610px;
+    width: 688px;
+    height: 603px;
   }
 }
+
 .contactList {
   margin-bottom: 60px;
 
@@ -172,6 +173,6 @@
   left: 50%;
   transform: translateX(-50%);
 
-  width: 439px;
-  height: 450px;
+  width: 504px;
+  height: 442px;
 }

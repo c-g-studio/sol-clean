@@ -2,7 +2,8 @@ import {
   FieldErrors,
   FieldValues,
   Path,
-  UseFormRegister
+  UseFormRegister,
+  FieldNamesMarkedBoolean
 } from 'react-hook-form';
 
 import cn from 'classnames';
@@ -19,7 +20,7 @@ type TextareaProps<T extends FieldValues> = {
   labelClassName?: string
   placeholder?: string;
   errors: FieldErrors<T>;
-  dirtyFields: Partial<Record<keyof T, boolean>>;
+  dirtyFields: FieldNamesMarkedBoolean<T>;
   isSubmitted: boolean;
   register: UseFormRegister<T>;
 };

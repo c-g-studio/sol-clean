@@ -13,7 +13,9 @@ import { Typography } from '@/components/common/Typography/Typography';
 import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 import { SuccessRequestModal } from '@/components/common/SuccessRequestModal/SuccessRequestModal';
 import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRequestModal';
-
+import { JobCheckboxGroup } from './JobCheckboxGroup';
+import { Controller } from "react-hook-form";
+import { DragNDropUploadFile } from '@/components/common/formUI/DragNDropUploadFile/DragNDropUploadFile';
 
 import s from './styles.module.scss';
 
@@ -37,7 +39,15 @@ const formSchema = z.object({
     message: z
         .string()
         .max(500, 'Maximal 500 Zeichen erlaubt')
-        .optional()
+        .optional(),
+    jobs: z
+        .array(z.enum(['Reiniger', 'Elektriker', 'Aussendienstler']))
+        .min(1, 'Bitte wählen Sie mindestens eine Option aus'),
+
+    cv: z
+        .any()
+        .refine((file) => file instanceof File || file === null, 'Bitte laden Sie eine Datei hoch')
+        .optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -51,6 +61,7 @@ type RequestStatus = 'idle' | 'success' | 'error';
 
 export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClose }) => {
     const [requestStatus, setRequestStatus] = useState<RequestStatus>('idle');
+    const [cvFile, setCvFile] = useState<File | null>(null); // ✅ стейт для файлу
 
     const {
         register,
@@ -72,10 +83,14 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
         setRequestStatus('idle');
         onClose();
         reset();
+        setCvFile(null); // очистка CV при закритті
     };
 
     const onSubmit = async (data: FormData) => {
-        console.log(data);
+        console.log({
+            ...data,
+            cv: cvFile, // ✅ додаєш cvFile в результат сабміту
+        });
     };
 
     return (
@@ -92,56 +107,87 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
                     </Typography>
 
                     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-                        <Input<FormData>
-                            name="phone"
-                            control={control}
-                            errors={errors}
-                            dirtyFields={dirtyFields}
-                            isSubmitted={isSubmitted}
-                            maskRef={inputRef}
-                            labelName={'Tel'}
-                            placeholder={'+49'}
-                            autoComplete={'tel'}
-                            type={'tel'}
-                        />
-                        <Input<FormData>
-                            name="email"
-                            control={control}
-                            errors={errors}
-                            dirtyFields={dirtyFields}
-                            isSubmitted={isSubmitted}
-                            labelName={'E-Mail'}
-                            autoComplete={'email'}
-                            placeholder={'@gmail.com'}
-                            type={'email'}
-                        />
-                        <Input<FormData>
-                            name="linkedin"
-                            control={control}
-                            errors={errors}
-                            dirtyFields={dirtyFields}
-                            isSubmitted={isSubmitted}
-                            labelName={'LinkedIn'}
-                            autoComplete={'email'}
-                            placeholder={'@gmail.com'}
-                            type={'email'}
-                        />
-                        <Textarea
-                            name="message"
-                            labelName="Nachricht"
-                            placeholder="Hi..."
-                            errors={errors}
-                            dirtyFields={dirtyFields}
-                            isSubmitted={isSubmitted}
-                            register={register}
-                        />
-                        <Button
-                            buttonType='buttonWithArrowOnDesktop'
-                            className={s.btn}
-                            type="submit"
-                        >
-                            Schicken
-                        </Button>
+                        <div className={s.jobsAndUploadGroup}>
+                            <JobCheckboxGroup<FormData>
+                                control={control}
+                                name={"jobs"}
+                                errors={errors}
+                                isSubmitted={isSubmitted}
+                            />
+
+                            <Controller
+                                control={control}
+                                name="cv"
+                                render={({ field }) => (
+                                    <div>
+                                        <DragNDropUploadFile
+                                            width="100%"
+                                            onFilesSelected={(files) => {
+                                                const file = files.length > 0 ? files[0] : null;
+                                                field.onChange(file);
+                                                setCvFile(file); // щоб паралельно оновлювати локальний стейт, якщо треба
+                                            }}
+                                        />
+                                        {errors.cv && (
+                                            <p className="error">{errors.cv.message?.toString()}</p>
+                                        )}
+                                    </div>
+                                )}
+                            />
+                        </div>
+
+                        <div className={s.inputGroup}>
+                            <Input<FormData>
+                                name="phone"
+                                control={control}
+                                errors={errors}
+                                dirtyFields={dirtyFields}
+                                isSubmitted={isSubmitted}
+                                maskRef={inputRef}
+                                labelName={'Tel'}
+                                placeholder={'+49'}
+                                autoComplete={'tel'}
+                                type={'tel'}
+                            />
+                            <Input<FormData>
+                                name="email"
+                                control={control}
+                                errors={errors}
+                                dirtyFields={dirtyFields}
+                                isSubmitted={isSubmitted}
+                                labelName={'E-Mail'}
+                                autoComplete={'email'}
+                                placeholder={'@gmail.com'}
+                                type={'email'}
+                            />
+                            <Input<FormData>
+                                name="linkedin"
+                                control={control}
+                                errors={errors}
+                                dirtyFields={dirtyFields}
+                                isSubmitted={isSubmitted}
+                                labelName={'LinkedIn'}
+                                autoComplete={'email'}
+                                placeholder={'@gmail.com'}
+                                type={'email'}
+                            />
+                            <Textarea
+                                name="message"
+                                labelName="Nachricht"
+                                placeholder="Hi..."
+                                errors={errors}
+                                dirtyFields={dirtyFields}
+                                isSubmitted={isSubmitted}
+                                register={register}
+                            />
+                            <Button
+                                buttonType='buttonWithArrowOnDesktop'
+                                className={s.btn}
+                                type="submit"
+                            >
+                                Schicken
+                            </Button>
+                        </div>
                     </form>
                 </div>
             </ModalLayout>

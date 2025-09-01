@@ -1,5 +1,5 @@
 import { Ref } from 'react';
-import { Control, Controller, FieldErrors, FieldValues, Path, UseFormWatch } from 'react-hook-form';
+import { Control, Controller, FieldErrors, FieldValues, Path, UseFormWatch, FieldNamesMarkedBoolean } from 'react-hook-form';
 import { useMask } from '@react-input/mask';
 
 import { Input } from '@/components/common/formUI/Input/Input';
@@ -13,7 +13,7 @@ type ContactMethodInputProps<T extends FieldValues> = {
     errors: FieldErrors<T>;
     nameContactMethod: Path<T>;
     nameContactInfo: Path<T>;
-    dirtyFields: Partial<Record<keyof T, boolean>>;
+    dirtyFields: FieldNamesMarkedBoolean<T>;
     isSubmitted: boolean;
     maskRef?: Ref<HTMLInputElement>;
     labelClassName?: string;

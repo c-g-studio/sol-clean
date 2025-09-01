@@ -4,7 +4,8 @@ import {
   Controller,
   FieldErrors,
   FieldValues,
-  Path
+  Path,
+  FieldNamesMarkedBoolean
 } from 'react-hook-form';
 
 import cn from 'classnames';
@@ -20,7 +21,7 @@ type InputProps<T extends FieldValues> = {
   labelClassName?: string;
   control: Control<T>;
   errors: FieldErrors<T>;
-  dirtyFields: Partial<Record<keyof T, boolean>>;
+  dirtyFields: FieldNamesMarkedBoolean<T>;
   isSubmitted: boolean;
   maskRef?: Ref<HTMLInputElement>;
   labelName: string;
