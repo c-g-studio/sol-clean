@@ -248,7 +248,7 @@
 //             Ihrem Standort basierend auf der Sonneneinstrahlung zu ermitteln.
 //             Für eine genauere Berechnung, die auch Dachgröße und -ausrichtung
 //             berücksichtigt, wenden Sie sich direkt an uns oder wählen Sie die
-//             Zusendung eines Angebots am Ende dieser
+//             Zusendung eines s am Ende dieser
 //             Wirtschaftlichkeitsberechnung aus.
 //           </Typography>
 //         </div>

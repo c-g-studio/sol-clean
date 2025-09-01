@@ -9,10 +9,10 @@ export const HeroSection = () => {
     <section className={s.section}>
       <AppContainer>
         <Typography variant={'h1'} className={s.title}>
-          Business
+          Business solutions
         </Typography>
         <Typography variant={'body3'} className={s.text}>
-          Die passende Lösung für Ihr Unternehmen
+          Weil gute Solarenergie nicht bei der Installation endet  – Ihr Partner für geprüfte Qualität und nachhaltige Solarwirtschaft
         </Typography>
         <Button
           variant={'primary'}

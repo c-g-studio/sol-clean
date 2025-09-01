@@ -58,14 +58,14 @@
   border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-lg) {
-    width: 295px;
+    width: 212px;
     max-width: none;
     margin: 0;
 
     transition: width 0.3s ease-in-out;
 
     &:hover {
-      width: calc((100% - 295px * 2) - 40px);
+      width: calc((100% - 212px * 3) - 60px);
     }
 
     &:hover .listItemContentBox {
@@ -109,7 +109,6 @@
   font-size: 20px;
 
   @include useMedia('min-width', $breakpoint-lg) {
-    font-size: 24px;
     font-weight: 800;
     line-height: 1.4;
     color: $color-clean-white;
