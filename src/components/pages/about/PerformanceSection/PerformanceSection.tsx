@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { SectionTopBar } from '@/components/common/SectionTopBar/SectionTopBar';
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Typography } from '@/components/common/Typography/Typography';
@@ -19,13 +17,18 @@ export const PerformanceSection = () => {
               Leistung, die begeistert!
             </Typography>
           </Typography>
-          <Image
-            src={'/img/about/performanceSection/man.png'}
-            width="668"
-            height="517"
-            alt={'house icon image'}
-            className={s.imageMobile}
-          />
+          <div className={s.videoWrapperMobile}>
+            <video
+              src="/img/about/performanceSection/performance.mp4"
+              className={s.videoMobile}
+              width={668}
+              height={517}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
           <Typography variant={'body3'} className={s.text}>
             Mit Sol-Clean wird Ihre Solaranlage effizienter und langlebiger.
             Unsere Reinigung entfernt Ablagerungen, steigert die Energieausbeute
@@ -47,13 +50,18 @@ export const PerformanceSection = () => {
             Wirtschaftlichkeitsrechnung
           </Button>
         </div>
-        <Image
-          src={'/img/about/performanceSection/man.png'}
-          width="540"
-          height="410"
-          alt={'house icon image'}
-          className={s.imageDesktop}
-        />
+        <div className={s.videoWrapperDesktop}>
+          <video
+            src="/img/about/performanceSection/performance.mp4"
+            className={s.videoDesktop}
+            width={540}
+            height={410}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </div>
       </AppContainer>
     </section>
   );

@@ -13,7 +13,7 @@ export const OurRangeSection = () => {
       <SectionTopBar />
       <AppContainer>
         <Typography variant={'h2'} className={s.sectionTitle}>
-          <Typography variant={'decorSpan'}>Unser</Typography>
+          Unser<Typography variant={'decorSpan'}> Angebot</Typography>
         </Typography>
 
         <ul className={s.list}>
@@ -48,14 +48,11 @@ export const OurRangeSection = () => {
           <li className={s.listItem}>
             <div className={s.listItemContentBox}>
               <Typography variant={'h3'} className={s.listItemTitle}>
-                Thermografische Prüfung
+                Professionelle Reinigung
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.
+                Saubere Module – mehr Leistung
+                Professionelle Reinigung sorgt für maximalen Ertrag und längere Lebensdauer Ihrer Photovoltaikanlage.
               </Typography>
             </div>
             <Button
@@ -76,14 +73,10 @@ export const OurRangeSection = () => {
           <li className={s.listItem}>
             <div className={s.listItemContentBox}>
               <Typography variant={'h3'} className={s.listItemTitle}>
-                Thermografische Prüfung
+                EEG-Umstellung & Transfor-mation (Kurzfassung)
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.
+                Das EEG verändert sich ständig. Betreiber von PV-Anlagen profitieren beim Wechsel von Volleinspeisung zu Eigenverbrauch mit Überschusseinspeisung: mehr Wirtschaftlichkeit, mehr Unabhängigkeit.
               </Typography>
             </div>
             <Button
@@ -104,14 +97,10 @@ export const OurRangeSection = () => {
           <li className={s.listItem}>
             <div className={s.listItemContentBox}>
               <Typography variant={'h3'} className={s.listItemTitle}>
-                Thermografische Prüfung
+                Inspektionsflüge Gebäude
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.
+                Drohneninspektionen sichern Immobilien schnell, kostengünstig und risikofrei – mit Wärmebild und HD-Daten für Dächer, Fassaden und schwer zugängliche Bereiche.
               </Typography>
             </div>
             <Button

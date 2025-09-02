@@ -42,20 +42,6 @@
   }
 }
 
-.imageMobile {
-  margin-bottom: 30px;
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  border-radius: 20px;
-
-  @include useMedia('min-width', $breakpoint-lg) {
-    display: none;
-  }
-}
-
 .text {
   margin-bottom: 30px;
 
@@ -82,15 +68,46 @@
   }
 }
 
-.imageDesktop {
+
+.videoWrapperMobile {
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: none;
+  }
+
+  .videoMobile {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; // видео не растянется и заполнит блок
+  }
+}
+
+.videoWrapperDesktop {
   width: 540px;
   height: 410px;
 
   display: none;
 
   border-radius: 20px;
+  overflow: hidden;
 
   @include useMedia('min-width', $breakpoint-lg) {
     display: block;
+  }
+
+  .videoDesktop {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
   }
 }

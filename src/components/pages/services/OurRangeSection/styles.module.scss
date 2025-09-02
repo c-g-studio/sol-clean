@@ -73,10 +73,12 @@
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 100%;
     padding: 0;
     overflow: unset;
 
     display: flex;
+    gap: 81px;
     justify-content: space-between;
 
     background-color: transparent;
@@ -109,12 +111,20 @@
 }
 
 .imageWrapper {
+
+  display: block;
+  width: auto;
+  height: 410px;
+
+  margin: 0 auto;
   margin-bottom: 20px;
   overflow: hidden;
 
   border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-md) {
+    width: 687px;
+    height: 410px;
     margin-bottom: 30px;
   }
 
@@ -124,22 +134,36 @@
 }
 
 .mobileImage {
-  margin: 0 auto;
-  width: auto;
-  height: 410px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vdsIcon {
   display: block;
 
   @include useMedia('min-width', $breakpoint-md) {
-    width: 687px;
-    height: 410px;
+    margin: 0 auto 9px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 9px;
   }
 }
 
 .contentWrapper {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 687px;
+  }
+
   @include useMedia('min-width', $breakpoint-lg) {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+
+    max-width: unset;
+    // flex-shrink: 0;
   }
 }
 
@@ -156,6 +180,8 @@
   @include useMedia('min-width', $breakpoint-lg) {
     max-width: 610px;
     width: 100%;
+
+    margin: 0 0 20px;
 
     text-align: left;
   }
@@ -235,3 +261,89 @@
     display: block;
   }
 }
+
+.benefitsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 40px;
+
+  max-width: 534px;
+  margin-bottom: 20px;
+}
+
+
+
+.benefitsTitle,
+.suggestionTitle,
+.ourViewsTitle {
+
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+.benefitsText {
+  white-space: normal;
+  /* разрешает перенос строк */
+  word-wrap: break-word;
+  /* переносит длинные слова на новую строку */
+  overflow-wrap: break-word;
+  /* современный вариант word-wrap */
+}
+
+.suggestionList {
+  display: grid;
+  grid-template-columns: 3;
+
+
+}
+
+.suggestionList,
+.ourViewsList {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(auto, auto);
+  grid-column-gap: 40px;
+  grid-row-gap: 6px;
+
+  margin-bottom: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 40px;
+    grid-row-gap: 6px;
+
+    margin-bottom: 20px;
+  }
+}
+
+.ourViewsList {
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-left: 70px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-left: unset;
+  }
+}
+
+.suggestionWrapper {
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 534px;
+    margin: 0 auto;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: unset;
+  }
+}
+
+.ourViewsWrapper {}

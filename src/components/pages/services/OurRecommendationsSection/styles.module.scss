@@ -25,7 +25,7 @@
 
   @include useMedia('min-width', $breakpoint-lg) {
     margin: 0 0 60px 0;
-
+    max-width: unset;
     text-align: left;
   }
 }
@@ -57,6 +57,7 @@
   @include useMedia('min-width', $breakpoint-md) {
     width: calc((100% - 20px) / 2);
   }
+
   @include useMedia('min-width', $breakpoint-lg) {
     width: calc((100% - 292px) / 3);
   }
@@ -75,6 +76,7 @@
   background-color: transparent;
 
   transition: background-color 0.3s ease-in-out;
+
   &:hover {
     background-color: $color-aqua-light;
   }
