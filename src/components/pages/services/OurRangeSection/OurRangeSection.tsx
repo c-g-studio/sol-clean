@@ -63,24 +63,26 @@ export const OurRangeSection = () => {
                 alt={'some man image'}
                 className={s.vdsIcon}
               />
-              <Typography variant={'body1'} className={s.listItemText}>
-                Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.
-                <br />
-                <br />
-                Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.Durch die Thermografie-Prüfung finden wir Hotspots und
-                versteckte Widerstände in Ihren Solarmodulen, die die Anlage
-                beeinträchtigen können. Zudem erkennen wir Defekte an
-                Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
-                bleiben.
-              </Typography>
+              <div className={s.testWrapper}>
+                <Typography variant={'body1'} className={s.listItemText}>
+                  Durch die Thermografie-Prüfung finden wir Hotspots und
+                  versteckte Widerstände in Ihren Solarmodulen, die die Anlage
+                  beeinträchtigen können. Zudem erkennen wir Defekte an
+                  Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
+                  bleiben.
+                  <br />
+                  <br />
+                  Durch die Thermografie-Prüfung finden wir Hotspots und
+                  versteckte Widerstände in Ihren Solarmodulen, die die Anlage
+                  beeinträchtigen können. Zudem erkennen wir Defekte an
+                  Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
+                  bleiben.Durch die Thermografie-Prüfung finden wir Hotspots und
+                  versteckte Widerstände in Ihren Solarmodulen, die die Anlage
+                  beeinträchtigen können. Zudem erkennen wir Defekte an
+                  Umschaltdioden und anderen Bauteilen, die sonst unsichtbar
+                  bleiben.
+                </Typography>
+              </div>
 
               <Button
                 buttonType={'buttonLink'}
@@ -131,10 +133,10 @@ export const OurRangeSection = () => {
                     iconName={item.iconName}
                     text={item.text} />)}
                 </ul>
+                <Typography variant={'body1'} className={s.benefitsText}>
+                  Mit Sol-Clean sparen Sie Zeit – wir sichern den effizienten Betrieb, Sie konzentrieren sich aufs Wesentliche.
+                </Typography>
               </div>
-              <Typography variant={'body1'} className={s.benefitsText}>
-                Mit Sol-Clean sparen Sie Zeit – wir sichern den effizienten Betrieb, Sie konzentrieren sich aufs Wesentliche.
-              </Typography>
 
               <Button
                 buttonType={'buttonLink'}
@@ -184,7 +186,7 @@ export const OurRangeSection = () => {
                     iconName={item.iconName}
                     text={item.text} />)}
                 </ul>
-                <Typography variant={'body1'} className={s.listItemText}>
+                <Typography variant={'body1'} className={s.suggestionText}>
                   So nutzen Sie Ihre Energie effizient, rechtssicher und zukunftsorientiert.
                 </Typography>
               </div>
@@ -236,7 +238,7 @@ export const OurRangeSection = () => {
                     iconName={item.iconName}
                     text={item.text} />)}
                 </ul>
-                <Typography variant={'body1'} className={s.listItemText}>
+                <Typography variant={'body1'} className={s.ourViewsText}>
                   So nutzen Sie Ihre Energie effizient, rechtssicher und zukunftsorientiert.
                 </Typography>
               </div>

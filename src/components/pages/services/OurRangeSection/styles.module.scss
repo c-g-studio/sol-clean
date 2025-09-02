@@ -91,7 +91,7 @@
   }
 }
 
-.listItemTitle {
+h2.listItemTitle {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -141,10 +141,12 @@
 
 .vdsIcon {
   display: block;
+  margin: 0 0 9px;
 
-  @include useMedia('min-width', $breakpoint-md) {
-    margin: 0 auto 9px;
-  }
+  @include useMedia('min-width', $breakpoint-md) {}
+
+  margin: 0 auto 9px;
+
 
   @include useMedia('min-width', $breakpoint-lg) {
     margin: 0 0 9px;
@@ -168,10 +170,10 @@
 }
 
 .listItemText {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   @include useMedia('min-width', $breakpoint-md) {
-    margin: 0 auto 30px auto;
+    margin: 0 auto 30px;
     max-width: 581px;
 
     text-align: center;
@@ -267,8 +269,13 @@
   flex-wrap: wrap;
   gap: 6px 40px;
 
-  max-width: 534px;
-  margin-bottom: 20px;
+  // max-width: 534px;
+  margin-bottom: 10px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
 }
 
 
@@ -276,10 +283,10 @@
 .benefitsTitle,
 .suggestionTitle,
 .ourViewsTitle {
+  margin-bottom: 10px;
 
   @include useMedia('min-width', $breakpoint-md) {
     text-align: center;
-    margin-bottom: 10px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
@@ -288,22 +295,19 @@
   }
 }
 
-.benefitsText {
-  white-space: normal;
-  /* разрешает перенос строк */
-  word-wrap: break-word;
-  /* переносит длинные слова на новую строку */
-  overflow-wrap: break-word;
-  /* современный вариант word-wrap */
+.benefitsText,
+.suggestionText,
+.ourViewsText {
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    text-align: unset;
+  }
 }
 
-.suggestionList {
-  display: grid;
-  grid-template-columns: 3;
-
-
-}
-
+.benefitsList,
 .suggestionList,
 .ourViewsList {
   display: grid;
@@ -327,23 +331,25 @@
 
 .ourViewsList {
   @include useMedia('min-width', $breakpoint-md) {
-    margin-left: 70px;
+    // margin-left: 70px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    margin-left: unset;
+    // margin-left: unset;
   }
 }
 
+.testWrapper,
+.ourViewsWrapper,
+.benefitsWrapper,
 .suggestionWrapper {
+  margin: 0 0 30px 0;
+
   @include useMedia('min-width', $breakpoint-md) {
-    max-width: 534px;
-    margin: 0 auto;
+    place-items: center;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    margin: unset;
+    place-items: unset;
   }
 }
-
-.ourViewsWrapper {}
