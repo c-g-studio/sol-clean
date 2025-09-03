@@ -122,8 +122,7 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
                                     <div>
                                         <DragNDropUploadFile
                                             width="100%"
-                                            onFilesSelected={(files) => {
-                                                const file = files.length > 0 ? files[0] : null;
+                                            onFileSelected={(file) => {
                                                 field.onChange(file);
                                                 setCvFile(file); // щоб паралельно оновлювати локальний стейт, якщо треба
                                             }}
