@@ -7,7 +7,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-export const usePdfPreview = (file: File) => {
+export const usePdfPreview = (file: File | null) => {
   // вказуємо воркер для pdf.js
   const [preview, setPreview] = useState<string | null>(null);
 

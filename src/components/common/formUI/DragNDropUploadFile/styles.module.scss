@@ -41,6 +41,16 @@
     object-fit: cover;
 }
 
+.docPreview {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.fileName {
+    margin-top: 70px;
+}
+
 .uploadInfo {
     display: flex;
     align-items: center;
