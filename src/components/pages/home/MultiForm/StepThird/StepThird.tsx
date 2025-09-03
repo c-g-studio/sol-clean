@@ -78,7 +78,7 @@ export const StepThird: FC<TStepThirdProps> = ({
     control,
     handleSubmit,
     watch,
-    formState: { errors, dirtyFields, isSubmitted }
+    formState: { errors, dirtyFields, isSubmitted, isValid }
   } = useForm<TStepThirdData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -109,7 +109,7 @@ export const StepThird: FC<TStepThirdProps> = ({
 
   const defaultAbsolutePollution =
     pollutionTable[defaultValues?.ownerType as TPollutionTableType][
-      new Date().getFullYear() - Number(year)
+    new Date().getFullYear() - Number(year)
     ];
 
   const onSubmit = (data: TStepThirdData) => {
@@ -279,7 +279,10 @@ export const StepThird: FC<TStepThirdProps> = ({
         >
           Zurück
         </Button>
-        <Button type="submit" buttonType="buttonWithArrow" className={s.button}>
+        <Button
+          type="submit"
+          buttonType="buttonWithArrow"
+          className={`${s.button} ${isValid ? s.buttonActive : s.buttonInactive}`}>
           Weiter
         </Button>
       </div>

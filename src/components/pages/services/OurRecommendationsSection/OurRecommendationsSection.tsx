@@ -31,7 +31,7 @@ export const OurRecommendationsSection = () => {
               Die Photovoltaik-, Solaranlage sollte regelmäßige Sicht bzw. mit
               einer Wärmebildkamera geprüft werden, damit aus kleinen Mängel
               (Hotspots durch Blätter, Beeren, etc...) keine großen Schäden
-              werden.
+              werden
             </Typography>
           </li>
           <li className={s.listItem}>
@@ -45,7 +45,7 @@ export const OurRecommendationsSection = () => {
               Um genau zu ermitteln in welchem Zyklus eine Reinigung sich für
               Ihre Anlage lohnt, muss eine ausführliche individuelle
               Wirtschaftlichkeitsrechnung erstellt werden, die den
-              effizientesten Reinigungszeitpunkt genau bestimmt.
+              effizientesten Reinigungszeitpunkt genau bestimmt
             </Typography>
           </li>
           <li className={s.listItem}>
@@ -75,7 +75,7 @@ export const OurRecommendationsSection = () => {
               Photovoltaik-, Solarreinigungsgeräten arbeitet. Sollte dies nicht
               der Fall sein, können erhebliche Schäden an der Beschichtung der
               Photovoltaik-, Solarmodulen und dadurch der Funktionsverlust die
-              Folge sein.
+              Folge sein
             </Typography>
           </li>
           <li className={s.listItem}>
@@ -86,7 +86,11 @@ export const OurRecommendationsSection = () => {
               Verschmutzung mehr als nur Ertragsverlust
             </Typography>
             <Typography variant={'body2'} className={s.listItemText}>
-              Stellen Sie sicher das Sie einen Professionellen Service-Partner beauftragen, der mit professionellem EU-Zertifizierten Photovoltaik-, Solarreinigungsgeräten arbeitet. Sollte dies nicht der Fall sein, können erhebliche Schäden an der Beschichtung der Photovoltaik-, Solarmodulen entstehen und dadurch der Funktionsverlust die Folge sein.
+              Durch die Verschmutzung der Photovoltaik-, Solaranlage haben Sie
+              neben bis zu 30% Ertragsverlust eine deutlich verkürzte
+              Lebensdauer Ihrer Anlage, da durch die Verschmutzung eine
+              aggressive chemische Korrosion der Module stattfindet. Durch
+              Hotspots kann das betroffen Modul irreparable Schäden aufweisen.
             </Typography>
           </li>
           <li className={s.listItem}>

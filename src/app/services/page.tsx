@@ -4,6 +4,7 @@ import { OurRangeSection } from '@/components/pages/services/OurRangeSection/Our
 import { DifferenceSection } from '@/components/pages/services/DifferenceSection/DifferenceSection';
 import { OurRecommendationsSection } from '@/components/pages/services/OurRecommendationsSection/OurRecommendationsSection';
 import { FaqSection } from '@/components/pages/services/FaqSection/FaqSection';
+import slidesData from '@/mockData/differenceSlidesData.json';
 
 export const metadata: Metadata = {
   title: 'Sol Clean | Unser Angebot'
@@ -13,7 +14,7 @@ export default function ServicesPage() {
   return (
     <>
       <OurRangeSection />
-      <DifferenceSection />
+      <DifferenceSection slidesData={slidesData} rounded />
       <OurRecommendationsSection />
       <FaqSection />
     </>

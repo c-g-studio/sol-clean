@@ -1,11 +1,15 @@
-import { FC, JSX } from 'react';
+import { FC } from 'react';
 
 import { Typography } from '@/components/common/Typography/Typography';
+import { SpriteIcon } from '@/components/icons/SpriteIcon/SpriteIcon';
 
+
+import iconS from '@/components/pages/about/OurRecommendationsSection/styles.module.scss';
 import s from './styles.module.scss';
 
 type TOurMissionItemProps = {
-  icon: JSX.Element;
+  // icon: JSX.Element;
+  icon: string;
   title: string;
   text: string;
 };
@@ -17,7 +21,10 @@ export const OurMissionItem: FC<TOurMissionItemProps> = ({
 }) => {
   return (
     <li className={s.listItem}>
-      <div className={s.iconBox}>{icon}</div>
+      {/* <div className={s.iconBox}>{icon}</div> */}
+      <div className={s.iconBox}>
+        <SpriteIcon name={icon} className={iconS.icon} width={64} height={64} />
+      </div>
       <Typography variant={'h3'} className={s.listItemTitle}>
         {title}
       </Typography>

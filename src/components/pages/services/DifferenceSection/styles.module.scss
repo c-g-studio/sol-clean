@@ -63,6 +63,7 @@
 }
 
 .slider {
+  // max-width: 350px;
   margin-bottom: 30px;
 
   @include useMedia('min-width', $breakpoint-md) {
@@ -76,12 +77,13 @@
 
 .slide {
   padding: 20px;
-
   border-radius: 20px;
+
 
   background-color: $color-blue-extra-light;
 
   @include useMedia('min-width', $breakpoint-md) {
+    border-radius: 0;
     margin-bottom: 30px;
   }
 
@@ -93,6 +95,10 @@
     flex-direction: row-reverse;
     gap: 30px;
   }
+}
+
+.slide.rounded {
+  border-radius: 20px;
 }
 
 .slideText {
@@ -125,15 +131,15 @@
 
 .slideImage {
   display: block;
-  max-width: 400px;
+  // max-width: 400px;
   width: 100%;
   height: auto;
+  border-radius: 20px;
 
   object-fit: cover;
 
-  border-radius: 20px;
-
   @include useMedia('min-width', $breakpoint-md) {
+    border-radius: 0;
     max-width: 260px;
   }
 
@@ -141,6 +147,10 @@
     max-width: 380px;
     height: 376px;
   }
+}
+
+.slideImage.rounded {
+  border-radius: 20px;
 }
 
 .button {
