@@ -1,0 +1,55 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(32, 43, 56, 0.88);
+    padding: 60px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.title {
+    font-size: 40px;
+    color: $color-clean-white;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.39986;
+    color: $color-clean-white;
+    margin-bottom: 60px;
+}
+
+.link {
+    color: $color-yellow;
+    text-decoration: underline;
+
+    &:hover {
+        color: #004999;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    @include useMedia('min-width', 550px) {
+        flex-wrap: nowrap;
+    }
+
+    @include useMedia('min-width', $breakpoint-md) {
+        flex-wrap: nowrap;
+    }
+}
+
+// .acceptAll {}
+
+// .necessary {}
+
+// .settings {}

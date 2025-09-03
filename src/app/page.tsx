@@ -12,6 +12,7 @@ import { CleaningSection } from '@/components/pages/home/CleaningSection/Cleanin
 import { OurRangeSection } from '@/components/pages/home/OurRangeSection/OurRangeSection';
 import { BookAppointmentSection } from '@/components/pages/home/BookAppointmentSection/BookAppointmentSection';
 import { BusinessPartnerSection } from '@/components/pages/home/BusinessPartnerSection/BusinessPartnerSection';
+import { CookieConsent } from '@/components/pages/notFound/CookieConsent/CookieConsent';
 
 export const metadata: Metadata = {
   title: 'Sol Clean | Maximale Effizienz für Ihre Solarenergie '
@@ -34,6 +35,7 @@ export default function Home() {
       <CallBackSection />
       <ImportanceCleaningSection />
       <BusinessPartnerSection />
+      <CookieConsent />
     </>
   );
 }
