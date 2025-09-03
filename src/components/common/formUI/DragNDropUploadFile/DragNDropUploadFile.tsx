@@ -5,12 +5,14 @@ import { Typography } from "@/components/common/Typography/Typography";
 import { useFilePreview } from "@/hooks/uploadPreview";
 
 interface DragNdropProps {
+  value?: File | null; // ✅ може бути File | null | undefined
   onFileSelected: (file: File | null) => void;
   width?: string | number;
   height?: string | number;
 }
 
 export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
+  value,
   onFileSelected,
   width,
   height,
@@ -23,24 +25,36 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files?.length) return;
-    setFile(e.target.files[0]);
+    const newFile = e.target.files[0];
+    setFile(newFile);
+    onFileSelected(newFile); // ⚡ одразу пробиваємо у форму
     e.target.value = ""; // щоб можна було вибрати той самий файл знову
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     if (!e.dataTransfer.files.length) return;
-    setFile(e.dataTransfer.files[0]);
+    const droppedFile = e.dataTransfer.files[0];
+    setFile(droppedFile);
+    onFileSelected(droppedFile);
   };
 
   const handleRemoveFile = () => {
     setFile(null);
+    onFileSelected(null);
     if (inputRef.current) inputRef.current.value = "";
   };
 
+  // ✅ Синхронізація з RHF (Controller може кинути undefined/null/File)
   useEffect(() => {
-    onFileSelected(file);
-  }, [file, onFileSelected]);
+    if (value === undefined) return; // форма ще не ініціалізована
+    if (value === null) {
+      setFile(null);
+      if (inputRef.current) inputRef.current.value = "";
+    } else {
+      setFile(value);
+    }
+  }, [value]);
 
   return (
     <div className={s.dragDrop} style={{ width, height }}>
@@ -69,7 +83,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
             <div className={s.fileListContainer}>
               <div className={s.fileItem}>
                 <div className={s.preview}>
-                  {/* 👇 превʼю залежно від типу */}
+                  {/* превʼю залежно від типу */}
                   {type === "image" && preview && (
                     <img
                       key={preview}
@@ -91,7 +105,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
                     />
                   )}
 
-                  {type === "txt" && preview && (
+                  {type === "txt" && (
                     <div className={s.docPreview}>
                       <Image
                         src="/img/notFound/docIcon.png"
@@ -120,7 +134,6 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
                   className={s.changeBtn}
                   type="button"
                   onClick={() => {
-                    // при кліку відкриваємо файл-пікер
                     if (inputRef.current) {
                       inputRef.current.click();
                     }

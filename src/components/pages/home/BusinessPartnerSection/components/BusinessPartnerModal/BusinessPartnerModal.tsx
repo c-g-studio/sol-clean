@@ -61,7 +61,6 @@ type RequestStatus = 'idle' | 'success' | 'error';
 
 export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClose }) => {
     const [requestStatus, setRequestStatus] = useState<RequestStatus>('idle');
-    const [cvFile, setCvFile] = useState<File | null>(null); // ✅ стейт для файлу
 
     const {
         register,
@@ -71,7 +70,15 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
         formState: { errors, dirtyFields, isSubmitted }
     } = useForm<FormData>({
         resolver: zodResolver(formSchema),
-        mode: 'onChange'
+        mode: 'onChange',
+        defaultValues: {
+            jobs: [], // ✅ масив завжди існує
+            cv: null,
+            phone: '',
+            email: '',
+            linkedin: '',
+            message: ''
+        }
     });
 
     const inputRef = useMask({
@@ -82,14 +89,27 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
     const handleClose = () => {
         setRequestStatus('idle');
         onClose();
-        reset();
-        setCvFile(null); // очистка CV при закритті
+        reset({
+            jobs: [], // ✅ явний скидання
+            cv: null,
+            phone: '',
+            email: '',
+            linkedin: '',
+            message: ''
+        });
     };
 
     const onSubmit = async (data: FormData) => {
         console.log({
             ...data,
-            cv: cvFile, // ✅ додаєш cvFile в результат сабміту
+        });
+        reset({
+            jobs: [], // ✅ явний скидання
+            cv: null,
+            phone: '',
+            email: '',
+            linkedin: '',
+            message: ''
         });
     };
 
@@ -122,9 +142,9 @@ export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({ isOpen, onClos
                                     <div>
                                         <DragNDropUploadFile
                                             width="100%"
+                                            value={field.value}
                                             onFileSelected={(file) => {
                                                 field.onChange(file);
-                                                setCvFile(file); // щоб паралельно оновлювати локальний стейт, якщо треба
                                             }}
                                         />
                                         {errors.cv && (
