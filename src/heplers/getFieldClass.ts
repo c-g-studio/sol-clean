@@ -1,4 +1,8 @@
-import { FieldErrors, FieldValues, FieldNamesMarkedBoolean } from 'react-hook-form';
+import {
+  FieldErrors,
+  FieldValues,
+  FieldNamesMarkedBoolean
+} from 'react-hook-form';
 
 export const getFieldClass = <T extends FieldValues>(
   fieldName: keyof T,
@@ -11,7 +15,7 @@ export const getFieldClass = <T extends FieldValues>(
 ): string => {
   const hasError = !!errors[fieldName];
 
-  const dirty = dirtyFields[fieldName as keyof typeof dirtyFields]
+  const dirty = dirtyFields[fieldName as keyof typeof dirtyFields];
   const isDirty = Array.isArray(dirty) ? dirty.some(Boolean) : !!dirty;
 
   if (!isDirty && !isSubmitted) return baseClass;

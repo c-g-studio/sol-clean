@@ -17,19 +17,16 @@
   border: 1px solid transparent;
   outline: none;
 
-
   font-weight: 400;
   font-size: 14px;
   line-height: 1;
 
-
   cursor: pointer;
 
   transition:
-          border-color 0.3s ease-in-out,
-          color 0.3s ease-in-out,
-          background-color 0.3s ease-in-out;
-
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
 
   &:hover,
   &:focus {
@@ -45,8 +42,6 @@
     color: #718096;
     font-size: 12px;
   }
-
-
 }
 
 .Icon {
@@ -57,7 +52,7 @@
   z-index: 100;
   box-sizing: border-box;
   position: relative;
-  margin-top:40px;
+  margin-top: 40px;
 
   width: 100%;
 
@@ -65,7 +60,7 @@
   background-color: #e6edf4;
   border-radius: 10px;
 
-  border: 1px solid #849AB4;
+  border: 1px solid #849ab4;
 }
 
 .Viewport {
@@ -76,7 +71,6 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-
 
   padding: 10px;
   position: relative;
@@ -100,10 +94,9 @@
 
   transition: color 0.3s ease-in-out;
 
-
   &:not(:last-child) {
-    border-bottom: 1px solid #849AB4
-  };
+    border-bottom: 1px solid #849ab4;
+  }
 }
 
 .ItemIndicator {

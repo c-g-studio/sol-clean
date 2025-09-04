@@ -17,7 +17,7 @@ import s from './styles.module.scss';
 type TextareaProps<T extends FieldValues> = {
   name: Path<T>;
   labelName: string;
-  labelClassName?: string
+  labelClassName?: string;
   placeholder?: string;
   errors: FieldErrors<T>;
   dirtyFields: FieldNamesMarkedBoolean<T>;
@@ -39,7 +39,7 @@ export const Textarea = <T extends FieldValues>({
     <label className={s.label}>
       <span className={cn(s.labelName, labelClassName)}>{labelName}</span>
       <textarea
-        placeholder={placeholder ? placeholder : "Hi..."}
+        placeholder={placeholder ? placeholder : 'Hi...'}
         className={getFieldClass(
           name,
           s.textarea,

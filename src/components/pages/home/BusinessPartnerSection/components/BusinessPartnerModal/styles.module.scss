@@ -2,286 +2,284 @@
 @import '@/styles/_variables';
 
 .layout {
-    padding: 20px;
+  padding: 20px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        padding: 40px;
-        max-width: 688px;
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 40px;
+    max-width: 688px;
+  }
 
-    @include useMedia('min-width', $breakpoint-xl) {
-        padding: 60px;
-        max-width: 863px;
-    }
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 60px;
+    max-width: 863px;
+  }
 }
 
 .closeIcon {
-    top: 30px;
-    right: 30px;
+  top: 30px;
+  right: 30px;
 }
 
 .modalBox {
-    padding-top: 20px;
-    max-width: 330px;
+  padding-top: 20px;
+  max-width: 330px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        max-width: 688px;
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 688px;
+  }
 
-    @include useMedia('min-width', $breakpoint-lg) {
-        max-width: 838px;
-    }
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 838px;
+  }
 }
 
 .title {
-    margin-bottom: 20px;
-    max-width: 275px;
+  margin-bottom: 20px;
+  max-width: 275px;
 
-    font-size: 36px;
+  font-size: 36px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        max-width: 534px;
-
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 534px;
+  }
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        gap: 31px;
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    gap: 31px;
+  }
 
-    @include useMedia('min-width', $breakpoint-lg) {
-        flex-direction: row-reverse;
-        gap: 31px;
-    }
+  @include useMedia('min-width', $breakpoint-lg) {
+    flex-direction: row-reverse;
+    gap: 31px;
+  }
 }
 
 .jobsAndUploadGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
 
-    display: flex;
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: row;
+
+    // элементы внутри занимают одинаковую ширину
+    > * {
+      flex: 1 1 50%; // равные доли
+      max-width: 50%; // ограничиваем сверху
+    }
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 35px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        flex-direction: row;
-
-        // элементы внутри занимают одинаковую ширину
-        >* {
-            flex: 1 1 50%; // равные доли
-            max-width: 50%; // ограничиваем сверху
-        }
+    > * {
+      max-width: unset;
+      flex: unset;
     }
-
-    @include useMedia('min-width', $breakpoint-lg) {
-
-        flex-direction: column;
-        gap: 35px;
-
-        >* {
-            max-width: unset;
-            flex: unset;
-        }
-    }
-
+  }
 }
 
 .inputGroup {
-    width: 100%;
+  width: 100%;
 }
 
 .labelName {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .message {
-    max-width: 310px;
+  max-width: 310px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        max-width: 100%;
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 100%;
+  }
 }
 
 .phoneWrapper {
-    padding: 8px 20px;
+  padding: 8px 20px;
 
-    display: flex;
-    align-items: center;
-    background: #eef2fa;
-    border-radius: 12px;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  background: #eef2fa;
+  border-radius: 12px;
+  gap: 10px;
 }
 
 .submitButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #dde7f7;
-    border-radius: 9999px;
-    padding: 12px 24px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #dde7f7;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
 
-    @include useMedia('min-width', $breakpoint-md) {
-        font-size: 16px;
-    }
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 16px;
+  }
 }
 
 .arrow {
-    font-size: 18px;
-    margin-left: 12px;
+  font-size: 18px;
+  margin-left: 12px;
 }
 
 .btn {
-    width: 100%;
-    gap: 10px;
+  width: 100%;
+  gap: 10px;
+  align-self: flex-end;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 296px;
+    align-self: flex-start;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
     align-self: flex-end;
+  }
+
+  & span {
+    padding: 8px 20px;
+    background: #dde7f7;
+
+    font-size: 12px;
 
     @include useMedia('min-width', $breakpoint-md) {
-        max-width: 296px;
-        align-self: flex-start;
+      padding: 8px 40px;
+
+      font-size: 16px;
     }
 
     @include useMedia('min-width', $breakpoint-lg) {
-        align-self: flex-end;
+      min-width: 230px;
     }
+  }
 
-    & span {
-        padding: 8px 20px;
-        background: #dde7f7;
+  & svg {
+    width: 31px;
+    height: 31px;
 
-        font-size: 12px;
+    background: #dde7f7;
 
-        @include useMedia('min-width', $breakpoint-md) {
-            padding: 8px 40px;
-
-            font-size: 16px;
-        }
-
-        @include useMedia('min-width', $breakpoint-lg) {
-            min-width: 230px;
-        }
+    @include useMedia('min-width', $breakpoint-md) {
+      width: 36px;
+      height: 36px;
     }
-
-    & svg {
-        width: 31px;
-        height: 31px;
-
-        background: #dde7f7;
-
-        @include useMedia('min-width', $breakpoint-md) {
-            width: 36px;
-            height: 36px;
-        }
-    }
+  }
 }
 
 .agreementText {
-    width: 100%;
-    margin-bottom: 40px;
+  width: 100%;
+  margin-bottom: 40px;
 
-    @include useMedia('min-width', $breakpoint-md) {}
+  @include useMedia('min-width', $breakpoint-md) {
+  }
 
-    @include useMedia('min-width', $breakpoint-lg) {}
+  @include useMedia('min-width', $breakpoint-lg) {
+  }
 }
 
 .agreementLink {
-    display: block;
-    text-decoration: underline;
-    color: $color-yellow;
+  display: block;
+  text-decoration: underline;
+  color: $color-yellow;
 }
 
 //  style for checkboxGroup
 
 .checkboxGroup {
+  padding: 30px;
+  border: 1px solid #405f83;
+  border-radius: 20px;
+  background-color: $color-blue-extra-light;
 
-    padding: 30px;
-    border: 1px solid #405f83;
-    border-radius: 20px;
-    background-color: $color-blue-extra-light;
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-top: 30px;
+  }
 
-    @include useMedia('min-width', $breakpoint-md) {
-        margin-top: 30px;
-    }
-
-    @include useMedia('min-width', $breakpoint-lg) {
-        margin-top: 0;
-    }
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 0;
+  }
 }
 
 .checkBoxTitle {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .checkboxes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
 
 // style for uplodaPFD
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
 }
 
 .label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
 }
 
 .dropZone {
-    width: 310px;
-    height: 180px;
-    border: 2px dashed #aaa;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 310px;
+  height: 180px;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropZone.dragging {
-    border-color: #0070f3;
-    background-color: rgba(0, 112, 243, 0.05);
+  border-color: #0070f3;
+  background-color: rgba(0, 112, 243, 0.05);
 }
 
 .input {
-    display: none;
+  display: none;
 }
 
 .placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    color: #555;
-    text-align: center;
-    font-size: 14px;
-    padding: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px;
 }
 
 .preview {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

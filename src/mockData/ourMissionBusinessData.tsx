@@ -8,25 +8,25 @@
 export const ourMissionBusinessData = [
   {
     // icon: <Icon_first className={s.icon} />,
-    icon: "lightning_64px",
+    icon: 'lightning_64px',
     title: 'Maximale Energieausbeute',
     text: 'Die Reinigung und Wartung erfolgt immer unter Voraussetzung einer positiver Kosten-Nutzen-Analyse sodass Ihr finanzieller Vorteil gesichert ist'
   },
   {
     // icon: <Icon_second className={s.icon} />,
-    icon: "target_65px",
+    icon: 'target_65px',
     title: 'Präzise Technologie',
     text: 'Mit Drohnen geführter Thermografie-Inspektionen, Cloud-basierten Monitoring, Software gestützt Wirtschaftlichkeitanalysen, und Fernwartungssystemen behalten wir Ihre Photovoltaikanlage stets im Auge und können frühzeitig Probleme erkennen und diese beheben bevor Sie zu teuren Schäden werden.'
   },
   {
     // icon: <Icon_third className={s.icon} />,
-    icon: "stars_65px",
+    icon: 'stars_65px',
     title: 'Rundum-Betreuung',
     text: 'Auch bei Schäden und Reparaturen. Sie konzentrieren sich auf Ihre Kernkompetenz wir kümmern uns mit unserer um Ihre Photovoltaikanlage'
   },
   {
     // icon: <Icon_fourth className={s.icon} />,
-    icon: "arrowTop_65px",
+    icon: 'arrowTop_65px',
     title: 'Nachhaltige Investition',
     text: 'Unsere Dienstleistungen verlängern die Lebensdauer Ihrer Solarmodule und sichern Ihre Investition – für eine effiziente und rentable Zukunft.'
   }

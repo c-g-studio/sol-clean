@@ -27,7 +27,7 @@ type InputProps<T extends FieldValues> = {
   labelName: string;
   placeholder: string;
   type: string;
-  autoComplete?: string
+  autoComplete?: string;
 };
 
 export const Input = <T extends FieldValues>({
