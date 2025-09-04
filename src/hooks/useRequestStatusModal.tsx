@@ -13,10 +13,16 @@ export const useRequestStatusModal = () => {
 
   const modals = (
     <>
-      <SuccessRequestModal requestStatus={requestStatus} handleClose={handleClose} />
-  <ErrorRequestModal requestStatus={requestStatus} handleClose={handleClose} />
-  </>
-);
+      <SuccessRequestModal
+        requestStatus={requestStatus}
+        handleClose={handleClose}
+      />
+      <ErrorRequestModal
+        requestStatus={requestStatus}
+        handleClose={handleClose}
+      />
+    </>
+  );
 
   return { requestStatus, setSuccess, setError, handleClose, modals };
 };

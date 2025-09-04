@@ -41,7 +41,6 @@ p.text {
   text-align: center;
 
   @include useMedia('min-width', $breakpoint-md) {
-
     max-width: 540px;
     font-size: 20px;
   }

@@ -51,8 +51,9 @@ export const OurRangeSection = () => {
                 Professionelle Reinigung
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Saubere Module – mehr Leistung
-                Professionelle Reinigung sorgt für maximalen Ertrag und längere Lebensdauer Ihrer Photovoltaikanlage.
+                Saubere Module – mehr Leistung Professionelle Reinigung sorgt
+                für maximalen Ertrag und längere Lebensdauer Ihrer
+                Photovoltaikanlage.
               </Typography>
             </div>
             <Button
@@ -76,7 +77,10 @@ export const OurRangeSection = () => {
                 EEG-Umstellung & Transfor-mation (Kurzfassung)
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Das EEG verändert sich ständig. Betreiber von PV-Anlagen profitieren beim Wechsel von Volleinspeisung zu Eigenverbrauch mit Überschusseinspeisung: mehr Wirtschaftlichkeit, mehr Unabhängigkeit.
+                Das EEG verändert sich ständig. Betreiber von PV-Anlagen
+                profitieren beim Wechsel von Volleinspeisung zu Eigenverbrauch
+                mit Überschusseinspeisung: mehr Wirtschaftlichkeit, mehr
+                Unabhängigkeit.
               </Typography>
             </div>
             <Button
@@ -100,7 +104,9 @@ export const OurRangeSection = () => {
                 Inspektionsflüge Gebäude
               </Typography>
               <Typography variant={'body1'} className={s.listItemText}>
-                Drohneninspektionen sichern Immobilien schnell, kostengünstig und risikofrei – mit Wärmebild und HD-Daten für Dächer, Fassaden und schwer zugängliche Bereiche.
+                Drohneninspektionen sichern Immobilien schnell, kostengünstig
+                und risikofrei – mit Wärmebild und HD-Daten für Dächer, Fassaden
+                und schwer zugängliche Bereiche.
               </Typography>
             </div>
             <Button

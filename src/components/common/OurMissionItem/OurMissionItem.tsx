@@ -3,7 +3,6 @@ import { FC, JSX } from 'react';
 import { Typography } from '@/components/common/Typography/Typography';
 import { SpriteIcon } from '@/components/icons/SpriteIcon/SpriteIcon';
 
-
 import iconS from '@/components/pages/about/OurRecommendationsSection/styles.module.scss';
 import s from './styles.module.scss';
 
@@ -23,12 +22,16 @@ export const OurMissionItem: FC<TOurMissionItemProps> = ({
     <li className={s.listItem}>
       {/* <div className={s.iconBox}>{icon}</div> */}
       <div className={s.iconBox}>
-        {typeof icon === "string" ? (
-          <SpriteIcon name={icon} className={iconS.icon} width={64} height={64} />
+        {typeof icon === 'string' ? (
+          <SpriteIcon
+            name={icon}
+            className={iconS.icon}
+            width={64}
+            height={64}
+          />
         ) : (
           icon
         )}
-
       </div>
       <Typography variant={'h3'} className={s.listItemTitle}>
         {title}

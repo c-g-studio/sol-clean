@@ -34,7 +34,7 @@ export const WorkStepsSection = () => {
                 notwendigen Informationen zu Ihrer Photovoltaik-Anlage
                 sorgfältig aufgenommen bei Ihnen vor Ort oder digital, um Ihnen
                 eine detaillierte Wirtschaftlichkeitsberechnung
-(Kosten-Nutzen-Analyse) erstellen zu können
+                (Kosten-Nutzen-Analyse) erstellen zu können
               </Typography>
             </div>
           </li>

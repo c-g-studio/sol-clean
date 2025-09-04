@@ -1,13 +1,13 @@
 #reviewsSection .swiper-slide {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #e6edf4;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #e6edf4;
 }
 
 @media (min-width: 768px) {
-    #reviewsSection .swiper-slide {
-        padding: 40px;
-        display: flex;
-        gap: 50px;
-    }
+  #reviewsSection .swiper-slide {
+    padding: 40px;
+    display: flex;
+    gap: 50px;
+  }
 }

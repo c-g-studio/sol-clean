@@ -12,7 +12,8 @@ export const HeroSection = () => {
           Business solutions
         </Typography>
         <Typography variant={'body3'} className={s.text}>
-          Weil gute Solarenergie nicht bei der Installation endet  – Ihr Partner für geprüfte Qualität und nachhaltige Solarwirtschaft
+          Weil gute Solarenergie nicht bei der Installation endet – Ihr Partner
+          für geprüfte Qualität und nachhaltige Solarwirtschaft
         </Typography>
         <Button
           variant={'primary'}

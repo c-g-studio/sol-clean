@@ -26,7 +26,10 @@ export const Checkbox: FC<TCheckboxProps> = ({
       onCheckedChange={onCheckedChange}
     >
       <Check.Indicator className={styles.Indicator}>
-        <CheckIcon style={{ width: '18px', height: '24px' }} className={styles.checkIcon} />
+        <CheckIcon
+          style={{ width: '18px', height: '24px' }}
+          className={styles.checkIcon}
+        />
       </Check.Indicator>
     </Check.Root>
     <label className={styles.Label} htmlFor={id}>

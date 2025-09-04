@@ -24,12 +24,10 @@ type DifferenceSectionProps = {
 
 export const DifferenceSection = ({
   slidesData,
-  rounded = false,
+  rounded = false
 }: DifferenceSectionProps) => {
   return (
-    <section
-      className={`${s.differenceSection} ${rounded ? s.rounded : ''}`}
-    >
+    <section className={`${s.differenceSection} ${rounded ? s.rounded : ''}`}>
       <SectionTopBar />
       <AppContainer>
         <Typography variant="h2" className={s.sectionTitle}>
@@ -48,12 +46,15 @@ export const DifferenceSection = ({
         <Slider
           breakpoints={{
             768: { slidesPerView: 1.2 },
-            1199: { slidesPerView: 1 },
+            1199: { slidesPerView: 1 }
           }}
           className={`${s.slider} ${rounded ? s.sliderRounded : ''}`}
         >
           {slidesData.map((slide, index) => (
-            <SwiperSlide key={index} className={`${s.slide} ${rounded ? s.rounded : ''}`}>
+            <SwiperSlide
+              key={index}
+              className={`${s.slide} ${rounded ? s.rounded : ''}`}
+            >
               <Typography variant="body1" className={s.slideText}>
                 {slide.text}
               </Typography>
@@ -80,7 +81,7 @@ export const DifferenceSection = ({
         >
           Wirtschaftlichkeitsrechnung
         </Button>
-      </AppContainer >
-    </section >
+      </AppContainer>
+    </section>
   );
 };

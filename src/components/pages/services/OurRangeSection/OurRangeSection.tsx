@@ -8,31 +8,31 @@ import s from './styles.module.scss';
 import { ListItemIcon } from './components/ListIconItem';
 
 type TListItem = {
-  iconName: string,
-  text: string
-}
+  iconName: string;
+  text: string;
+};
 
 type TListData = TListItem[];
 
 const benefitsListData: TListData = [
-  { iconName: "lightning", text: "Mehr Energie" },
-  { iconName: "spanner", text: "Weniger Schäden" }
-]
+  { iconName: 'lightning', text: 'Mehr Energie' },
+  { iconName: 'spanner', text: 'Weniger Schäden' }
+];
 
 const suggestionListData: TListData = [
-  { iconName: "chart", text: "Strategieberatung" },
-  { iconName: "checkMark", text: "Umsetzung & Dokumentation" },
-  { iconName: "shield", text: "Technische & rechtliche Prüfung" },
-  { iconName: "cogwheel", text: "Wartung & Betreuung" },
-  { iconName: "notes", text: "Unterstützung bei Anträgen" }
-]
+  { iconName: 'chart', text: 'Strategieberatung' },
+  { iconName: 'checkMark', text: 'Umsetzung & Dokumentation' },
+  { iconName: 'shield', text: 'Technische & rechtliche Prüfung' },
+  { iconName: 'cogwheel', text: 'Wartung & Betreuung' },
+  { iconName: 'notes', text: 'Unterstützung bei Anträgen' }
+];
 const ourViewsListData: TListData = [
-  { iconName: "house", text: "Dach- und Fassadenschäden" },
-  { iconName: "spanner", text: "Photovoltaik- & onstruktionsschäden" },
-  { iconName: "waterDrop", text: "Wasserschäden & undichte Stellen" },
-  { iconName: "notes", text: "Dokumentation für Versicherungen" },
-  { iconName: "waves", text: "Verstopfte Dachrinnen" }
-]
+  { iconName: 'house', text: 'Dach- und Fassadenschäden' },
+  { iconName: 'spanner', text: 'Photovoltaik- & onstruktionsschäden' },
+  { iconName: 'waterDrop', text: 'Wasserschäden & undichte Stellen' },
+  { iconName: 'notes', text: 'Dokumentation für Versicherungen' },
+  { iconName: 'waves', text: 'Verstopfte Dachrinnen' }
+];
 
 export const OurRangeSection = () => {
   return (
@@ -120,21 +120,26 @@ export const OurRangeSection = () => {
                 />
               </div>
               <Typography variant={'body1'} className={s.listItemText}>
-                Saubere Module – mehr Leistung
-                Professionelle Reinigung sorgt für maximalen Ertrag und längere Lebensdauer Ihrer Photovoltaikanlage.
+                Saubere Module – mehr Leistung Professionelle Reinigung sorgt
+                für maximalen Ertrag und längere Lebensdauer Ihrer
+                Photovoltaikanlage.
               </Typography>
               <div className={s.benefitsWrapper}>
                 <Typography variant={'h3'} className={s.benefitsTitle}>
                   Ihre Vorteile:
                 </Typography>
                 <ul className={s.benefitsList}>
-                  {benefitsListData.map((item: TListItem, i) => <ListItemIcon
-                    key={i}
-                    iconName={item.iconName}
-                    text={item.text} />)}
+                  {benefitsListData.map((item: TListItem, i) => (
+                    <ListItemIcon
+                      key={i}
+                      iconName={item.iconName}
+                      text={item.text}
+                    />
+                  ))}
                 </ul>
                 <Typography variant={'body1'} className={s.benefitsText}>
-                  Mit Sol-Clean sparen Sie Zeit – wir sichern den effizienten Betrieb, Sie konzentrieren sich aufs Wesentliche.
+                  Mit Sol-Clean sparen Sie Zeit – wir sichern den effizienten
+                  Betrieb, Sie konzentrieren sich aufs Wesentliche.
                 </Typography>
               </div>
 
@@ -174,20 +179,27 @@ export const OurRangeSection = () => {
                 />
               </div>
               <Typography variant={'body1'} className={s.listItemText}>
-                Das EEG verändert sich ständig. Betreiber von PV-Anlagen profitieren beim Wechsel von Volleinspeisung zu Eigenverbrauch mit Überschusseinspeisung: mehr Wirtschaftlichkeit, mehr Unabhängigkeit.
+                Das EEG verändert sich ständig. Betreiber von PV-Anlagen
+                profitieren beim Wechsel von Volleinspeisung zu Eigenverbrauch
+                mit Überschusseinspeisung: mehr Wirtschaftlichkeit, mehr
+                Unabhängigkeit.
               </Typography>
               <div className={s.suggestionWrapper}>
                 <Typography variant={'h3'} className={s.suggestionTitle}>
                   Wir bieten:
                 </Typography>
                 <ul className={s.suggestionList}>
-                  {suggestionListData.map((item: TListItem, i) => <ListItemIcon
-                    key={i}
-                    iconName={item.iconName}
-                    text={item.text} />)}
+                  {suggestionListData.map((item: TListItem, i) => (
+                    <ListItemIcon
+                      key={i}
+                      iconName={item.iconName}
+                      text={item.text}
+                    />
+                  ))}
                 </ul>
                 <Typography variant={'body1'} className={s.suggestionText}>
-                  So nutzen Sie Ihre Energie effizient, rechtssicher und zukunftsorientiert.
+                  So nutzen Sie Ihre Energie effizient, rechtssicher und
+                  zukunftsorientiert.
                 </Typography>
               </div>
               <Button
@@ -226,20 +238,26 @@ export const OurRangeSection = () => {
                 />
               </div>
               <Typography variant={'body1'} className={s.listItemText}>
-                Drohneninspektionen sichern Immobilien schnell, kostengünstig und risikofrei – mit Wärmebild und HD-Daten für Dächer, Fassaden und schwer zugängliche Bereiche.
+                Drohneninspektionen sichern Immobilien schnell, kostengünstig
+                und risikofrei – mit Wärmebild und HD-Daten für Dächer, Fassaden
+                und schwer zugängliche Bereiche.
               </Typography>
               <div className={s.ourViewsWrapper}>
                 <Typography variant={'h3'} className={s.ourViewsTitle}>
                   Wir bieten:
                 </Typography>
                 <ul className={s.ourViewsList}>
-                  {ourViewsListData.map((item: TListItem, i) => <ListItemIcon
-                    key={i}
-                    iconName={item.iconName}
-                    text={item.text} />)}
+                  {ourViewsListData.map((item: TListItem, i) => (
+                    <ListItemIcon
+                      key={i}
+                      iconName={item.iconName}
+                      text={item.text}
+                    />
+                  ))}
                 </ul>
                 <Typography variant={'body1'} className={s.ourViewsText}>
-                  So nutzen Sie Ihre Energie effizient, rechtssicher und zukunftsorientiert.
+                  So nutzen Sie Ihre Energie effizient, rechtssicher und
+                  zukunftsorientiert.
                 </Typography>
               </div>
               <Button

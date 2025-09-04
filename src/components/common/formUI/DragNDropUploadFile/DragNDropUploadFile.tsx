@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import s from "./styles.module.scss";
-import { Typography } from "@/components/common/Typography/Typography";
-import { useFilePreview } from "@/hooks/uploadPreview";
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import s from './styles.module.scss';
+import { Typography } from '@/components/common/Typography/Typography';
+import { useFilePreview } from '@/hooks/uploadPreview';
 
 interface DragNdropProps {
   value?: File | null; // ✅ може бути File | null | undefined
@@ -17,7 +17,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
   value,
   onFileSelected,
   width,
-  height,
+  height
 }) => {
   const [file, setFile] = useState<File | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -30,7 +30,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
     const newFile = e.target.files[0];
     setFile(newFile);
     onFileSelected(newFile); // ⚡ одразу пробиваємо у форму
-    e.target.value = ""; // щоб можна було вибрати той самий файл знову
+    e.target.value = ''; // щоб можна було вибрати той самий файл знову
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -44,7 +44,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
   const handleRemoveFile = () => {
     setFile(null);
     onFileSelected(null);
-    if (inputRef.current) inputRef.current.value = "";
+    if (inputRef.current) inputRef.current.value = '';
   };
 
   // ✅ Синхронізація з RHF (Controller може кинути undefined/null/File)
@@ -52,7 +52,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
     if (value === undefined) return; // форма ще не ініціалізована
     if (value === null) {
       setFile(null);
-      if (inputRef.current) inputRef.current.value = "";
+      if (inputRef.current) inputRef.current.value = '';
     } else {
       setFile(value);
     }
@@ -65,9 +65,9 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
       </Typography>
 
       <div
-        className={`${s.documentUploader} ${file ? s.active : ""}`}
+        className={`${s.documentUploader} ${file ? s.active : ''}`}
         onDrop={handleDrop}
-        onDragOver={(event) => event.preventDefault()}
+        onDragOver={event => event.preventDefault()}
       >
         <div className={s.uploadInfo}></div>
 
@@ -86,7 +86,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
               <div className={s.fileItem}>
                 <div className={s.preview}>
                   {/* превʼю залежно від типу */}
-                  {type === "image" && preview && (
+                  {type === 'image' && preview && (
                     <img
                       key={preview}
                       className={s.imagePreview}
@@ -97,7 +97,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
                     />
                   )}
 
-                  {type === "pdf" && preview && (
+                  {type === 'pdf' && preview && (
                     <img
                       key={preview}
                       className={s.imagePreview}
@@ -107,7 +107,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
                     />
                   )}
 
-                  {type === "txt" && (
+                  {type === 'txt' && (
                     <div className={s.docPreview}>
                       <Image
                         src="/img/notFound/docIcon.png"
@@ -119,7 +119,7 @@ export const DragNDropUploadFile: React.FC<DragNdropProps> = ({
                     </div>
                   )}
 
-                  {(type === "docx" || type === "other") && (
+                  {(type === 'docx' || type === 'other') && (
                     <div className={s.docPreview}>
                       <Image
                         src="/img/notFound/docIcon.png"
