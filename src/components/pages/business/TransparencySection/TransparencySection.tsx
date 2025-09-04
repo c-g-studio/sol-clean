@@ -15,15 +15,15 @@ export const TransparencySection = () => {
                             Wir decken alles auf
                         </Typography>
                         <Typography variant={'body1'} className={s.text}>
-                            Thermografie macht das Unsichtbare sichtbar: Verborgene Schäden und gefährliche Hotspots auf Ihren Solarmodulen entgehen dem bloßen Auge – aber nicht der Wärmebildkamera. Mit modernster Drohnentechnologie spüren wir zuverlässig Mikrorisse, defekte Zellen und überhitzte Bereiche auf, die für größere Ertragseinbußen oder Folgeschäden verantwortlich sind. So gewinnen Sie Klarheit über den Zustand Ihrer Module und sichern dauerhaft höchste Energieerträge.
+                            Thermografie macht das Unsichtbare sichtbar: Verborgene Schäden und gefährliche Hotspots auf Ihren Solarmodulen entgehen dem bloßen Auge - aber nicht der Wärmebildkamera. Mit modernster Drohnentechnologie spüren wir zuverlässig Mikrorisse, defekte Zellen und überhitzte Bereiche auf, die für größere Ertragseinbußen oder Folgeschäden verantwortlich sind. So gewinnen Sie Klarheit über den Zustand Ihrer Module und sichern dauerhaft höchste Energieerträge.
                         </Typography>
 
                         <div className={s.points}>
                             <Typography variant={'body1'} className={s.point1}>
-                                1. Auf dem zweiten Bild zeigt die Thermografiekamera detailliert, an welchen Stellen ungewöhnlich hohe Temperaturen auftreten – ein klares Anzeichen für Defekte.
+                                1. Auf dem zweiten Bild zeigt die Thermografiekamera detailliert, an welchen Stellen ungewöhnlich hohe Temperaturen auftreten - ein klares Anzeichen für Defekte.
                             </Typography>
                             <Typography variant={'body1'} className={s.point2}>
-                                2. Thermografieaufnahmen decken gefährliche Stellen auf, die sich auf bis zu 200 °C erhitzen können – ein ernstes Brandrisiko. Solche Defekte führen oft unbemerkt zu teuren Folgeschäden. Eine regelmäßige Prüfung schützt Ihre Investition und sorgt für langfristige Sicherheit und volle Leistung.
+                                2. Thermografieaufnahmen decken gefährliche Stellen auf, die sich auf bis zu 200 °C erhitzen können - ein ernstes Brandrisiko. Solche Defekte führen oft unbemerkt zu teuren Folgeschäden. Eine regelmäßige Prüfung schützt Ihre Investition und sorgt für langfristige Sicherheit und volle Leistung.
                             </Typography>
                         </div>
 
