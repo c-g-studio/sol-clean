@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Ich bin begeistert !",
-    "text": "\"Ich bin begeistert von der professionellen Solarreinigung der Sol-Clean! Schon nach der Reinigung habe ich eine deutliche Leistungssteigerung meiner Solaranlage bemerkt. Der Ertrag ist messbar gestiegen, und meine Module sehen aus wie neu. Besonders beeindruckt hat mich die gründliche und schonende Reinigung ohne Chemikalien – perfekt für die Umwelt und meine Anlage. Das Team war pünktlich, freundlich und sehr kompetent. Zudem wurde mir genau erklärt, wie regelmäßige Reinigung langfristig die Effizienz und Lebensdauer meiner Solarmodule erhöht.\"",
+    "text": "\"Ich bin begeistert von der professionellen Solarreinigung der Sol-Clean! Schon nach der Reinigung habe ich eine deutliche Leistungssteigerung meiner Solaranlage bemerkt. Der Ertrag ist messbar gestiegen, und meine Module sehen aus wie neu.Besonders beeindruckt hat mich die gründliche und schonende Reinigung ohne Chemikalien – perfekt für die Umwelt und meine Anlage. Das Team war pünktlich, freundlich und sehr kompetent. Zudem wurde mir genau erklärt, wie regelmäßige Reinigung langfristig die Effizienz und Lebensdauer meiner Solarmodule erhöht.Ich kann diesen Service jedem empEin echtes Highlight ist das Sol-Clean 365. Ohne zusätzlichen Aufwand für mich und ohne zusätzliche Kosten wird meine Anlage regelmäßig überprüft und gereinigt. So bleibt die Leistung konstant hoch, und mögliche Mängel oder Schäden werden frühzeitig erkannt. Ich muss mich um nichts kümmern und kann sicher sein, dass meine Solaranlage immer optimal funktioniert.Ich kann diesen Service jedem empfehlen, der das Beste aus seiner Solaranlage herausholen möchte. Eine Investition, die sich wirklich lohnt!\"",
     "rating": 5,
     "author": "Katharina S., Privatkunde",
     "date": "20.12.2024",
@@ -38,26 +38,27 @@
         "alt": "image 4"
       }
     ]
-  }, {
-  "id": 3,
-  "title": "Ich bin begeistert !",
-  "text": "\"Ich bin begeistert von der professionellen Solarreinigung der Sol-Clean! Schon nach der Reinigung habe ich eine deutliche Leistungssteigerung meiner Solaranlage bemerkt. Der Ertrag ist messbar gestiegen, und meine Module sehen aus wie neu. Besonders beeindruckt hat mich die gründliche und schonende Reinigung ohne Chemikalien – perfekt für die Umwelt und meine Anlage. Das Team war pünktlich, freundlich und sehr kompetent. Zudem wurde mir genau erklärt, wie regelmäßige Reinigung langfristig die Effizienz und Lebensdauer meiner Solarmodule erhöht.\"",
-  "rating": 5,
-  "author": "Katharina S., Privatkunde",
-  "date": "20.12.2024",
-  "images": [
-    {
-      "id": 1,
-      "url": "/img/home/reviewsSection/image_1.png",
-      "alt": "image 1"
-    },
-    {
-      "id": 2,
-      "url": "/img/home/reviewsSection/image_2.png",
-      "alt": "image 2"
-    }
-  ]
-},
+  },
+  {
+    "id": 3,
+    "title": "Ich bin begeistert !",
+    "text": "\"Ich bin begeistert von der professionellen Solarreinigung der Sol-Clean! Schon nach der Reinigung habe ich eine deutliche Leistungssteigerung meiner Solaranlage bemerkt. Der Ertrag ist messbar gestiegen, und meine Module sehen aus wie neu. Besonders beeindruckt hat mich die gründliche und schonende Reinigung ohne Chemikalien – perfekt für die Umwelt und meine Anlage. Das Team war pünktlich, freundlich und sehr kompetent. Zudem wurde mir genau erklärt, wie regelmäßige Reinigung langfristig die Effizienz und Lebensdauer meiner Solarmodule erhöht.\"",
+    "rating": 5,
+    "author": "Katharina S., Privatkunde",
+    "date": "20.12.2024",
+    "images": [
+      {
+        "id": 1,
+        "url": "/img/home/reviewsSection/image_1.png",
+        "alt": "image 1"
+      },
+      {
+        "id": 2,
+        "url": "/img/home/reviewsSection/image_2.png",
+        "alt": "image 2"
+      }
+    ]
+  },
   {
     "id": 4,
     "title": "Sol-Clean überzeugt mit Qualität, Kundennutzen und ohne Zusatzkosten !",
@@ -78,5 +79,4 @@
       }
     ]
   }
-
 ]

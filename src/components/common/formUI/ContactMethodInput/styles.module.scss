@@ -1,0 +1,73 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+
+.contactMethodWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .radioQuestion {
+        color: $color-black;
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 12px;
+
+        @include useMedia('min-width', $breakpoint-md) {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        @include useMedia('min-width', $breakpoint-lg) {
+            max-width: 432px;
+        }
+    }
+
+    .radioGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include useMedia('min-width', $breakpoint-md) {
+            flex-direction: row;
+
+        }
+
+        .radioLabel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            border-radius: 49px;
+            padding: 8px 8px;
+            width: 100%;
+            min-height: 36px;
+            background: #e6edf4;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+
+            @include useMedia('min-width', $breakpoint-md) {
+                width: calc((100% - 2 * 10px) / 3);
+            }
+
+
+            input {
+                display: none;
+            }
+
+            &.active {
+                background: #405f83;
+                color: #fff;
+            }
+
+            &:not(.active):hover {
+                background: #d9e2ed;
+            }
+        }
+
+    }
+}

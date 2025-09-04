@@ -34,17 +34,21 @@
   }
 }
 
-.text {
-  margin-bottom: 60px;
+p.text {
+  margin: 0 auto 60px auto;
 
   color: $color-clean-white;
   text-align: center;
 
   @include useMedia('min-width', $breakpoint-md) {
+
+    max-width: 540px;
     font-size: 20px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 740px;
+    margin: 0 0 60px 0;
     font-size: 24px;
     text-align: left;
   }
@@ -56,6 +60,7 @@
   font-family: $font-outfit, sans-serif;
 
   border-radius: 0;
+
   @include useMedia('min-width', $breakpoint-lg) {
     margin: 0;
   }

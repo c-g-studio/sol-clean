@@ -1,0 +1,111 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.bookAppointmentSection {
+    padding: 90px 0;
+
+    background-color: $color-blue-extra-light;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        padding: 100px 0;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        padding: 120px 0;
+    }
+}
+
+.bookAppointmentSectionContainer {
+    @include useMedia('min-width', $breakpoint-lg) {
+        display: flex;
+        align-items: center;
+        gap: 112px;
+        // justify-content: space-between;
+    }
+}
+
+.sectionTitle {
+    margin-bottom: 45px;
+
+    color: $color-black;
+    text-align: center;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        margin: 0 auto 50px auto;
+        max-width: 500px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        margin: 0 0 60px 0;
+
+        text-align: left;
+    }
+}
+
+.mobileImageBox {
+    position: relative;
+
+    margin-bottom: 45px;
+    height: 242px;
+
+    border-radius: 14px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        margin-bottom: 50px;
+        height: 475px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        display: none;
+    }
+}
+
+.mobileImage {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 350px;
+    height: 242px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        width: 688px;
+        height: 475px;
+    }
+}
+
+
+.button {
+    max-width: 281px;
+    margin: 0 auto;
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        margin: 0;
+    }
+}
+
+.desktopImageBox {
+    position: relative;
+
+    display: none;
+    width: 545px;
+    height: 376px;
+
+    border-radius: 14px;
+
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        display: block;
+    }
+}
+
+.desktopImage {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 545px;
+    height: 376px;
+}

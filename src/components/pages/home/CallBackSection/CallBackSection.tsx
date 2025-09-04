@@ -68,8 +68,8 @@ export const CallBackSection = () => {
         <div className={s.desktopImageBox}>
           <Image
             src={'/img/home/callBackSection/some_man.png'}
-            width="440"
-            height="507"
+            width="504"
+            height="441"
             alt={'some man image'}
             className={s.desktopImage}
           />

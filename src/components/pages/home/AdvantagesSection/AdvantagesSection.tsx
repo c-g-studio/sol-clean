@@ -10,7 +10,7 @@ export const AdvantagesSection = () => {
         <ul className={s.list}>
           <li className={s.listItem}>
             <Typography variant={'p'} className={s.listItemTitle}>
-              431 <span className={s.listItemTitleSpan}>M.€</span>
+              431 <span className={s.listItemTitleSpan}>Mio.€</span>
             </Typography>
             <Typography variant={'p'} className={s.listItemText}>
               Jährlicher Ertragsverlust durch verschmutzte PV-Anlagen
@@ -26,7 +26,7 @@ export const AdvantagesSection = () => {
           </li>
           <li className={s.listItem}>
             <Typography variant={'p'} className={s.listItemTitle}>
-              81,2 <span className={s.listItemTitleSpan}>M.kW</span>
+              81,2 <span className={s.listItemTitleSpan}>Mio.kW</span>
             </Typography>
             <Typography variant={'p'} className={s.listItemText}>
               Installierte PV Leistung in Deutschland

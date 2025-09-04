@@ -1,5 +1,6 @@
 @import '@/styles/_variables';
 @import '@/styles/_mixins';
+
 .headerContainer {
   position: relative;
 }
@@ -10,7 +11,7 @@
   top: 0;
   z-index: 12;
 
-  margin-top: 35px;
+  margin-top: 44px;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
@@ -20,15 +21,21 @@
   justify-content: space-between;
   overflow: hidden;
 
+  @include useMedia('min-width', $breakpoint-md) {
+    padding-left: 35px;
+    margin-top: 48px;
+  }
+
   @include useMedia('min-width', $breakpoint-xl) {
     padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 0px;
   }
 }
 
 .logo {
   width: 142px;
   height: 34px;
+
   @include useMedia('min-width', $breakpoint-xl) {
     margin-left: -15px;
 
@@ -71,13 +78,17 @@
 .navigation {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 22px;
 }
 
 .navigationItem {
   padding: 8px 23px;
 
   font-weight: 500;
+
+  &:last-child {
+    padding-right: 0;
+  }
 }
 
 .navLink {
@@ -112,6 +123,7 @@
 .navigationItemBusiness {
   padding: 0;
   color: $color-clean-white;
+
   &:hover {
     color: $color-clean-white;
   }

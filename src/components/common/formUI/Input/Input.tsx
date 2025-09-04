@@ -4,8 +4,11 @@ import {
   Controller,
   FieldErrors,
   FieldValues,
-  Path
+  Path,
+  FieldNamesMarkedBoolean
 } from 'react-hook-form';
+
+import cn from 'classnames';
 
 import { Error } from '@/components/common/formUI/Error/Error';
 
@@ -15,18 +18,21 @@ import s from './styles.module.scss';
 
 type InputProps<T extends FieldValues> = {
   name: Path<T>;
+  labelClassName?: string;
   control: Control<T>;
   errors: FieldErrors<T>;
-  dirtyFields: Partial<Record<keyof T, boolean>>;
+  dirtyFields: FieldNamesMarkedBoolean<T>;
   isSubmitted: boolean;
   maskRef?: Ref<HTMLInputElement>;
   labelName: string;
   placeholder: string;
   type: string;
+  autoComplete?: string
 };
 
 export const Input = <T extends FieldValues>({
   name,
+  labelClassName,
   control,
   errors,
   dirtyFields,
@@ -34,11 +40,12 @@ export const Input = <T extends FieldValues>({
   maskRef,
   labelName,
   placeholder,
-  type
+  type,
+  autoComplete
 }: InputProps<T>) => {
   return (
     <label className={s.label}>
-      <span className={s.labelName}>{labelName}</span>
+      <span className={cn(s.labelName, labelClassName)}>{labelName}</span>
 
       <Controller
         name={name}
@@ -47,6 +54,7 @@ export const Input = <T extends FieldValues>({
           <input
             type={type}
             placeholder={placeholder}
+            autoComplete={autoComplete}
             className={getFieldClass(
               name,
               s.input,

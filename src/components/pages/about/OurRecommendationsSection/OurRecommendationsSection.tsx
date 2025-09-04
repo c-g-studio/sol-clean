@@ -10,7 +10,7 @@ import { OurMissionItem } from '@/components/common/OurMissionItem/OurMissionIte
 import s from './styles.module.scss';
 
 type TDataItem = {
-  icon: JSX.Element;
+  icon: JSX.Element | string;
   title: string;
   text: string;
 };

@@ -126,6 +126,10 @@
   }
 }
 
+.button.buttonActive {
+  background-color: $color-yellow;
+}
+
 .buttonBack {
   flex-direction: row-reverse;
 

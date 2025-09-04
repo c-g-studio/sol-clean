@@ -17,13 +17,13 @@ export const HeroSection = () => {
       <AppContainer classes={s.heroContainer}>
         <div className={s.box}>
           <Typography variant={'h1'} className={s.heroTitle}>
-            Maximale Effizienz für Ihre Solarenergie
+            Fachgerechter Service. Klare Dokumentation. <Typography variant={'decorSpan'} className={s.heroTitleHighlight}>Sichere Energie.</Typography>
           </Typography>
           <Image
             src={
               isDesktop
                 ? '/img/home/hero_desktop.png'
-                : '/img/home/hero_mobile.png'
+                : '/img/home/hero_mobile.jpg'
             }
             alt={'some img'}
             className={s.heroImg}
@@ -33,8 +33,7 @@ export const HeroSection = () => {
         </div>
         <div className={s.heroTextWrapper}>
           <Typography variant={'body2'} className={s.heroText}>
-            Professionelle Wartung und Reinigung von Solaranlagen – damit Ihre
-            Anlage volle Leistung bringt
+            Professioneller Service und Reinigung von Solaranlagen – damit Ihre Anlage volle Leistung bringt
           </Typography>
           <Button
             variant={'primary'}

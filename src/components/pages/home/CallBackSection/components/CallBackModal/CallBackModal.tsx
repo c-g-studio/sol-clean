@@ -94,6 +94,8 @@ export const CallBackModal: FC<TCallBackModalProps> = ({ isOpen, onClose }) => {
             />
             <Textarea
               name="message"
+              labelName="Nachricht"
+              placeholder="Hi..."
               errors={errors}
               dirtyFields={dirtyFields}
               isSubmitted={isSubmitted}

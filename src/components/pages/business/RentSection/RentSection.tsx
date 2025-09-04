@@ -4,6 +4,7 @@ import { Typography } from '@/components/common/Typography/Typography';
 import s from './styles.module.scss';
 import Image from 'next/image';
 import { CheckMarkIcon } from '@/components/icons/CheckMarkIcon';
+import { Button } from '@/components/common/Button/Button';
 
 export const RentSection = () => {
   return (
@@ -17,8 +18,8 @@ export const RentSection = () => {
         <div className={s.contentWrapper}>
           <Image
             src={'/img/business/RateSection/some_people.jpg'}
-            width={'688'}
-            height={'517'}
+            width={'549'}
+            height={'496'}
             alt={'some people image'}
             className={s.image}
           />
@@ -95,6 +96,14 @@ export const RentSection = () => {
                 </li>
               </ul>
             </div>
+            <Button
+              variant={'primary'}
+              buttonType={'buttonLink'}
+              href={'/#calculatorSection'}
+              className={s.button}
+            >
+              Jetzt Wartungskonzept anfragen
+            </Button>
           </div>
         </div>
       </AppContainer>

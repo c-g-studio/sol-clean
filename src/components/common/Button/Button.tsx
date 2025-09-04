@@ -14,7 +14,7 @@ type BaseProps = {
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
   icon?: ReactNode;
-  buttonType?: 'withArrow' | 'buttonLink' | 'buttonWithArrow' | 'buttonDiv';
+  buttonType?: 'withArrow' | 'buttonLink' | 'buttonWithArrow' | 'buttonWithArrowOnDesktop' | 'buttonDiv';
   className?: string;
   children: ReactNode;
   onClick?: () => void;
@@ -28,7 +28,7 @@ type ButtonLinkProps = BaseProps &
 
 type RegularButtonProps = BaseProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
-    buttonType?: undefined | 'buttonWithArrow';
+    buttonType?: undefined | 'buttonWithArrow' | "buttonWithArrowOnDesktop";
     href?: never;
   };
 
@@ -64,6 +64,15 @@ export const Button: FC<ButtonProps> = ({
   if (buttonType === 'buttonWithArrow') {
     return (
       <button className={`${s.buttonWithArrow} ${className}`} onClick={onClick}>
+        <span className={s.buttonWithArrowText}>{children}</span>
+        <RightArrow className={s.arrowIcon} />
+      </button>
+    );
+  }
+
+  if (buttonType === 'buttonWithArrowOnDesktop') {
+    return (
+      <button className={`${s.buttonWithArrowOnDesktop} ${className}`} onClick={onClick}>
         <span className={s.buttonWithArrowText}>{children}</span>
         <RightArrow className={s.arrowIcon} />
       </button>

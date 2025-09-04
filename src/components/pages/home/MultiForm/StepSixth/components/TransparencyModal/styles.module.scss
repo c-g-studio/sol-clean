@@ -1,0 +1,139 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.layout {
+    padding: 45px 0;
+    background-color: $color-clean-white;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        padding: 100px 0;
+    }
+
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        flex-direction: column;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        flex-direction: row;
+        gap: 125px;
+    }
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    // color: $color-clean-white;
+    margin-bottom: 30px;
+}
+
+.text {
+    margin-bottom: 20px;
+    // color: $color-clean-white;
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        margin-bottom: 30px;
+    }
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.point1,
+.point2 {
+    position: relative;
+    border-radius: 20px;
+
+    &::before {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 1.39986;
+    }
+}
+
+.point1 {
+    color: $color-blue-dark;
+    background-color: $color-clean-white;
+    padding: 10px 41px 10px 55px;
+
+    &::before {
+        content: '1';
+    }
+}
+
+.point2 {
+    color: $color-clean-white;
+    background-color: $color-blue-dark;
+    padding: 10px 16px 10px 55px;
+
+    &::before {
+        content: '2';
+    }
+}
+
+.button {
+    margin-bottom: 60px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        border-radius: 0;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        margin-bottom: 0;
+    }
+}
+
+.imageWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    flex-shrink: 1;
+
+    /* адаптивна ширина */
+    @include useMedia('min-width', $breakpoint-md) {
+        flex-direction: row;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        flex-direction: column;
+    }
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    min-height: 297px;
+    object-fit: cover;
+    border-radius: 20px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+        width: calc((100% - 10px) / 2);
+        min-height: 225px;
+        border-radius: 17px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
+        width: 506px;
+        height: 253px;
+        flex: 1 1 auto;
+        border-radius: 0;
+    }
+}

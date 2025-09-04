@@ -4,13 +4,16 @@ import { HeroSection } from '@/components/pages/business/HeroSection/HeroSection
 import { RentSection } from '@/components/pages/business/RentSection/RentSection';
 import { PartnerSection } from '@/components/pages/business/PartnerSection/PartnerSection';
 import { OurRecommendationsSection } from '@/components/pages/about/OurRecommendationsSection/OurRecommendationsSection';
+import { EmergencyServiceSection } from '@/components/pages/business/EmergencyServiceSection/EmergencyServiceSection';
+import { TransparencySection } from '@/components/pages/business/TransparencySection/TransparencySection';
+import { DifferenceSection } from '@/components/pages/services/DifferenceSection/DifferenceSection';
 import { SlidesSection } from '@/components/pages/about/SlidesSection/SlidesSection';
 
 import { ourMissionBusinessData } from '@/mockData/ourMissionBusinessData';
 import mockData from '@/mockData/sliderSectionBusinessDate.json';
+import slidesData from '@/mockData/differenceSlidesData.json';
 
 import s from './styles.module.scss';
-import { EmergencyServiceSection } from '@/components/pages/business/EmergencyServiceSection/EmergencyServiceSection';
 
 export const metadata: Metadata = {
   title: 'Sol Clean | Business'
@@ -26,6 +29,8 @@ export default function BusinessPage() {
         classes={s.ourRecommendationsSection}
         data={ourMissionBusinessData}
       />
+      <DifferenceSection slidesData={slidesData} />
+      <TransparencySection />
       <SlidesSection classes={s.sliderSection} data={mockData} />
       <EmergencyServiceSection />
     </>

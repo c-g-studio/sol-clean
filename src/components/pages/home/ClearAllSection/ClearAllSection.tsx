@@ -10,7 +10,7 @@ export const ClearAllSection = () => {
     <section className={s.clearAllSection}>
       <AppContainer>
         <Typography variant={'h2'} className={s.sectionTitle}>
-          Wir reinigen <Typography variant={'decorSpan'}>alles</Typography>
+          Unser Service für <Typography variant={'decorSpan'}>jede Anlage</Typography>
         </Typography>
         <ul className={s.list}>
           <li className={s.listItem}>

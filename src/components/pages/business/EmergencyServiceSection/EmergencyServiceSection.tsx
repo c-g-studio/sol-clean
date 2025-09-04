@@ -69,7 +69,7 @@ export const EmergencyServiceSection = () => {
               </Typography>
             </div>
             <Image
-              src={'/img/business/emergencyServiceSection/image_1.jpg'}
+              src={'/img/business/emergencyServiceSection/image_3.jpg'}
               width={333}
               height={404}
               alt={'Girl with notebook'}
@@ -100,6 +100,8 @@ export const EmergencyServiceSection = () => {
               />
               <Textarea
                 name="message"
+                labelName="Nachricht"
+                placeholder="Hi..."
                 errors={errors}
                 dirtyFields={dirtyFields}
                 isSubmitted={isSubmitted}

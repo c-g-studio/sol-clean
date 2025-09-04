@@ -73,10 +73,12 @@
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 100%;
     padding: 0;
     overflow: unset;
 
     display: flex;
+    gap: 81px;
     justify-content: space-between;
 
     background-color: transparent;
@@ -89,7 +91,7 @@
   }
 }
 
-.listItemTitle {
+h2.listItemTitle {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -109,12 +111,20 @@
 }
 
 .imageWrapper {
+
+  display: block;
+  width: auto;
+  height: 410px;
+
+  margin: 0 auto;
   margin-bottom: 20px;
   overflow: hidden;
 
   border-radius: 20px;
 
   @include useMedia('min-width', $breakpoint-md) {
+    width: 687px;
+    height: 410px;
     margin-bottom: 30px;
   }
 
@@ -124,30 +134,46 @@
 }
 
 .mobileImage {
-  margin: 0 auto;
-  width: auto;
-  height: 410px;
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  @include useMedia('min-width', $breakpoint-md) {
-    width: 687px;
-    height: 410px;
+.vdsIcon {
+  display: block;
+  margin: 0 0 9px;
+
+  @include useMedia('min-width', $breakpoint-md) {}
+
+  margin: 0 auto 9px;
+
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin: 0 0 9px;
   }
 }
 
 .contentWrapper {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 687px;
+  }
+
   @include useMedia('min-width', $breakpoint-lg) {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+
+    max-width: unset;
+    // flex-shrink: 0;
   }
 }
 
 .listItemText {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   @include useMedia('min-width', $breakpoint-md) {
-    margin: 0 auto 30px auto;
+    margin: 0 auto 30px;
     max-width: 581px;
 
     text-align: center;
@@ -156,6 +182,8 @@
   @include useMedia('min-width', $breakpoint-lg) {
     max-width: 610px;
     width: 100%;
+
+    margin: 0 0 20px;
 
     text-align: left;
   }
@@ -233,5 +261,95 @@
 
   @include useMedia('min-width', $breakpoint-lg) {
     display: block;
+  }
+}
+
+.benefitsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 40px;
+
+  // max-width: 534px;
+  margin-bottom: 10px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+}
+
+
+
+.benefitsTitle,
+.suggestionTitle,
+.ourViewsTitle {
+  margin-bottom: 10px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+.benefitsText,
+.suggestionText,
+.ourViewsText {
+  @include useMedia('min-width', $breakpoint-md) {
+    text-align: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    text-align: unset;
+  }
+}
+
+.benefitsList,
+.suggestionList,
+.ourViewsList {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(auto, auto);
+  grid-column-gap: 40px;
+  grid-row-gap: 6px;
+
+  margin-bottom: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 40px;
+    grid-row-gap: 6px;
+
+    margin-bottom: 20px;
+  }
+}
+
+.ourViewsList {
+  @include useMedia('min-width', $breakpoint-md) {
+    // margin-left: 70px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    // margin-left: unset;
+  }
+}
+
+.testWrapper,
+.ourViewsWrapper,
+.benefitsWrapper,
+.suggestionWrapper {
+  margin: 0 0 30px 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    place-items: center;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    place-items: unset;
   }
 }
