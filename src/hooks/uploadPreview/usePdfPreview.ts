@@ -1,43 +1,52 @@
 import { useEffect, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
-import { getDocument, PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist/legacy/build/pdf";
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
 
 export const usePdfPreview = (file: File | null) => {
-  // вказуємо воркер для pdf.js
   const [preview, setPreview] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!file) return; // вот эта проверка
+    if (!file) return;
     if (file.type !== "application/pdf") return;
 
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const typedArray = new Uint8Array(reader.result as ArrayBuffer);
+    let cancelled = false;
 
-      const pdf: PDFDocumentProxy = await getDocument(typedArray).promise;
-      const page: PDFPageProxy = await pdf.getPage(1);
+    const loadPdf = async () => {
+      // Динамічний імпорт тільки на клієнті
+      const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf");
+      const { getDocument } = pdfjsLib;
 
-      const viewport = page.getViewport({ scale: 1 });
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d")!;
+      // Встановлюємо worker з public
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf/pdf.worker.min.mjs";
 
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
+      const reader = new FileReader();
+      reader.onload = async () => {
+        if (cancelled) return;
 
-      await page.render({
-        canvasContext: context,
-        viewport,
-      }).promise;
+        const typedArray = new Uint8Array(reader.result as ArrayBuffer);
+        const pdf = await getDocument(typedArray).promise;
+        const page = await pdf.getPage(1);
 
-      setPreview(canvas.toDataURL());
+        const viewport = page.getViewport({ scale: 1 });
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d")!;
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        if (!cancelled) {
+          setPreview(canvas.toDataURL());
+        }
+      };
+
+      reader.readAsArrayBuffer(file);
     };
 
-    reader.readAsArrayBuffer(file);
+    loadPdf();
+
+    return () => {
+      cancelled = true; // щоб скасувати, якщо файл змінився до завершення
+    };
   }, [file]);
 
   return preview;

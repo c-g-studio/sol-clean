@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, JSX } from 'react';
 
 import { Typography } from '@/components/common/Typography/Typography';
 import { SpriteIcon } from '@/components/icons/SpriteIcon/SpriteIcon';
@@ -9,7 +9,7 @@ import s from './styles.module.scss';
 
 type TOurMissionItemProps = {
   // icon: JSX.Element;
-  icon: string;
+  icon: JSX.Element | string;
   title: string;
   text: string;
 };
@@ -23,7 +23,12 @@ export const OurMissionItem: FC<TOurMissionItemProps> = ({
     <li className={s.listItem}>
       {/* <div className={s.iconBox}>{icon}</div> */}
       <div className={s.iconBox}>
-        <SpriteIcon name={icon} className={iconS.icon} width={64} height={64} />
+        {typeof icon === "string" ? (
+          <SpriteIcon name={icon} className={iconS.icon} width={64} height={64} />
+        ) : (
+          icon
+        )}
+
       </div>
       <Typography variant={'h3'} className={s.listItemTitle}>
         {title}

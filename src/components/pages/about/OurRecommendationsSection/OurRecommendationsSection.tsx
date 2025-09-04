@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, JSX } from 'react';
 
 import { AppContainer } from '@/components/common/AppContainer/AppContainer';
 import { Typography } from '@/components/common/Typography/Typography';
@@ -10,8 +10,7 @@ import { OurMissionItem } from '@/components/common/OurMissionItem/OurMissionIte
 import s from './styles.module.scss';
 
 type TDataItem = {
-  // icon: JSX.Element;
-  icon: string;
+  icon: JSX.Element | string;
   title: string;
   text: string;
 };

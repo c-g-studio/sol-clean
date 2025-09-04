@@ -103,10 +103,10 @@
 //             <ul>
 //                 <li className={s.item}>
 //                     <SheetIcon />
-//                     <Typogra phy variant={'body3'} className={s.itemText}>
+//                     <Typography variant={'body3'} className={s.itemText}>
 //                         <span className={s.itemTextSpan}>Bis zu 90 %</span> weniger CO₂
 //                         durch Solarenergie.
-//                     </Typogra>
+//                     </Typography>
 //                 </li>
 //                 <li className={s.item}>
 //                     <GraphIcon />

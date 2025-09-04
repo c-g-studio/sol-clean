@@ -7,7 +7,12 @@ type SpriteIconProps = {
 export const SpriteIcon: React.FC<SpriteIconProps> = ({ name, ...props }) => {
     return (
         <svg {...props}>
-            <use href={`/img/sprite.svg#icon-${name}`} />
+            {typeof name === "string" ? (
+                <use href={`/img/sprite.svg#icon-${name}`} />
+            ) : (
+                name
+            )}
+
         </svg>
     );
 };
