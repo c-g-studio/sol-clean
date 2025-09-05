@@ -157,7 +157,16 @@
 }
 
 .button.buttonActive {
-  background-color: $color-yellow;
+
+  & span {
+
+    background-color: $color-yellow;
+  }
+
+  & svg {
+
+    background-color: $color-yellow;
+  }
 }
 
 .buttonBack {

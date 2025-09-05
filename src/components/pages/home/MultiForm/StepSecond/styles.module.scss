@@ -26,7 +26,7 @@
   margin-bottom: 20px;
 
   @include useMedia('min-width', $breakpoint-lg) {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
 }
 
@@ -138,6 +138,10 @@
   font-weight: 700;
 }
 
+.textGoogleAPI {
+  margin-bottom: 20px;
+}
+
 .totalBox {
   display: flex;
   gap: 10px;
@@ -152,6 +156,10 @@
   @include useMedia('min-width', $breakpoint-lg) {
     font-size: 24px;
   }
+}
+
+.total.totalActive {
+  color: $color-blue-dark ;
 }
 
 .total.totalSelected {
@@ -236,7 +244,16 @@
 }
 
 .button.buttonActive {
-  background-color: $color-yellow;
+
+  & span {
+
+    background-color: $color-yellow;
+  }
+
+  & svg {
+
+    background-color: $color-yellow;
+  }
 }
 
 .buttonsBox {
