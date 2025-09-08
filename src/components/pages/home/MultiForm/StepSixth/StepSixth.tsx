@@ -1,5 +1,7 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { Typography } from '@/components/common/Typography/Typography';
+import { Button } from '@/components/common/Button/Button';
 
 import s from './styles.module.scss';
 import { SheetIcon } from '@/components/icons/SheetIcon';
@@ -18,6 +20,7 @@ type TInputData = {
     efficiencyLoss: number;
     energyGeneration: string; // сколько всего кВт*ч
     selfConsumptionEnergy: string; // сколько потребляется
+    price: string;
 };
 
 type TStepProps = {
@@ -90,38 +93,72 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
 
     console.log('mReinigung', mReinigung);
     return (
-        <div className={s.container}>
-            <Typography variant={'body3'} className={s.title}>
-                Sie sparen in
-                <br /> <span className={s.age}>{age} Jahren</span> bis zu
-                <span className={s.lossMoney}>
-                    <br />
-                    824,84 €
-                </span>
-            </Typography>
+        <div >
+            <div className={s.container}>
+                <Typography variant={'body3'} className={s.title}>
+                    Sie sparen in
+                    <br /> <span className={s.age}>{age} Jahren</span> bis zu
+                    <span className={s.lossMoney}>
+                        <br />
+                        824,84 €
+                    </span>
+                </Typography>
 
-            <ul>
-                <li className={s.item}>
-                    <SheetIcon />
-                    <Typography variant={'body3'} className={s.itemText}>
-                        <span className={s.itemTextSpan}>Bis zu 90 %</span> weniger CO₂
-                        durch Solarenergie.
+                <ul>
+                    <li className={s.item}>
+                        <SheetIcon />
+                        <Typography variant={'body3'} className={s.itemText}>
+                            <span className={s.itemTextSpan}>Bis zu 90 %</span> weniger CO₂
+                            durch Solarenergie.
+                        </Typography>
+                    </li>
+                    <li className={s.item}>
+                        <GraphIcon />
+                        <Typography variant={'body3'}>
+                            bis zu <span className={s.itemTextSpan}>50%</span> Verlängerung der
+                            Lebensdauer
+                        </Typography>
+                    </li>
+                    <li className={s.item}>
+                        <DollarIcon />
+                        <Typography variant={'body3'}>
+                            Keine teuren Reparaturen durch Witterungschäden
+                        </Typography>
+                    </li>
+                </ul>
+                <div className={s.orderContainer}>
+                    <Typography variant="body3" className={s.orderText}>
+                        <span className={s.orderFirstText}>Jetzt kostenlosen</span>
+                        <span className={s.orderSecondText}>Wärmebild-Prüfung vereinbaren
+                            <span className={s.orderFree}>Free</span>
+                        </span>
+
                     </Typography>
-                </li>
-                <li className={s.item}>
-                    <GraphIcon />
-                    <Typography variant={'body3'}>
-                        bis zu <span className={s.itemTextSpan}>50%</span> Verlängerung der
-                        Lebensdauer
-                    </Typography>
-                </li>
-                <li className={s.item}>
-                    <DollarIcon />
-                    <Typography variant={'body3'}>
-                        Keine teuren Reparaturen durch Witterungschäden
-                    </Typography>
-                </li>
-            </ul>
+                    <Button
+                        type="button"
+                        className={`${s.orderButton} `}
+                        onClick={onBack}
+                    >
+                        {/* <Image
+                            src="/img/main/docIcon.png"
+                            alt="Info"
+                            width={40}
+                            height={40}
+                        /> */}
+                        Einen Termin vereinbaren
+                    </Button>
+                </div>
+            </div>
+            <div className={s.buttonsBox}>
+                <Button
+                    type="button"
+                    buttonType="buttonWithArrow"
+                    className={`${s.button} ${s.buttonBack}`}
+                    onClick={onBack}
+                >
+                    Zurück
+                </Button>
+            </div>
         </div>
     );
 };

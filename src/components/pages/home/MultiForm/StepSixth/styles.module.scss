@@ -50,3 +50,131 @@
   color: $color-black;
   font-weight: 700;
 }
+
+.orderContainer {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+
+  }
+}
+
+.orderText {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    flex-direction: column;
+    font-family: Outfit;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.2;
+
+  }
+}
+
+.orderFirstText {
+  @include useMedia('min-width', $breakpoint-lg) {}
+}
+
+.orderSecondText {
+  @include useMedia('min-width', $breakpoint-lg) {}
+}
+
+.orderFree {
+  @include useMedia('min-width', $breakpoint-lg) {
+    border: 1.50px dashed #ffc600;
+    border-radius: 4px;
+    padding: 2px 15px;
+
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: $color-yellow;
+
+    background: $color-yellow-light;
+  }
+}
+
+.orderButton {
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+.buttonBack {
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+
+.buttonsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.button {
+  z-index: 1;
+
+  margin-top: 20px;
+  width: 175px;
+
+  background-color: transparent;
+
+  & span {
+    padding: 8px 30px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-top: 40px;
+
+    & span {
+      padding: 8px 40px;
+    }
+  }
+}
+
+.button.buttonActive {
+
+  & span {
+
+    background-color: $color-yellow;
+  }
+
+  & svg {
+
+    background-color: $color-yellow;
+  }
+}
+
+.buttonBack {
+  flex-direction: row-reverse;
+
+  & svg {
+    transform: rotate(180deg);
+  }
+}
+
+.valid {
+  border-color: $color-yellow;
+  background-color: $color-yellow-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-yellow;
+  }
+}
+
+.invalid {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: $color-red-light;
+
+  &:hover,
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red-light;
+  }
+}

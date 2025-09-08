@@ -21,13 +21,13 @@
   }
 }
 
-.totalContainer {
-  margin-bottom: 40px;
+// .totalContainer {
+//   margin-bottom: 40px;
 
-  @include useMedia('min-width', $breakpoint-lg) {
-    margin-bottom: 60px;
-  }
-}
+//   @include useMedia('min-width', $breakpoint-lg) {
+//     margin-bottom: 60px;
+//   }
+// }
 
 .title {
   margin-bottom: 15px;
