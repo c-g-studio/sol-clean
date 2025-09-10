@@ -4,14 +4,14 @@
 .ourRecommendationsSection {
   background-color: $color-blue-extra-dark;
 
-  padding: 90px 0 90px 0;
+  padding: 90px 0 162px 0;
 
   @include useMedia('min-width', $breakpoint-md) {
-    padding: 100px 0 100px 0;
+    padding: 100px 0 178px 0;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    padding: 120px 0 120px 0;
+    padding: 120px 0 220px 0;
   }
 
   & ul li div {
@@ -22,6 +22,7 @@
     & ul li div {
       background-color: transparent;
     }
+
     & ul li:hover div {
       background-color: $color-blue-dark;
     }

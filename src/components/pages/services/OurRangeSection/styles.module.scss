@@ -142,8 +142,7 @@ h2.listItemTitle {
   display: block;
   margin: 0 0 9px;
 
-  @include useMedia('min-width', $breakpoint-md) {
-  }
+  @include useMedia('min-width', $breakpoint-md) {}
 
   margin: 0 auto 9px;
 
@@ -169,6 +168,8 @@ h2.listItemTitle {
 }
 
 .listItemText {
+  position: relative;
+  z-index: 1;
   margin-bottom: 10px;
 
   @include useMedia('min-width', $breakpoint-md) {

@@ -77,11 +77,11 @@ export const DifferenceSection = ({
         <Button
           buttonType="buttonLink"
           href="/#calculatorSection"
-          className={s.button}
+          className={`${s.button} ${rounded ? s.rounded : ''}`}
         >
           Wirtschaftlichkeitsrechnung
         </Button>
       </AppContainer>
-    </section>
+    </section >
   );
 };

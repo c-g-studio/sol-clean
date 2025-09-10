@@ -7,7 +7,12 @@
 
   border-radius: 20px;
   background-color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    padding: 40px;
+  }
 }
+
 
 .title {
   margin-bottom: 40px;
@@ -24,9 +29,18 @@
 }
 
 .lossMoney {
+  position: relative;
   color: $color-black;
   font-weight: 500;
   font-size: 51px;
+}
+
+.infoButton {
+  position: absolute;
+  bottom: 27px;
+  right: -28px;
+  border: none;
+  background-color: transparent;
 }
 
 .item {
@@ -60,39 +74,62 @@
 }
 
 .orderText {
+  display: flex;
+  margin-bottom: 20px;
+
+  font-family: Outfit;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+
+  @include useMedia('min-width', $breakpoint-md) {}
+
   @include useMedia('min-width', $breakpoint-lg) {
-    display: flex;
     flex-direction: column;
-    font-family: Outfit;
-    font-weight: 600;
+
     font-size: 24px;
-    line-height: 1.2;
 
   }
 }
 
 .orderFirstText {
+  flex: 1 1 auto;
+
   @include useMedia('min-width', $breakpoint-lg) {}
 }
 
 .orderSecondText {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 8px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+
+    flex: 1 1 auto;
+
+    justify-content: space-between;
+
+  }
+
   @include useMedia('min-width', $breakpoint-lg) {}
 }
 
 .orderFree {
-  @include useMedia('min-width', $breakpoint-lg) {
-    border: 1.50px dashed #ffc600;
-    border-radius: 4px;
-    padding: 2px 15px;
+  flex: 0 1 auto;
+  border: 1.50px dashed #ffc600;
+  border-radius: 4px;
+  padding: 2px 15px;
 
-    font-family: "Outfit", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
-    color: $color-yellow;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: $color-yellow;
 
-    background: $color-yellow-light;
-  }
+  background: $color-yellow-light;
+
+  @include useMedia('min-width', $breakpoint-lg) {}
 }
 
 .orderButton {

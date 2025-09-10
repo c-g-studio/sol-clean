@@ -60,11 +60,9 @@
   font-weight: 700;
   color: $color-aqua-light;
 
-  @include useMedia('min-width', $breakpoint-md) {
-  }
+  @include useMedia('min-width', $breakpoint-md) {}
 
-  @include useMedia('min-width', $breakpoint-xl) {
-  }
+  @include useMedia('min-width', $breakpoint-xl) {}
 }
 
 .box {
@@ -124,7 +122,7 @@
 
   @include useMedia('min-width', $breakpoint-xl) {
     margin: 0;
-    margin-right: 103px;
+    margin-right: 89px;
     text-align: left;
   }
 }

@@ -55,14 +55,14 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-type TBusinessPartnerModal = {
+type TJobApplicationModal = {
   isOpen: boolean;
   onClose: () => void;
 };
 
 type RequestStatus = 'idle' | 'success' | 'error';
 
-export const BusinessPartnerModal: FC<TBusinessPartnerModal> = ({
+export const JobApplicationModal: FC<TJobApplicationModal> = ({
   isOpen,
   onClose
 }) => {
