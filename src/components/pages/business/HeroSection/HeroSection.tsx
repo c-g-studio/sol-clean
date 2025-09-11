@@ -3,6 +3,7 @@ import { Typography } from '@/components/common/Typography/Typography';
 import { Button } from '@/components/common/Button/Button';
 
 import s from './styles.module.scss';
+import { HeroStatement } from './components/HeroStatment';
 
 export const HeroSection = () => {
   return (
@@ -24,6 +25,7 @@ export const HeroSection = () => {
           Wirtschaftlichkeitsrechnung
         </Button>
       </AppContainer>
+      <HeroStatement />
     </section>
   );
 };

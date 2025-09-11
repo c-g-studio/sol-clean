@@ -58,20 +58,20 @@ export const CookieConsent: React.FC = () => {
           .
         </Typography>
         <div className={s.actions}>
-          <Button onClick={handleAcceptAll} className={s.acceptAll}>
+          <Button onClick={handleAcceptAll} className={`${s.btn} ${s.acceptAll}`}>
             Alle akzeptieren
           </Button>
           <Button
             variant="secondary"
             onClick={handleNecessaryOnly}
-            className={s.necessary}
+            className={`${s.btn} ${s.necessary}`}
           >
             Nur notwendige
           </Button>
           <Button
             variant="secondary"
             onClick={handleSettings}
-            className={s.settings}
+            className={`${s.btn} ${s.settings}`}
           >
             Cookie-Einstellungen
           </Button>

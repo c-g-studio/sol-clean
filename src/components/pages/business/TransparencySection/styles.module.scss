@@ -87,9 +87,11 @@
 }
 
 .button {
+  max-width: 100%;
   margin-bottom: 60px;
 
   @include useMedia('min-width', $breakpoint-md) {
+    max-width: 281px;
     border-radius: 0;
   }
 

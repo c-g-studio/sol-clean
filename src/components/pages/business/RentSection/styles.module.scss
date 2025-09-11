@@ -5,17 +5,18 @@
   position: relative;
   z-index: -1;
 
-  margin-top: -165px;
-  padding-top: 190px;
+  padding-top: 170px;
+  padding-bottom: 65px;
 
   background-color: $color-blue-dark;
 
   @include useMedia('min-width', $breakpoint-md) {
-    padding-top: 210px;
+    padding-top: 182px;
+    padding-bottom: 50px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    padding-top: 250px;
+    padding-top: 240px;
     padding-bottom: 100px;
   }
 }
@@ -110,12 +111,14 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 30px;
+  text-align: center;
 
   @include useMedia('min-width', $breakpoint-md) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     gap: 86px;
+    text-align: left;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
