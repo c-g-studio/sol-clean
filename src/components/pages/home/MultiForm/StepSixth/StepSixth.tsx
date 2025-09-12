@@ -10,6 +10,7 @@ import { GraphIcon } from '@/components/icons/GraphIcon';
 
 import { useModal } from '@/hooks/useModal';
 import { BookAppointmentModalLite } from './components/BookAppointmentModalLite/BookAppointmentModalLite';
+import { ProgressComparison } from './components/ProgressBar/ProgressBar';
 
 type TInputData = {
     typeOfUse: 'business' | 'privat';
@@ -99,54 +100,67 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
     return (
         <div >
             <div className={s.container}>
-                <Typography variant={'body3'} className={s.title}>
-                    Sie sparen in
-                    <br /> <span className={s.age}>{age} Jahren</span> bis zu
-                    <span className={s.lossMoney}>
-                        {/* <br /> */}
-                        824,84 €
-                        <button className={s.infoButton} onClick={onOpen} type="button">
-                            <Image
-                                src="/img/home/calculatorSection/stepSixth/info.png"
-                                alt="Info"
-                                width={19}
-                                height={19}
-                            />
-                        </button>
-                    </span>
-                </Typography>
+                <div className={s.textWrapper}>
+                    <Typography variant={'body3'} className={s.title}>
+                        Sie sparen in
+                        <br className={s.brBeforeAge} /> <span className={s.age}>{age} Jahren&nbsp;</span>
+                        <span className={s.titleInner}>
+                            bis zu&nbsp;
+                            <br className={s.brBeforeLossMoney} />
+                            <span className={s.lossMoney}>
+                                824,84 €
+                                <button className={s.infoButton} onClick={onOpen} type="button">
+                                    <Image
+                                        src="/img/home/calculatorSection/stepSixth/info.png"
+                                        alt="Info"
+                                        width={19}
+                                        height={19}
+                                    />
+                                </button>
+                            </span>
+                        </span>
+                    </Typography>
 
-                <ul>
-                    <li className={s.item}>
-                        <SheetIcon />
-                        <Typography variant={'body3'} className={s.itemText}>
-                            <span className={s.itemTextSpan}>Bis zu 90 %</span> weniger CO₂
-                            durch Solarenergie.
-                        </Typography>
-                    </li>
-                    <li className={s.item}>
-                        <GraphIcon />
-                        <Typography variant={'body3'}>
-                            bis zu <span className={s.itemTextSpan}>50%</span> Verlängerung der
-                            Lebensdauer
-                        </Typography>
-                    </li>
-                    <li className={s.item}>
-                        <DollarIcon />
-                        <Typography variant={'body3'}>
-                            Keine teuren Reparaturen durch Witterungschäden
-                        </Typography>
-                    </li>
-                </ul>
+                    <ul className={s.list}>
+                        <li className={s.item}>
+                            <SheetIcon />
+                            <Typography variant={'body3'} className={s.itemText}>
+                                <span className={s.itemTextSpan}>Bis zu 90 %</span> weniger CO₂
+                                durch Solarenergie.
+                            </Typography>
+                        </li>
+                        <li className={s.item}>
+                            <GraphIcon />
+                            <Typography variant={'body3'} className={s.itemText}>
+                                bis zu <span className={s.itemTextSpan}>50%</span> Verlängerung der
+                                Lebensdauer
+                            </Typography>
+                        </li>
+                        <li className={s.item}>
+                            <DollarIcon />
+                            <Typography variant={'body3'} className={s.itemText}>
+                                Keine teuren Reparaturen durch Witterungschäden
+                            </Typography>
+                        </li>
+                    </ul>
+                </div>
+                {/* <ProgressBar label='Hello' value={30} max={100} color='white' /> */}
+                <ProgressComparison
+                    years={4}
+                    withCleaning={659.94}
+                    withoutCleaning={1484.78}
+                    layout="horizontal"
+                />
                 <div className={s.orderContainer}>
                     <Typography variant="body3" className={s.orderText}>
-                        <span className={s.orderFirstText}>Jetzt kostenlosen&nbsp;</span>
+                        {/* <span className={s.orderFirstText}>Jetzt kostenlosen&nbsp;</span>
                         <span className={s.orderSecondText}>Wärmebild-Prüfung vereinbaren
                             <span className={s.orderFree}>Free</span>
-                        </span>
-                        {/* Jetzt kostenlosen
+                        </span> */}
+                        Jetzt kostenlosen&nbsp;
+                        <br className={s.br} />
                         Wärmebild-Prüfung vereinbaren
-                        <span className={s.orderFree}>Free</span> */}
+                        &nbsp;<span className={s.orderFree}>Free</span>
 
 
                     </Typography>
@@ -176,6 +190,6 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                     Zurück
                 </Button>
             </div>
-        </div>
+        </div >
     );
 };

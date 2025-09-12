@@ -47,6 +47,7 @@ const tagMap: Record<Variant, keyof JSX.IntrinsicElements> = {
   body4: 'p',
   decorSpan: 'span'
 };
+
 export const Typography: FC<TypographyProps> = ({
   variant,
   children,

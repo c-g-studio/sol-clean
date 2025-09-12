@@ -8,8 +8,15 @@
   border-radius: 20px;
   background-color: $color-clean-white;
 
-  @include useMedia('min-width', $breakpoint-lg) {
+  @include useMedia('min-width', $breakpoint-md) {
     padding: 40px;
+  }
+}
+
+.textWrapper {
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -35,12 +42,38 @@
   font-size: 51px;
 }
 
+.brBeforeAge {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: none;
+  }
+}
+
+.titleInner {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: flex;
+  }
+}
+
+.brBeforeLossMoney {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: none;
+  }
+}
+
 .infoButton {
   position: absolute;
-  bottom: 27px;
+  top: 0;
   right: -28px;
   border: none;
   background-color: transparent;
+}
+
+.list {
+  @include useMedia('min-width', $breakpoint-md) {
+    display: flex;
+    gap: 44px;
+    justify-content: space-between;
+  }
 }
 
 .item {
@@ -48,12 +81,35 @@
   align-items: center;
   //justify-content: center;
   gap: 13px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    max-width: 153px;
+
+    &:last-child {
+      max-width: 176px;
+    }
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 173px;
+
+    &:last-child {
+      max-width: 194px;
+    }
+  }
 }
 
 .itemText {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 14px;
+  }
 
   @include useMedia('min-width', $breakpoint-lg) {
     font-size: 16px;
@@ -69,12 +125,13 @@
   @include useMedia('min-width', $breakpoint-lg) {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 
   }
 }
 
 .orderText {
-  display: flex;
+
   margin-bottom: 20px;
 
   font-family: Outfit;
@@ -82,12 +139,26 @@
   font-size: 20px;
   line-height: 1.2;
 
-  @include useMedia('min-width', $breakpoint-md) {}
+  @include useMedia('min-width', $breakpoint-md) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: flex-end;
 
+    margin-bottom: 0;
     font-size: 24px;
+
+  }
+}
+
+.br {
+  display: none;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    display: block;
 
   }
 }
@@ -134,7 +205,18 @@
 
 .orderButton {
   @include useMedia('min-width', $breakpoint-lg) {
+    position: relative;
     font-size: 16px;
+
+    &::before {
+      position: absolute;
+      left: -123px;
+      content: "";
+      width: 111px;
+      height: 57px;
+
+      background-image: url("/img/home/calculatorSection/stepSixth/finish_arrow.png");
+    }
   }
 }
 
