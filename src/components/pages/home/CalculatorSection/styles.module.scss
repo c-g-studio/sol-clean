@@ -13,6 +13,19 @@
   }
 }
 
+.callBackSectionContainer {
+  padding: 0;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 0 40px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    // max-width: 1320px;
+  }
+
+}
+
 .sectionTitle {
   margin-bottom: 30px;
 

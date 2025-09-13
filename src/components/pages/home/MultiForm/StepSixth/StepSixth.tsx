@@ -11,6 +11,7 @@ import { GraphIcon } from '@/components/icons/GraphIcon';
 import { useModal } from '@/hooks/useModal';
 import { BookAppointmentModalLite } from './components/BookAppointmentModalLite/BookAppointmentModalLite';
 import { ProgressComparison } from './components/ProgressBar/ProgressBar';
+import { useMedia } from '@/hooks/useMedia';
 
 type TInputData = {
     typeOfUse: 'business' | 'privat';
@@ -40,53 +41,12 @@ type TStepProps = {
 //     Wiese: [0.048, 0.072, 0.0936, 0.113]
 // };
 
-// const ProgressBar = ({
-//     label,
-//     value,
-//     max,
-//     color
-// }: {
-//     label: string;
-//     value: number;
-//     max: number;
-//     color: string;
-// }) => {
-//     const percent = Math.round((value / max) * 100);
-//     return (
-//         <div style={{ marginBottom: 16 }}>
-//             <div style={{ marginBottom: 4 }}>
-//                 <strong>{label}:</strong> {value.toFixed(2)} €
-//             </div>
-//             <div
-//                 style={{
-//                     background: '#ddd',
-//                     height: 24,
-//                     borderRadius: 4,
-//                     overflow: 'hidden'
-//                 }}
-//             >
-//                 <div
-//                     style={{
-//                         width: `${percent}%`,
-//                         backgroundColor: color,
-//                         height: '100%',
-//                         transition: 'width 0.3s',
-//                         textAlign: 'right',
-//                         paddingRight: 8,
-//                         color: '#fff',
-//                         fontWeight: 600
-//                     }}
-//                 >
-//                     {percent}%
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
 export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
     const { isOpen, onOpen, onClose } = useModal();
     console.log('data', data);
+
+    const isMobile = useMedia("max-width", "md");
+    const layout = isMobile ? "vertical" : "horizontal";
 
     const mReinigung =
         data.solarData *
@@ -144,19 +104,14 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                         </li>
                     </ul>
                 </div>
-                {/* <ProgressBar label='Hello' value={30} max={100} color='white' /> */}
                 <ProgressComparison
                     years={4}
                     withCleaning={659.94}
                     withoutCleaning={1484.78}
-                    layout="horizontal"
+                    layout={layout}
                 />
                 <div className={s.orderContainer}>
                     <Typography variant="body3" className={s.orderText}>
-                        {/* <span className={s.orderFirstText}>Jetzt kostenlosen&nbsp;</span>
-                        <span className={s.orderSecondText}>Wärmebild-Prüfung vereinbaren
-                            <span className={s.orderFree}>Free</span>
-                        </span> */}
                         Jetzt kostenlosen&nbsp;
                         <br className={s.br} />
                         Wärmebild-Prüfung vereinbaren
@@ -169,12 +124,6 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                         className={`${s.orderButton} `}
                         onClick={onOpen}
                     >
-                        {/* <Image
-                            src="/img/main/docIcon.png"
-                            alt="Info"
-                            width={40}
-                            height={40}
-                        /> */}
                         Einen Termin vereinbaren
                     </Button>
                     <BookAppointmentModalLite isOpen={isOpen} onClose={onClose} />

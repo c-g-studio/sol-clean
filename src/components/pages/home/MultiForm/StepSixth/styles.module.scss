@@ -69,10 +69,27 @@
 }
 
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+
   @include useMedia('min-width', $breakpoint-md) {
     display: flex;
+    flex-direction: row;
     gap: 44px;
     justify-content: space-between;
+    // margin-bottom: 26px;
+  }
+
+
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 0;
+  }
+
+  @include useMedia('max-width', 1246px) {
+    gap: 20px;
   }
 }
 
