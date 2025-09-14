@@ -43,7 +43,6 @@ type TStepProps = {
 
 export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
     const { isOpen, onOpen, onClose } = useModal();
-    console.log('data', data);
 
     const isMobile = useMedia("max-width", "md");
     const layout = isMobile ? "vertical" : "horizontal";

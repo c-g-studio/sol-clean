@@ -1,5 +1,5 @@
 // components/ProgressComparison.tsx
-import { FC, useLayoutEffect, useRef, useState } from 'react';
+import { FC, useRef } from 'react';
 import s from './styles.module.scss';
 // import { string } from 'zod';
 
@@ -19,7 +19,7 @@ export const ProgressComparison: FC<Props> = ({
     const withCleaningRef = useRef<HTMLDivElement | null>(null);
     const withoutCleaningRef = useRef<HTMLDivElement | null>(null);
 
-    const [widthWithCleaningEl, setWidthWithCleaningEl] = useState<number>(0)
+    // const [widthWithCleaningEl, setWidthWithCleaningEl] = useState<number>(0)
 
     const percent = Math.min(
         100,
@@ -27,22 +27,7 @@ export const ProgressComparison: FC<Props> = ({
     );
 
 
-    useLayoutEffect(() => {
-        if (!withoutCleaningRef.current) return;
-
-        const el = withoutCleaningRef.current;
-
-        const observer = new ResizeObserver(entries => {
-            for (const entry of entries) {
-                const baseWidth = entry.contentRect.width;
-                setWidthWithCleaningEl((baseWidth * percent) / 100);
-            }
-        });
-
-        observer.observe(el);
-
-        return () => observer.disconnect();
-    }, [percent]);
+    const widthWithCleaningEl = (percent / 100) * 50;
 
     return (
         <div className={`${s.wrapper} ${s[layout]}`}>
@@ -94,7 +79,7 @@ export const ProgressComparison: FC<Props> = ({
                     <div className={s.verticalItem}>
                         <div
                             className={s.colorBoxYellow}
-                            style={{ width: `${widthWithCleaningEl}px` }}
+                            style={{ width: `${widthWithCleaningEl}%` }}
                         ></div>
                         <div>
                             <span className={s.label}>mit Reinigung</span>

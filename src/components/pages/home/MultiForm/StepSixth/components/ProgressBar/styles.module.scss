@@ -30,6 +30,8 @@
 
     &.horizontal {
       min-height: 207px;
+
+      padding: 22px 20px;
     }
   }
 
@@ -65,6 +67,7 @@
   @include useMedia('min-width', $breakpoint-md) {
     max-width: 100%;
 
+    margin-bottom: 0;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
@@ -101,6 +104,14 @@
   height: 20px;
   overflow: visible;
   position: relative;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    height: 31px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    height: 20px;
+  }
 }
 
 .utterMark {

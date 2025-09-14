@@ -86,6 +86,10 @@
     font-size: 12px;
 
     @include useMedia('min-width', $breakpoint-md) {
+        font-size: 14px;
+    }
+
+    @include useMedia('min-width', $breakpoint-lg) {
         font-size: 16px;
     }
 }
@@ -106,6 +110,7 @@
     }
 
     @include useMedia('min-width', $breakpoint-lg) {
+        max-width: 303px;
         align-self: flex-end;
     }
 

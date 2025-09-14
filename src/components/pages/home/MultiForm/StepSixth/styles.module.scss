@@ -1,6 +1,16 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
+@keyframes anim-scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.4);
+  }
+}
+
 .container {
   margin-bottom: 30px;
   padding: 20px 10px;
@@ -66,6 +76,8 @@
   right: -28px;
   border: none;
   background-color: transparent;
+
+  animation: 1s linear 0s infinite alternate anim-scale;
 }
 
 .list {
