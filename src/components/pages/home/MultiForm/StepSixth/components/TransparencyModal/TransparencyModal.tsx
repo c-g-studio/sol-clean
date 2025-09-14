@@ -5,21 +5,21 @@ import { FC } from 'react';
 
 import s from './styles.module.scss';
 import Image from 'next/image';
-import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout.jsx';
+import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 
 type TSuccessRequestModalProps = {
-  requestStatus: 'idle' | 'success' | 'error';
-  handleClose: () => void;
+  isOpen: boolean;
+  onClose: () => void;
 };
 
 export const TransparencyModal: FC<TSuccessRequestModalProps> = ({
-  requestStatus,
-  handleClose
+  isOpen,
+  onClose
 }) => {
   return (
     <ModalLayout
-      isOpen={requestStatus === 'error'}
-      onClose={handleClose}
+      isOpen={isOpen}
+      onClose={onClose}
       layoutClass={s.layout}
     >
       <AppContainer>

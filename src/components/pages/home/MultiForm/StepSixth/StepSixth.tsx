@@ -10,6 +10,7 @@ import { GraphIcon } from '@/components/icons/GraphIcon';
 
 import { useModal } from '@/hooks/useModal';
 import { BookAppointmentModalLite } from './components/BookAppointmentModalLite/BookAppointmentModalLite';
+import { TransparencyModal } from './components/TransparencyModal/TransparencyModal';
 import { ProgressComparison } from './components/ProgressBar/ProgressBar';
 import { useMedia } from '@/hooks/useMedia';
 
@@ -42,7 +43,17 @@ type TStepProps = {
 // };
 
 export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
-    const { isOpen, onOpen, onClose } = useModal();
+    const {
+        isOpen: isOpenTransparencyModal,
+        onOpen: onOpenTransparencyModal,
+        onClose: onCloseTransparencyModal
+    } = useModal();
+
+    const {
+        isOpen: isOpenAppointmentModal,
+        onOpen: onOpenAppointmentModal,
+        onClose: onCloseAppointmentModal
+    } = useModal();
 
     const isMobile = useMedia("max-width", "md");
     const layout = isMobile ? "vertical" : "horizontal";
@@ -68,7 +79,7 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                             <br className={s.brBeforeLossMoney} />
                             <span className={s.lossMoney}>
                                 824,84 €
-                                <button className={s.infoButton} onClick={onOpen} type="button">
+                                <button className={s.infoButton} onClick={onOpenTransparencyModal} type="button">
                                     <Image
                                         src="/img/home/calculatorSection/stepSixth/info.png"
                                         alt="Info"
@@ -121,11 +132,12 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                     <Button
                         type="button"
                         className={`${s.orderButton} `}
-                        onClick={onOpen}
+                        onClick={onOpenAppointmentModal}
                     >
                         Einen Termin vereinbaren
                     </Button>
-                    <BookAppointmentModalLite isOpen={isOpen} onClose={onClose} />
+                    <BookAppointmentModalLite isOpen={isOpenAppointmentModal} onClose={onCloseAppointmentModal} />
+                    <TransparencyModal isOpen={isOpenTransparencyModal} onClose={onCloseTransparencyModal} />
                 </div>
             </div>
             <div className={s.buttonsBox}>
