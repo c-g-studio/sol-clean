@@ -93,6 +93,7 @@ export const BookAppointmentModalLite: FC<TBookAppointmentModal> = ({
     const onSubmit = async (data: FormData) => {
         console.log('data: ', data);
         reset();
+        setRequestStatus('success');
         // try {
         //     await callBackService.callBack(data);
         //     setRequestStatus('success');

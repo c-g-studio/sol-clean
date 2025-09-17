@@ -21,7 +21,7 @@ type TData = {
     nominalExit: string;
     nearBy: string[];
     absolutePollution: number;
-    energyGeneration: string;
+    energyGeneration?: string;
     // selfConsumptionEnergy: string;
 };
 
@@ -60,7 +60,7 @@ const pollutionTable: Record<TPollutionTableType, number[]> = {
 const schema = z.object({
     energyGeneration: z
         .string()
-        .min(1, 'Geben Sie an, wie viel Leergia erzeugt wird'),
+        .optional(),
     // selfConsumptionEnergy: z
     //     .string()
     //     .min(1, 'Geben Sie an, wie viel Leergia Sie verwenden')
@@ -110,7 +110,7 @@ export const StepFourth: FC<TStepThirdProps> = ({
             nominalExit: defaultValues?.nominalExit ?? '',
             nearBy: defaultValues?.nearBy ?? [],
             absolutePollution,
-            energyGeneration: data.energyGeneration,
+            energyGeneration: data.energyGeneration ?? "",
         };
 
         onNextAction(fullData);

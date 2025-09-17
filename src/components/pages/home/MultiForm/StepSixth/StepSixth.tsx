@@ -15,10 +15,11 @@ import { ProgressComparison } from './components/ProgressBar/ProgressBar';
 import { useMedia } from '@/hooks/useMedia';
 
 type TInputData = {
-    typeOfUse: 'business' | 'privat';
     address: string;
     ownerType: 'Norm' | 'Wald' | 'Acker' | 'Bauernhof' | 'Wiese';
+    // ownerType: string;
     solarData: number; // солнечная энергия (Einstralung)
+    typeOfUse: 'business' | 'personal';
     year: string; // год постройки
     nominalExit: string; // мощность, кВт
     nearBy: unknown[];
@@ -58,15 +59,26 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
     const isMobile = useMedia("max-width", "md");
     const layout = isMobile ? "vertical" : "horizontal";
 
-    const mReinigung =
-        data.solarData *
-        Number(data.price) *
-        (data.absolutePollution / 100) *
-        ((100 - data.efficiencyLoss) / 100);
+    // const mReinigung =
+    //     data.solarData *
+    //     Number(data.price) *
+    //     (data.absolutePollution / 100) *
+    //     ((100 - data.efficiencyLoss) / 100);
 
     const age = Number(new Date().getFullYear()) - Number(data.year);
 
-    console.log('mReinigung', mReinigung);
+
+    const withoutCleaning =
+        data.solarData *
+        Number(data.price) *
+        (data.absolutePollution / 100) *
+        ((100 - data.efficiencyLoss) / 100) * age;
+
+    const withCleaning =
+        data.solarData *
+        Number(data.price) *
+        ((100 - data.efficiencyLoss) / 100) * age;
+
     return (
         <div >
             <div className={s.container}>
@@ -115,9 +127,9 @@ export const StepSixth: FC<TStepProps> = ({ onBack, data }) => {
                     </ul>
                 </div>
                 <ProgressComparison
-                    years={4}
-                    withCleaning={659.94}
-                    withoutCleaning={1484.78}
+                    years={age}
+                    withCleaning={withCleaning}
+                    withoutCleaning={withoutCleaning}
                     layout={layout}
                 />
                 <div className={s.orderContainer}>

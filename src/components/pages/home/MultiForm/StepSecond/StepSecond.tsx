@@ -129,6 +129,7 @@ export const StepSecond: FC<TStepSecondProps> = ({
         const solarData = await res.json();
         console.log('solarData', solarData);
         setSolarPotential(calculateSinglePanelProductionKWh(solarData));
+        // setSolarPotential(100);
         // setSolarData(solarData);
     };
 
