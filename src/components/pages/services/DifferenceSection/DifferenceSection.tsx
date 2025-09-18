@@ -82,6 +82,6 @@ export const DifferenceSection = ({
           Wirtschaftlichkeitsrechnung
         </Button>
       </AppContainer>
-    </section >
+    </section>
   );
 };

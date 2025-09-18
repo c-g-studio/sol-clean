@@ -37,7 +37,6 @@
   margin-bottom: 20px;
   padding: 20px;
 
-
   border: 1px solid $color-blue-dark;
   border-radius: 20px;
   background-color: $color-black;
@@ -54,7 +53,7 @@
   max-width: 242px;
   height: 237px;
 
-  background-color: #020E1C;
+  background-color: #020e1c;
 
   border: 1px solid $color-blue-dark;
   border-radius: 20px;
@@ -80,7 +79,6 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 33px;
   grid-row-gap: 10px;
-
 
   @include useMedia('min-width', $breakpoint-md) {
     display: grid;
@@ -260,7 +258,7 @@
 }
 
 .total.totalActive {
-  color: $color-blue-dark ;
+  color: $color-blue-dark;
 }
 
 .left {
@@ -341,14 +339,11 @@
 }
 
 .button.buttonActive {
-
   & span {
-
     background-color: $color-yellow;
   }
 
   & svg {
-
     background-color: $color-yellow;
   }
 }

@@ -159,7 +159,7 @@
 }
 
 .total.totalActive {
-  color: $color-blue-dark ;
+  color: $color-blue-dark;
 }
 
 .total.totalSelected {
@@ -244,14 +244,11 @@
 }
 
 .button.buttonActive {
-
   & span {
-
     background-color: $color-yellow;
   }
 
   & svg {
-
     background-color: $color-yellow;
   }
 }

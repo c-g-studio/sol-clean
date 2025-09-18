@@ -37,9 +37,9 @@ export const BusinessPartnerSection = () => {
 
           <Button
             variant={'primary'}
-            buttonType={"buttonLink"}
+            buttonType={'buttonLink'}
             className={s.businessPartnerButton}
-            href={"/business"}
+            href={'/business'}
           >
             Zu Business Solutionsn
           </Button>

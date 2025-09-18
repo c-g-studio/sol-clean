@@ -112,17 +112,16 @@
   margin-bottom: 60px;
   border-radius: 16px;
 
-  @include useMedia('min-width', $breakpoint-md) {}
+  @include useMedia('min-width', $breakpoint-md) {
+  }
 
   @include useMedia('min-width', $breakpoint-lg) {
     margin-bottom: 0;
-
   }
 }
 
 .factBlock {
   margin-bottom: 30;
-
 }
 
 .imageWrapper {

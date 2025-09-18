@@ -16,7 +16,6 @@ import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRe
 import s from './styles.module.scss';
 // import { callBackService } from '@/services/sendInfo.service';
 
-
 const formSchema = z
   .object({
     name: z.string().min(2, 'Bitte geben Sie Ihren vollständigen Namen ein'),

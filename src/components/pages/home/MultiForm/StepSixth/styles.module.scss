@@ -30,7 +30,6 @@
   }
 }
 
-
 .title {
   margin-bottom: 40px;
 
@@ -94,8 +93,6 @@
     // margin-bottom: 26px;
   }
 
-
-
   @include useMedia('min-width', $breakpoint-lg) {
     margin-bottom: 0;
   }
@@ -155,12 +152,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
   }
 }
 
 .orderText {
-
   margin-bottom: 20px;
 
   font-family: Outfit;
@@ -179,7 +174,6 @@
 
     margin-bottom: 0;
     font-size: 24px;
-
   }
 }
 
@@ -188,14 +182,14 @@
 
   @include useMedia('min-width', $breakpoint-lg) {
     display: block;
-
   }
 }
 
 .orderFirstText {
   flex: 1 1 auto;
 
-  @include useMedia('min-width', $breakpoint-lg) {}
+  @include useMedia('min-width', $breakpoint-lg) {
+  }
 }
 
 .orderSecondText {
@@ -205,23 +199,22 @@
   gap: 8px;
 
   @include useMedia('min-width', $breakpoint-md) {
-
     flex: 1 1 auto;
 
     justify-content: space-between;
-
   }
 
-  @include useMedia('min-width', $breakpoint-lg) {}
+  @include useMedia('min-width', $breakpoint-lg) {
+  }
 }
 
 .orderFree {
   flex: 0 1 auto;
-  border: 1.50px dashed #ffc600;
+  border: 1.5px dashed #ffc600;
   border-radius: 4px;
   padding: 2px 15px;
 
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-align: center;
@@ -229,7 +222,8 @@
 
   background: $color-yellow-light;
 
-  @include useMedia('min-width', $breakpoint-lg) {}
+  @include useMedia('min-width', $breakpoint-lg) {
+  }
 }
 
 .orderButton {
@@ -240,11 +234,11 @@
     &::before {
       position: absolute;
       left: -123px;
-      content: "";
+      content: '';
       width: 111px;
       height: 57px;
 
-      background-image: url("/img/home/calculatorSection/stepSixth/finish_arrow.png");
+      background-image: url('/img/home/calculatorSection/stepSixth/finish_arrow.png');
     }
   }
 }
@@ -254,7 +248,6 @@
     font-size: 16px;
   }
 }
-
 
 .buttonsBox {
   display: flex;
@@ -285,14 +278,11 @@
 }
 
 .button.buttonActive {
-
   & span {
-
     background-color: $color-yellow;
   }
 
   & svg {
-
     background-color: $color-yellow;
   }
 }

@@ -13,7 +13,6 @@
   color: $color-clean-white;
   font-family: sans-serif;
 
-
   &.horizontal {
     width: 100%;
     min-height: 155px;
@@ -49,7 +48,7 @@
 }
 
 .header {
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2;
@@ -58,7 +57,6 @@
   margin-bottom: 16px;
 
   .years {
-
     font-weight: 600;
     font-size: 32px;
     // line-height: 1.39986;
@@ -75,7 +73,8 @@
   }
 }
 
-.title {}
+.title {
+}
 
 .barWrapper {
   position: relative;
@@ -93,7 +92,7 @@
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
-    height: auto
+    height: auto;
   }
 }
 
@@ -153,11 +152,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .label {
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
@@ -165,7 +163,7 @@
 }
 
 .amount {
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 1.39986;

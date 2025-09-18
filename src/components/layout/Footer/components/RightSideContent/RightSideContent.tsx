@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { JobApplicationModal } from '@/components/common/JobApplicationModal/JobApplicationModal';
 import { Typography } from '@/components/common/Typography/Typography';
@@ -9,7 +9,6 @@ import { useModal } from '@/hooks/useModal';
 import s from './styles.module.scss';
 
 export const RightSideContent = () => {
-
   const { isOpen, onOpen, onClose } = useModal();
   return (
     <div className={s.rightSideContent}>

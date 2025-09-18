@@ -119,7 +119,7 @@
 }
 
 .total.totalActive {
-  color: $color-blue-dark ;
+  color: $color-blue-dark;
 }
 
 .input.error {
@@ -155,14 +155,11 @@
 }
 
 .button.buttonActive {
-
   & span {
-
     background-color: $color-yellow;
   }
 
   & svg {
-
     background-color: $color-yellow;
   }
 }
