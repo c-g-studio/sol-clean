@@ -1,12 +1,26 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
+.layoutContainer {
+  max-width: 370px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 495px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 838px;
+  }
+}
+
 .modalBox {
+  width: 100%;
   max-width: 330px;
 
   @include useMedia('min-width', $breakpoint-md) {
     max-width: 495px;
   }
+
   @include useMedia('min-width', $breakpoint-lg) {
     max-width: 838px;
   }

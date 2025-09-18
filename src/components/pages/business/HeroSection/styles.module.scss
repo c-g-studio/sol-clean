@@ -2,6 +2,8 @@
 @import '@/styles/_variables';
 
 .section {
+  position: relative;
+
   font-family: $font-roboto, sans-serif;
   padding: 230px 0 202px 0;
 

@@ -95,31 +95,16 @@
   margin-left: 12px;
 }
 
-.btn {
+button.btn {
   width: 100%;
   gap: 10px;
   align-self: flex-end;
-
-  @include useMedia('min-width', $breakpoint-md) {
-    max-width: 296px;
-    align-self: flex-start;
-  }
-
-  @include useMedia('min-width', $breakpoint-lg) {
-    align-self: flex-end;
-  }
 
   & span {
     padding: 8px 20px;
     background: #dde7f7;
 
     font-size: 12px;
-
-    @include useMedia('min-width', $breakpoint-md) {
-      padding: 8px 40px;
-
-      font-size: 16px;
-    }
   }
 
   & svg {
@@ -127,11 +112,26 @@
     height: 31px;
 
     background: #dde7f7;
+  }
 
-    @include useMedia('min-width', $breakpoint-md) {
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 303px;
+    align-self: flex-start;
+
+    & span {
+      padding: 8px 40px;
+      font-size: 16px;
+    }
+
+    & svg {
+      flex: 1 1 auto;
       width: 36px;
       height: 36px;
     }
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    align-self: flex-end;
   }
 }
 

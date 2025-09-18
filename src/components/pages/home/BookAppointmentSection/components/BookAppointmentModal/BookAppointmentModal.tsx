@@ -13,9 +13,8 @@ import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 import { SuccessRequestModal } from '@/components/common/SuccessRequestModal/SuccessRequestModal';
 import { ErrorRequestModal } from '@/components/common/ErrorRequestModal/ErrorRequestModal';
 
-// import { callBackService } from '@/services/sendInfo.service';
-
 import s from './styles.module.scss';
+// import { callBackService } from '@/services/sendInfo.service';
 
 const formSchema = z
   .object({

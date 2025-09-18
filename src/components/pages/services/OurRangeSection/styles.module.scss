@@ -169,6 +169,8 @@ h2.listItemTitle {
 }
 
 .listItemText {
+  position: relative;
+  z-index: 1;
   margin-bottom: 10px;
 
   @include useMedia('min-width', $breakpoint-md) {

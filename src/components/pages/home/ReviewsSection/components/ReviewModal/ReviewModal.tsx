@@ -33,7 +33,11 @@ export const ReviewModal: FC<TReviewModalProps> = ({
   review
 }) => {
   return (
-    <ModalLayout onClose={onClose} isOpen={isOpen}>
+    <ModalLayout
+      onClose={onClose}
+      isOpen={isOpen}
+      layoutClass={s.layoutContainer}
+    >
       <div className={s.modalBox}>
         <div className={s.rating}>
           <RatingMarkup rating={review.rating} />

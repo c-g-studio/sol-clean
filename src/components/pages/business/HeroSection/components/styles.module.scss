@@ -1,0 +1,70 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.section {
+  position: absolute;
+  left: 50%;
+  bottom: -122px;
+  width: 100%;
+  max-width: 350px;
+  padding: 40px 31px;
+
+  transform: translateX(-50%);
+
+  background-color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    bottom: -82px;
+    max-width: 689px;
+    padding: 40px 43px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    bottom: -115px;
+    max-width: 1239px;
+    padding: 40px 200px;
+  }
+}
+
+.wrapper {
+  // text-align: center;
+}
+
+.title {
+  margin-bottom: 10px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.1;
+  text-align: center;
+  color: $color-black;
+
+  & span {
+    color: $color-blue-dark;
+  }
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin-bottom: 3px;
+    line-height: 1.39986;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    margin-bottom: 17px;
+    max-width: 1239px;
+    font-size: 64px;
+  }
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: #405f83;
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 36px;
+  }
+}

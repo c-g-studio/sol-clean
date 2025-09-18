@@ -1,7 +1,7 @@
 @import '@/styles/_mixins';
 @import '@/styles/_variables';
 
-.importanceCleaningSection {
+.businessPartnerSection {
   padding: 90px 0;
   background-color: $color-black;
 
@@ -14,14 +14,14 @@
   }
 }
 
-.importanceCleaningSectionContainer {
+.businessPartnerSectionContainer {
   @include useMedia('min-width', $breakpoint-lg) {
     display: flex;
     gap: 170px;
   }
 }
 
-.importanceCleaningSectionImageDesktop {
+.businessPartnerSectionImageDesktop {
   display: none;
   border-radius: 20px;
 
@@ -33,7 +33,7 @@
   }
 }
 
-.importanceCleaningTitle {
+.businessPartnerTitle {
   margin-bottom: 30px;
 
   color: $color-clean-white;
@@ -57,7 +57,7 @@
   }
 }
 
-.importanceCleaningSectionImage {
+.businessPartnerSectionImage {
   display: block;
   margin: 0 auto 45px auto;
 
@@ -76,7 +76,7 @@
   }
 }
 
-.importanceCleaningText {
+.businessPartnerText {
   text-align: center;
   margin: 0 auto 45px auto;
 
@@ -95,7 +95,7 @@
   }
 }
 
-.importanceCleaningButton {
+.businessPartnerButton {
   display: block;
   margin: 0 auto;
   max-width: 281px;

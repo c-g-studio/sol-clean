@@ -1,0 +1,158 @@
+@import '@/styles/_mixins';
+@import '@/styles/_variables';
+
+.layout {
+  padding: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    padding: 40px;
+    max-width: 688px;
+  }
+
+  @include useMedia('min-width', $breakpoint-xl) {
+    padding: 60px;
+    max-width: 590px;
+  }
+}
+
+.closeIcon {
+  top: 30px;
+  right: 30px;
+}
+
+.modalBox {
+  padding-top: 20px;
+  max-width: 330px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 688px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 838px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  max-width: 200px;
+
+  font-size: 20px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 300px;
+
+    font-size: 40px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelName {
+  max-width: 300px;
+}
+
+.message {
+  max-width: 310px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 100%;
+  }
+}
+
+.phoneWrapper {
+  padding: 8px 20px;
+
+  display: flex;
+  align-items: center;
+  background: #eef2fa;
+  border-radius: 12px;
+  gap: 10px;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #dde7f7;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    font-size: 14px;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
+}
+
+.arrow {
+  font-size: 18px;
+  margin-left: 12px;
+}
+
+.btn {
+  width: 100%;
+  gap: 10px;
+  align-self: flex-end;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    max-width: 296px;
+    align-self: flex-start;
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    max-width: 303px;
+    align-self: flex-end;
+  }
+
+  & span {
+    padding: 8px 20px;
+    background: #dde7f7;
+
+    font-size: 12px;
+
+    @include useMedia('min-width', $breakpoint-md) {
+      padding: 8px 40px;
+
+      font-size: 16px;
+    }
+  }
+
+  & svg {
+    width: 31px;
+    height: 31px;
+
+    background: #dde7f7;
+
+    @include useMedia('min-width', $breakpoint-md) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.agreementText {
+  width: 100%;
+  margin-bottom: 40px;
+
+  @include useMedia('min-width', $breakpoint-md) {
+  }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+  }
+}
+
+.agreementLink {
+  display: block;
+  text-decoration: underline;
+  color: $color-yellow;
+}

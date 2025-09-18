@@ -48,6 +48,14 @@
   }
 }
 
+.btn {
+  max-width: 100%;
+
+  @include useMedia('min-width', 550px) {
+    max-width: 281px;
+  }
+}
+
 // .acceptAll {}
 
 // .necessary {}

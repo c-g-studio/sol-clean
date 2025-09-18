@@ -5,23 +5,19 @@ import { FC } from 'react';
 
 import s from './styles.module.scss';
 import Image from 'next/image';
-import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout.jsx';
+import { ModalLayout } from '@/components/common/ModalLayout/ModalLayout';
 
 type TSuccessRequestModalProps = {
-  requestStatus: 'idle' | 'success' | 'error';
-  handleClose: () => void;
+  isOpen: boolean;
+  onClose: () => void;
 };
 
 export const TransparencyModal: FC<TSuccessRequestModalProps> = ({
-  requestStatus,
-  handleClose
+  isOpen,
+  onClose
 }) => {
   return (
-    <ModalLayout
-      isOpen={requestStatus === 'error'}
-      onClose={handleClose}
-      layoutClass={s.layout}
-    >
+    <ModalLayout isOpen={isOpen} onClose={onClose} layoutClass={s.layout}>
       <AppContainer>
         <div className={s.contentWrapper}>
           <div className={s.textWrapper}>
@@ -41,16 +37,26 @@ export const TransparencyModal: FC<TSuccessRequestModalProps> = ({
 
             <div className={s.points}>
               <Typography variant={'body1'} className={s.point1}>
-                1. Auf dem zweiten Bild zeigt die Thermografiekamera
-                detailliert, an welchen Stellen ungewöhnlich hohe Temperaturen
-                auftreten – ein klares Anzeichen für Defekte.
+                Auf dem zweiten Bild zeigt die Thermografiekamera detailliert,
+                an welchen Stellen ungewöhnlich hohe Temperaturen auftreten –
+                ein klares Anzeichen für Defekte.
               </Typography>
               <Typography variant={'body1'} className={s.point2}>
-                2. Thermografieaufnahmen decken gefährliche Stellen auf, die
-                sich auf bis zu 200 °C erhitzen können – ein ernstes
-                Brandrisiko. Solche Defekte führen oft unbemerkt zu teuren
-                Folgeschäden. Eine regelmäßige Prüfung schützt Ihre Investition
-                und sorgt für langfristige Sicherheit und volle Leistung.
+                Thermografieaufnahmen decken gefährliche Stellen auf, die sich
+                auf bis zu 200 °C erhitzen können – ein ernstes Brandrisiko.
+                Solche Defekte führen oft unbemerkt zu teuren Folgeschäden. Eine
+                regelmäßige Prüfung schützt Ihre Investition und sorgt für
+                langfristige Sicherheit und volle Leistung.
+              </Typography>
+            </div>
+
+            <div className={s.factBlock}>
+              <Typography variant={'body1'} className={s.factBlockText}>
+                Schon eine dünne Staubschicht kann zu einem Leistungsverlust
+              </Typography>
+              <Typography variant={'body1'} className={s.textAccent}>
+                von bis zu <span className={s.textAccentPercentNumber}>30</span>{' '}
+                <span className={s.textAccentPercent}>% führen!</span>
               </Typography>
             </div>
 
