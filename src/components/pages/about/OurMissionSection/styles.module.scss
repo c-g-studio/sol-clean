@@ -71,7 +71,7 @@
   }
 }
 
-.subtitle {
+h2.subtitle {
   color: $color-yellow;
   font-size: 15px;
   font-weight: 500;
@@ -80,13 +80,22 @@
   @include useMedia('min-width', $breakpoint-md) {
     font-size: 16px;
   }
+
+  @include useMedia('min-width', $breakpoint-lg) {
+    font-size: 16px;
+  }
 }
 
-.text {
+p.text {
   color: $color-clean-white;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    color: $color-clean-white;
+  }
 
   @include useMedia('min-width', $breakpoint-lg) {
     font-size: 20px;
+    color: $color-clean-white;
   }
 }
 
@@ -129,6 +138,7 @@
   @include useMedia('min-width', 391px) {
     display: block;
   }
+
   @include useMedia('min-width', $breakpoint-xl) {
     display: none;
   }
@@ -144,6 +154,7 @@
   height: auto;
 
   display: none;
+
   @include useMedia('min-width', $breakpoint-xl) {
     display: block;
   }

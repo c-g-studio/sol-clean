@@ -5,7 +5,7 @@
   max-width: 100%;
   width: 96%;
   padding: 20px 0;
-  background-color: $color-clean-white;
+  background-color: $color-blue-extra-light;
 
   @include useMedia('min-width', $breakpoint-md) {
     padding: 40px 0;
@@ -112,8 +112,7 @@
   margin-bottom: 60px;
   border-radius: 16px;
 
-  @include useMedia('min-width', $breakpoint-md) {
-  }
+  @include useMedia('min-width', $breakpoint-md) {}
 
   @include useMedia('min-width', $breakpoint-lg) {
     margin-bottom: 0;
@@ -121,7 +120,7 @@
 }
 
 .factBlock {
-  margin-bottom: 30;
+  margin-bottom: 30px;
 }
 
 .imageWrapper {

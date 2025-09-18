@@ -27,7 +27,7 @@ type TMultiFormData = {
 };
 
 export const MultiForm = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [formData, setFormData] = useState<Partial<TMultiFormData>>({});
 
   const next = (data: Partial<TMultiFormData>) => {

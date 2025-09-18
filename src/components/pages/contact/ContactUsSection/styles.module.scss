@@ -209,3 +209,11 @@
     display: block;
   }
 }
+
+.btn {
+  margin: 0 auto;
+
+  @include useMedia('min-width', $breakpoint-md) {
+    margin: unset;
+  }
+}
