@@ -54,15 +54,17 @@ export const MobileMenu: FC<TMobileMenuProps> = ({ isOpen, onClose }) => {
             })}
           </ul>
         </nav>
-        <Button
-          variant={'primary'}
-          buttonType={'buttonLink'}
-          href={'#calculatorSection'}
-          className={s.mobileMenuButton}
-          onClick={onClose}
-        >
-          Wirtschaftlichkeitsrechnung
-        </Button>
+        <div onClick={onClose}>
+          <Button
+            variant={'primary'}
+            buttonType={'buttonLink'}
+            href={'/#calculatorSection'}
+            className={s.mobileMenuButton}
+            onClick={onClose}
+          >
+            Wirtschaftlichkeitsrechnung
+          </Button>
+        </div>
       </div>
     </>
   );
