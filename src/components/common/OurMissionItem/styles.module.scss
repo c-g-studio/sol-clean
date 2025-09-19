@@ -9,6 +9,7 @@
   @include useMedia('min-width', $breakpoint-md) {
     width: calc((100% - 20px) / 2);
   }
+
   @include useMedia('min-width', $breakpoint-lg) {
     width: calc((100% - 118px) / 4);
   }
@@ -27,6 +28,7 @@
   background-color: transparent;
 
   transition: background-color 0.3s ease-in-out;
+
   &:hover {
     background-color: $color-aqua-light;
   }
@@ -36,7 +38,7 @@
   }
 }
 
-.listItemTitle {
+h3.listItemTitle {
   margin-bottom: 20px;
 
   color: $color-blue-dark;

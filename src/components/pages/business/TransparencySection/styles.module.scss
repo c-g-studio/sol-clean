@@ -89,6 +89,7 @@
 .button {
   max-width: 100%;
   margin-bottom: 60px;
+  border-radius: 0;
 
   @include useMedia('min-width', $breakpoint-md) {
     max-width: 281px;
@@ -122,18 +123,16 @@
   height: auto;
   min-height: 297px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 0;
 
   @include useMedia('min-width', $breakpoint-md) {
     width: calc((100% - 10px) / 2);
     min-height: 225px;
-    border-radius: 17px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
     width: 506px;
     height: 253px;
     flex: 1 1 auto;
-    border-radius: 0;
   }
 }

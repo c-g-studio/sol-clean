@@ -75,14 +75,14 @@
   }
 }
 
-.slide {
+div.slide {
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 0;
 
   background-color: $color-blue-extra-light;
 
   @include useMedia('min-width', $breakpoint-md) {
-    border-radius: 0;
+
     margin-bottom: 30px;
   }
 
@@ -128,21 +128,23 @@
   }
 }
 
-.slideImage {
+div.slideImage {
   display: block;
   // max-width: 400px;
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 0;
 
   object-fit: cover;
 
   @include useMedia('min-width', $breakpoint-md) {
-    border-radius: 0;
+
     max-width: 260px;
   }
 
   @include useMedia('min-width', $breakpoint-lg) {
+    display: flex;
+    flex-direction: row-reverse;
     max-width: 380px;
     height: 376px;
   }
