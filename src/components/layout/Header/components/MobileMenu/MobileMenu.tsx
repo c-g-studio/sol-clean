@@ -17,7 +17,7 @@ type TMobileMenuProps = {
 export const MobileMenu: FC<TMobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
-      <div className={`${s.backdrop} ${isOpen ? s.showBackdrop : ''}`}></div>
+      <div className={`${s.backdrop} ${isOpen ? s.showBackdrop : ''}`} onClick={onClose}></div>
       <div className={`${s.mobileMenu} ${isOpen ? s.isOpen : ''}`}>
         <div className={s.wrapper}>
           <Link href="/" aria-label={'Home page link'} onClick={onClose}>
